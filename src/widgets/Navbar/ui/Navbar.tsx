@@ -12,7 +12,6 @@ export const Navbar: React.FC<NavbarProps> = (props) => {
 
   return (
     <div className={ClassNames(cls.Navbar, {}, [className])}>
-      <ThemeSwitcher />
       <nav className={cls.links}>
         <AppLink theme={ApplinkTheme.SECONDARY} className={cls.firstLink} to="/">
           Домой
