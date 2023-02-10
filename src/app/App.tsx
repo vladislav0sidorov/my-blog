@@ -14,7 +14,6 @@ const App = () => {
     <div className={ClassNames('app', {}, [theme])}>
       <Suspense fallback={<div>Загрузка языка</div>}>
         <Navbar />
-
         <div className="content-page">
           <Sidebar />
           <AppRouter />
