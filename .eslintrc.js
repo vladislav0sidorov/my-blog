@@ -43,7 +43,7 @@ module.exports = {
     'linebreak-style': 'off',
     'react/prop-types': 'warn',
     'i18next/no-literal-string': [2, { markupOnly: true }],
-    'max-len': [2, { ignoreComments: true }],
+    'max-len': [2, { ignoreComments: true, code: 120 }],
 
   },
   globals: {

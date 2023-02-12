@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { ClassNames } from 'shared/lib/ClassNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button';
 
 interface LangSwitcherProps {
@@ -19,7 +19,7 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = (props) => {
     <Button
       theme={ThemeButton.CLEAR}
       onClick={switchLanguage}
-      className={ClassNames('', {}, [className])}
+      className={classNames('', {}, [className])}
     >
       {t('Русский')}
     </Button>
