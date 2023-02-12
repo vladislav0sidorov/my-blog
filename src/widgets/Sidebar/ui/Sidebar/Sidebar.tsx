@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ClassNames } from 'shared/lib/classNames/classNames';
+import { ClassNames } from 'shared/lib/ClassNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import cls from './Sidebar.module.scss';
