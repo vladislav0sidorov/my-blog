@@ -42,7 +42,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'linebreak-style': 'off',
     'react/prop-types': 'warn',
-    'i18next/no-literal-string': [2, { markupOnly: true }],
+    'i18next/no-literal-string': [2, { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
     'max-len': [2, { ignoreComments: true, code: 120 }],
 
   },
@@ -53,4 +53,10 @@ module.exports = {
     expect: true,
     JSX: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: { 'i18next/no-literal-string': 'off' },
+    },
+  ],
 };
