@@ -10,7 +10,6 @@ jobs:
     strategy:
       matrix:
         node-version: [ 17.x ]
-
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
@@ -20,7 +19,7 @@ jobs:
       - name: install modules
         run: npm install
       - name: build production project
-        run: npm run build:dev
+        run: npm run build:prod
       - name: linting typescript
         run: npm run lint:ts
       - name: linting css
