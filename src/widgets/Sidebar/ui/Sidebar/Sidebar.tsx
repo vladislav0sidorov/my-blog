@@ -26,7 +26,7 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
         type="button"
         onClick={onToggle}
       >
-        {t('Toggle')}
+        {t('Toggle1')}
 
       </Button>
       <div className={cls.switchers}>
