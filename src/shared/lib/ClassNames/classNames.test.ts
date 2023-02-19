@@ -1,4 +1,4 @@
-import { classNames } from './classNames';
+import { classNames } from './ClassNames';
 
 describe('classNames', () => {
   test('test', () => {

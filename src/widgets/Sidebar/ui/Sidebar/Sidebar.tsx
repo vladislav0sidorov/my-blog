@@ -1,7 +1,7 @@
 import { LangSwitcher } from 'features/LangSwitcher';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { Button } from 'shared/ui/Button/ui/Button';
 
 import cls from './Sidebar.module.scss';
