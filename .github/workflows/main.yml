@@ -17,30 +17,22 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          
       - name: install modules
         run: npm install
-
       - name: build production project
         run: npm run build:prod
-        if: alawys()
-
+        if: always()
       - name: linting typescript
         run: npm run lint:ts
-        if: alawys()
-
+        if: always()
       - name: linting css
         run: npm run lint:scss
-        if: alawys()
-
       - name: unit testing
+        if: always()
         run: npm run test:unit
-        if: alawys()
-
       - name: build storybook
         run: npm run storybook:build
-        if: alawys()
-
+        if: always()
       - name: screenshot testing
         run: npm run test:ui:ci
-        if: alawys()
+        if: always()
