@@ -9,15 +9,8 @@
   --font-size-xl: 32px;
   --font-line-xl: 40px;
   --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
-
-  // *Transition
   --main-transition: 0.4s ease;
-
-  // *Sizes
-  // Navbar
   --navbar-height: 50px;
-
-  // Sidebar
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 80px;
 }
