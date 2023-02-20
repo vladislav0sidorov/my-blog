@@ -1,6 +1,7 @@
 .Button {
   cursor: pointer;
   color: var(--inverted-primary-color);
+  padding: 8px 16px;
 }
 
 .clear {
@@ -11,7 +12,52 @@
 
 .outline {
   border: 1px solid var(--secondary-color);
-  padding: 16px;
   color: var(--secondary-color);
   background: none;
+}
+
+.background {
+  background: var(--bg-color);
+  color: var(--primary-color);
+  border: none;
+}
+
+.backgroundInverted {
+  background: var(--inverted-bg-color);
+  color: var(--inverted-primary-color);
+  border: none;
+}
+
+.square {
+  padding: 0;
+}
+
+.square.size_m {
+  width: var(--font-line-m);
+  height: var(--font-line-m);
+  font-size: var(--font-size-m);
+}
+
+.square.size_l {
+  width: var(--font-line-l);
+  height: var(--font-line-l);
+  font-size: var(--font-size-l);
+}
+
+.square.size_xl {
+  width: var(--font-line-xl);
+  height: var(--font-line-xl);
+  font-size: var(--font-size-xl);
+}
+
+.size_m {
+  font-size: var(--font-size-m);
+}
+
+.size_l {
+  font-size: var(--font-size-l);
+}
+
+.size_xl {
+  font-size: var(--font-size-xl);
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button';
+import { Button, ButtonVariables } from 'shared/ui/Button';
 
 interface BugButtonProps {
   className?: string;
@@ -21,7 +21,7 @@ export const BugButton: React.FC<BugButtonProps> = (props) => {
 
   return (
 
-    <Button onClick={toggleThrow}>
+    <Button theme={ButtonVariables.BACKGROUND_INVERTED} onClick={toggleThrow}>
 
       {t('Thorow')}
 
