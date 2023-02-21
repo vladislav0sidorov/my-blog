@@ -4,6 +4,7 @@ import cls from './Button.module.scss';
 
 export enum ButtonVariables {
   CLEAR = 'clear',
+  CLEAR_INVERTED = 'clearInverted',
   OUTLINE = 'outline',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
@@ -20,6 +21,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonVariables;
   square?: boolean;
   size?: string
+
 }
 
 export const Button: React.FC<ButtonProps> = (props) => {

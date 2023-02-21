@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/index.scss';
+
 import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
