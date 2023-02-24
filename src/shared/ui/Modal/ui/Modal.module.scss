@@ -10,11 +10,6 @@
   color: var(--inverted-primary-color);
 }
 
-.Modal.dark {
-  --inverted-bg-color: #1e252b;
-  --inverted-primary-color: rgb(255 255 255 / 90%);
-}
-
 .overlay {
   display: flex;
   align-items: center;
