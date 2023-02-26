@@ -1,6 +1,6 @@
 {
-  "name": "ulbi-tv-course",
-  "version": "0.1.0",
+  "name": "my-blog",
+  "version": "0.4.0",
   "description": "",
   "main": "index.js",
   "scripts": {
