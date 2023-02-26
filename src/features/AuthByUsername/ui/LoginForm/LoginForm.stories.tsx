@@ -1,4 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/stroybook/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from 'shared/config/stroybook/ThemeDecorator/ThemeDecorator';
 import { LoginForm } from './LoginForm';
 
 export default {
@@ -13,3 +16,29 @@ const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args
 
 export const Primary = Template.bind({});
 Primary.args = {};
+Primary.decorators = [StoreDecorator({
+  login: {
+    username: 'main@main.ru',
+    password: '123142',
+  },
+})];
+
+export const Error = Template.bind({});
+Error.args = {};
+Error.decorators = [StoreDecorator({
+  login: {
+    error: true,
+    username: 'main@main.ru',
+    password: '1231441242',
+  },
+})];
+
+export const Pending = Template.bind({});
+Pending.args = {};
+Pending.decorators = [StoreDecorator({
+  login: {
+    username: 'main@main.ru',
+    password: '123142',
+    isLoading: true,
+  },
+})];

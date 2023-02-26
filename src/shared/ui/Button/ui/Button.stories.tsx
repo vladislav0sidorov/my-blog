@@ -90,3 +90,12 @@ SquareSizeXL.args = {
   size: ButtonSizes.XL,
   theme: ButtonVariables.BACKGROUND_INVERTED,
 };
+
+export const DisabledSizeXL = Template.bind({});
+DisabledSizeXL.args = {
+  children: '>',
+  square: true,
+  size: ButtonSizes.XL,
+  theme: ButtonVariables.BACKGROUND_INVERTED,
+  disabled: true,
+};

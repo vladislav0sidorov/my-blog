@@ -1,5 +1,7 @@
 {  
   "Войти": "Login",
   "Введите имя пользователя": "Write username",
-  "Введите пароль": "Write password"
+  "Введите пароль": "Write password",
+  "Форма авторизации": "Authentication form",
+  "Вы ввели невереный логин или пароль": "You wrote uncurrect password or username"
 }

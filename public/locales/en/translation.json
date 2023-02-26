@@ -5,5 +5,6 @@
   "Главная": "Home",
   "Войти": "Login",
   "О себе": "About",
-  "Загрузка языка": "Loading language"
+  "Загрузка языка": "Loading language", 
+  "Выйти": "Exit"
 }
