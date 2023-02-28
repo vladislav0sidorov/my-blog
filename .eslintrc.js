@@ -43,7 +43,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'linebreak-style': 'off',
     'react/prop-types': 'warn',
-    'i18next/no-literal-string': [2, { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
+    'i18next/no-literal-string': [2, { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'name'] }],
     'max-len': [2, { ignoreComments: true, code: 150 }],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
