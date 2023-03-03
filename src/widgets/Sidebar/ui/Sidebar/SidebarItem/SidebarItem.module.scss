@@ -1,0 +1,22 @@
+.item {
+  display: flex;
+  align-items: center;
+  margin: 0 0 16px;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.icon {
+  margin: 0 12px 0 0;
+  fill: var(--secondary-color);
+}
+
+.collapsed {
+  .link {
+    opacity: 0;
+    transition: 0.2s opacity;
+    width: 0;
+  }
+}

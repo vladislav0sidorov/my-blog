@@ -6,5 +6,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": { 
+    "firstname": "Vladislav",
+    "lastname": "Sidorov",
+    "age": 22,
+    "currency": "GEL",
+    "country": "Georgia",
+    "city": "Tbilisi",
+    "username": "admin",
+    "avatar": "https://avatars.mds.yandex.net/get-yapic/65952/7Tlvh9K7U4U1jIdpps62WiFm80-1/islands-retina-small" 
+  }
 }

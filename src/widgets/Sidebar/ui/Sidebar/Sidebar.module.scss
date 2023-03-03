@@ -31,21 +31,6 @@
   margin: 0 0 0 30px;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  margin: 0 0 16px;
-
-  &:last-child {
-    margin: 0;
-  }
-}
-
-.icon {
-  margin: 0 12px 0 0;
-  fill: var(--secondary-color);
-}
-
 .collapsed {
   width: var(--sidebar-width-collapsed);
 
@@ -55,11 +40,5 @@
 
   .lang {
     margin: 0;
-  }
-
-  .link {
-    opacity: 0;
-    transition: 0.2s opacity;
-    width: 0;
   }
 }

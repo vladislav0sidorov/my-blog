@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
@@ -13,7 +13,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: React.FC<NavbarProps> = (props) => {
+export const Navbar: React.FC<NavbarProps> = memo((props) => {
   const { className } = props;
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -50,4 +50,4 @@ export const Navbar: React.FC<NavbarProps> = (props) => {
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
     </div>
   );
-};
+});
