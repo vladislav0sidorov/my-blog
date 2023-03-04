@@ -31,6 +31,10 @@ module.exports = {
       { extensions: ['.js', '.jsx', '.tsx'] },
     ],
     'import/no-unresolved': 'off',
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_" }
+    ],
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'warn',
     'react/require-default-props': 'off',
