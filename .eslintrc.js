@@ -57,6 +57,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
     React: true,
     context: true,
     expect: true,
