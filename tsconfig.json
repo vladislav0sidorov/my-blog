@@ -2,8 +2,11 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "baseUrl": ".",
+    "strict": true,
     "paths": {
-      "*": ["./src/*"]
+      "*": [
+        "./src/*"
+      ]
     },
     "noImplicitAny": true,
     "module": "ESNext",
@@ -18,10 +21,10 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }, 
+  },
   "include": [
     "./config/jest/setupTests.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx",
-    ]
+  ]
 }
