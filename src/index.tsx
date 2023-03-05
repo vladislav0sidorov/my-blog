@@ -8,14 +8,15 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundery';
 import App from './app/App';
 import 'shared/config/i18n/i18n';
 
-render(<BrowserRouter>
-  <StoreProvider>
-    <ErrorBoundary>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </ErrorBoundary>
-  </StoreProvider>
-</BrowserRouter>,
+render(
+  <BrowserRouter>
+    <StoreProvider>
+      <ErrorBoundary>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </ErrorBoundary>
+    </StoreProvider>
+  </BrowserRouter>,
   document.getElementById('root'),
 );

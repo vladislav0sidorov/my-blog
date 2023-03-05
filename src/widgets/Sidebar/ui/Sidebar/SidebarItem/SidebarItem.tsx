@@ -6,9 +6,9 @@ import { SidebarItemType } from '../../../model/items';
 import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
-item?: SidebarItemType;
-collapsed?: boolean;
-text?: string;
+  item: SidebarItemType;
+  collapsed?: boolean;
+  text?: string;
 }
 
 export const SidebarItem: React.FC<SidebarItemProps> = memo((props) => {

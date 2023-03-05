@@ -1,6 +1,6 @@
 import { useTheme } from 'app/providers/ThemeProvider';
-import React, { ReactNode } from 'react';
-import { classNames } from 'shared/lib/ClassNames/ClassNames';
+import React, { MutableRefObject, ReactNode } from 'react';
+import { classNames, Mods } from 'shared/lib/ClassNames/ClassNames';
 import { Portal } from 'shared/ui/Portal';
 import cls from './Modal.module.scss';
 
@@ -21,7 +21,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
 
   const [isClosing, setIsClosing] = React.useState(false);
   const [isMounted, setIsMounted] = React.useState(false);
-  const timerRef = React.useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = React.useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
   const { theme } = useTheme();
 
   React.useEffect(() => {
@@ -30,7 +30,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
     }
   }, [isOpen]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
@@ -62,7 +62,7 @@ export const Modal: React.FC<ModalProps> = (props) => {
     };
   }, [isOpen, onKeyDown]);
 
-  const onContentClick: React.MouseEventHandler<HTMLDivElement> = (e:React.MouseEvent) => {
+  const onContentClick: React.MouseEventHandler<HTMLDivElement> = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
 
