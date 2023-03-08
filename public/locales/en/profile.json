@@ -1,6 +1,16 @@
 {
     "Профиль": "Profile",
     "Редактировать": "Edit",
+    "Отменить": "Cancel",
+    "Сохранить": "Save",
     "Ваше имя": "First name",
-    "Ваша фамилия": "Last name"
+    "Ваша фамилия": "Last name",
+    "Ваш возраст": "Age",
+    "Ваше имя пользователя": "user name",
+    "Ваш город": "City",
+    "Укажите валюту": "Select currency",
+    "Укажите cтрану": "Select country",
+    "Ваше фото профиля": "Profile photo",
+    "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
+    "Мы уже работаем, не переживайте": "We are already working, don`t worry"
 }
