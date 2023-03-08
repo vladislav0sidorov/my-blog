@@ -11,6 +11,15 @@
     "Укажите валюту": "Select currency",
     "Укажите cтрану": "Select country",
     "Ваше фото профиля": "Profile photo",
+    "Некорректное имя": "Incorrect first name",
+    "Некорректная фамилия": "Incorrect last name",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректное имя пользователя": "Incorrect user name",
+    "Некорректная страна": "Incorrect country",
+    "Некорректная ссылка на фото профиля": "Incorrect link to avatar",
+    "Некорректный город": "Incorrect city",
+    "Нет информации о профиле": "No information about profile",
+    "Ошибка на сервере": "Error from server",
     "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
     "Мы уже работаем, не переживайте": "We are already working, don`t worry"
 }
