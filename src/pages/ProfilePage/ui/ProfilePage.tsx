@@ -55,7 +55,9 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
   };
 
   React.useEffect(() => {
-    dispatch(fetchProfileData());
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData());
+    }
   }, [dispatch]);
 
   const onEdit = React.useCallback(() => {
