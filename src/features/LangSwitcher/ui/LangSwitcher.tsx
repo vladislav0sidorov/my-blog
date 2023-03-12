@@ -18,11 +18,7 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = memo((props) => {
   };
 
   return (
-    <Button
-      theme={ButtonVariables.CLEAR}
-      onClick={switchLanguage}
-      className={classNames('', {}, [className])}
-    >
+    <Button theme={ButtonVariables.CLEAR_THIRD} onClick={switchLanguage} className={classNames('', {}, [className])}>
       {t(short ? 'Короткий язык' : 'Русский')}
     </Button>
   );

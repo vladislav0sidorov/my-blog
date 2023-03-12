@@ -21,9 +21,7 @@ export const Sidebar: React.FC<SidebarProps> = memo((props) => {
   const [collapsed, setCollapsed] = React.useState(false);
   const { t } = useTranslation();
 
-  const itemList = useMemo(() => SidebarItemsList.map((item) => (
-    <SidebarItem key={item.path} item={item} collapsed={collapsed} />
-  )), [collapsed]);
+  const itemList = useMemo(() => SidebarItemsList.map((item) => <SidebarItem key={item.path} item={item} collapsed={collapsed} />), [collapsed]);
 
   const onToggle = () => {
     setCollapsed((prev) => !prev);
@@ -41,9 +39,7 @@ export const Sidebar: React.FC<SidebarProps> = memo((props) => {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <div className={cls.items}>
-        {itemList}
-      </div>
+      <div className={cls.items}>{itemList}</div>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} className={cls.lang} />

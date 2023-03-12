@@ -13,6 +13,7 @@ import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { InputVariable } from 'shared/ui/Input/ui/Input';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
@@ -38,13 +39,19 @@ const LoginForm: React.FC<LoginFormProps> = React.memo((props) => {
   const isLoading = useSelector(getLoginLoading);
   const error = useSelector(getLoginError);
 
-  const onChangeUsername = React.useCallback((value: string) => {
-    dispatch(loginActions.setUsername(value));
-  }, [dispatch]);
+  const onChangeUsername = React.useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch],
+  );
 
-  const onChangePassword = React.useCallback((value: string) => {
-    dispatch(loginActions.setPassword(value));
-  }, [dispatch]);
+  const onChangePassword = React.useCallback(
+    (value: string) => {
+      dispatch(loginActions.setPassword(value));
+    },
+    [dispatch],
+  );
 
   const onLoginClick = React.useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }));
@@ -56,16 +63,30 @@ const LoginForm: React.FC<LoginFormProps> = React.memo((props) => {
   return (
     <DynamicModuleLoader removeAfterUnmount={false} reducers={initialReducers}>
       <div className={classNames(cls.LoginForm, {}, [className])}>
-        <Text title={t('Форма авторизации')} theme={TextTheme.SECONDORY} />
+        <Text title={t('Форма авторизации')} theme={TextTheme.SECONDORY_INVERTED} />
         {error && <Text text={t('Вы ввели невереный логин или пароль')} theme={TextTheme.ERROR} />}
-        <Input value={username} onChange={onChangeUsername} autoFocus placeholder={t('Введите имя пользователя')} className={cls.input} type="text" />
-        <Input value={password} onChange={onChangePassword} placeholder={t('Введите пароль')} className={cls.input} type="text" />
-        <Button disabled={isLoading} onClick={onLoginClick} theme={ButtonVariables.OUTLINE} className={cls.loginBtn}>
+        <Input
+          value={username}
+          theme={InputVariable.PRIMARY_INVERTED}
+          onChange={onChangeUsername}
+          autoFocus
+          placeholder={t('Введите имя пользователя')}
+          className={cls.input}
+          type="text"
+        />
+        <Input
+          value={password}
+          theme={InputVariable.PRIMARY_INVERTED}
+          onChange={onChangePassword}
+          placeholder={t('Введите пароль')}
+          className={cls.input}
+          type="text"
+        />
+        <Button disabled={isLoading} onClick={onLoginClick} theme={ButtonVariables.OUTLINE_INVERTED} className={cls.loginBtn}>
           {t('Войти')}
         </Button>
       </div>
     </DynamicModuleLoader>
-
   );
 });
 

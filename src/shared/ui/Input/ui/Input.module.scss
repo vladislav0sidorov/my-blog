@@ -9,7 +9,7 @@
   outline: none;
   width: 100%;
   text-shadow: 0 0 0 var(--inverted-primary-color);
-  color: var(--primary-color);
+  color: var(--secondary-color);
 
   &:focus {
     outline: none;
@@ -18,7 +18,7 @@
 
 .placeholder {
   margin: 0 6px 0 0;
-  color: var(--inverted-secondary-color);
+  color: var(--secondary-color);
 }
 
 .caretWrapper {
@@ -26,30 +26,43 @@
   position: relative;
 }
 
-.caret {
-  position: absolute;
-  height: 3px;
-  width: 9px;
-  background: var(--inverted-secondary-color);
-  bottom: 0;
-  left: 0;
-  animation: blink 1s forwards infinite;
-}
+// .caret {
+//   position: absolute;
+//   height: 3px;
+//   width: 9px;
+//   background: var(--inverted-secondary-color);
+//   bottom: 0;
+//   left: 0;
+//   animation: blink 1s forwards infinite;
+// }
 
 .readonly {
   opacity: 0.5;
 }
 
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
+// @keyframes blink {
+//   0% {
+//     opacity: 0;
+//   }
 
-  50% {
-    opacity: 0.01;
-  }
+//   50% {
+//     opacity: 0.01;
+//   }
 
-  100% {
-    opacity: 1;
+//   100% {
+//     opacity: 1;
+//   }
+// }
+.primaryInverted {
+  .input {
+    text-shadow: 0 0 0 var(--inverted-primary-color);
+    color: var(--inverted-secondary-color);
   }
+  .placeholder {
+    margin: 0 6px 0 0;
+    color: var(--inverted-secondary-color);
+  }
+  // .caret {
+  //   background: var(--inverted-secondary-color);
+  // }
 }

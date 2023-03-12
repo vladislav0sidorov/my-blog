@@ -7,6 +7,15 @@
   color: var(--primary-color);
   font: var(--font-m);
 }
+.primaryInverted {
+  .title {
+    color: var(--inverted-primaty-color);
+  }
+
+  .text {
+    color: var(--inverted-primaty-color);
+  }
+}
 
 .secondary {
   .title {
@@ -15,6 +24,15 @@
 
   .text {
     color: var(--secondary-color);
+  }
+}
+.secondaryInverted {
+  .title {
+    color: var(--inverted-secondary-color);
+  }
+
+  .text {
+    color: var(--inverted-secondary-color);
   }
 }
 
