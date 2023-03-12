@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   margin: 0 0 16px;
-
+  color: var(--third-color);
   &:last-child {
     margin: 0;
   }
@@ -10,7 +10,7 @@
 
 .icon {
   margin: 0 12px 0 0;
-  fill: var(--secondary-color);
+  fill: var(--third-color);
 }
 
 .collapsed {

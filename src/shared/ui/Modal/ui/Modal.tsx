@@ -45,11 +45,14 @@ export const Modal: React.FC<ModalProps> = (props) => {
     }
   }, [onClose]);
 
-  const onKeyDown = React.useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeHandler();
-    }
-  }, [closeHandler]);
+  const onKeyDown = React.useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeHandler();
+      }
+    },
+    [closeHandler],
+  );
 
   React.useEffect(() => {
     if (isOpen) {

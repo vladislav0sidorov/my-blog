@@ -4,7 +4,9 @@ import cls from './Text.module.scss';
 
 export enum TextTheme {
   PRIMARY = 'primary',
+  PRIMARY_INVERTED = 'primaryInverted',
   SECONDORY = 'secondary',
+  SECONDORY_INVERTED = 'secondaryInverted',
   ERROR = 'error',
 }
 
@@ -24,15 +26,10 @@ interface TextProps {
 
 export const Text: React.FC<TextProps> = memo((props) => {
   const {
-    className,
-    title,
-    text,
-    theme = TextTheme.PRIMARY,
-    aling = TextAling.LEFT,
+    className, title, text, theme = TextTheme.PRIMARY, aling = TextAling.LEFT,
   } = props;
 
-  const mods: Mods = {
-  };
+  const mods: Mods = {};
 
   return (
     <div className={classNames(cls.Text, mods, [className, cls[theme], cls[aling]])}>

@@ -4,6 +4,11 @@ import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'readOnly' | 'onChange'>;
 
+export enum InputVariable {
+  PRIMARY = 'primary',
+  PRIMARY_INVERTED = 'primaryInverted',
+}
+
 interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string | number;
@@ -12,18 +17,12 @@ interface InputProps extends HTMLInputProps {
   autoFocus?: boolean;
   type?: string;
   readonly?: boolean;
+  theme?: InputVariable;
 }
 
 export const Input: React.FC<InputProps> = React.memo((props) => {
   const {
-    className,
-    value,
-    onChange,
-    type,
-    placeholder,
-    autoFocus,
-    readonly,
-    ...otherProps
+    className, value, onChange, theme = InputVariable.PRIMARY, type, placeholder, autoFocus, readonly, ...otherProps
   } = props;
 
   const [isFocused, setIsFocused] = React.useState(false);
@@ -58,12 +57,8 @@ export const Input: React.FC<InputProps> = React.memo((props) => {
   };
 
   return (
-    <div className={classNames(cls.InputWrapper, mods, [className])}>
-      {placeholder && (
-        <div className={cls.placeholder}>
-          {`${placeholder} >`}
-        </div>
-      )}
+    <div className={classNames(cls.InputWrapper, mods, [className, cls[theme]])}>
+      {placeholder && <div className={cls.placeholder}>{`${placeholder} >`}</div>}
       <div className={cls.caretWrapper}>
         <input
           ref={ref}
@@ -80,6 +75,5 @@ export const Input: React.FC<InputProps> = React.memo((props) => {
         {isFocused && <span style={{ left: `${caretPosition * 7.34}px` }} className={cls.caret} />}
       </div>
     </div>
-
   );
 });
