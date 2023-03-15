@@ -1,9 +1,9 @@
-@import "reset";
-@import "variables/global";
-@import "themes/light";
-@import "themes/dark";
-@import "themes/purple";
-@import "themes/darkGreen";
+@import 'reset';
+@import 'variables/global';
+@import 'themes/light';
+@import 'themes/dark';
+@import 'themes/purple';
+@import 'themes/darkGreen';
 
 body {
   font: var(--font-m);
@@ -21,6 +21,8 @@ body {
 
 .page-wrapper {
   flex-grow: 1;
-  padding: 20px;
+  padding: 20px 20px 20px 45px;
   transition: var(--main-transition);
+  height: calc(100vh - var(--navbar-height));
+  overflow: auto;
 }
