@@ -16,20 +16,29 @@ export enum TextAling {
   LEFT = 'left',
 }
 
+export enum TextSize {
+  S = 'size_s',
+  M = 'size_m',
+  L = 'size_l',
+}
+
 interface TextProps {
   className?: string;
   title?: string;
   text?: string;
   theme?: TextTheme;
   aling?: TextAling;
+  size?: TextSize;
 }
 
 export const Text: React.FC<TextProps> = memo((props) => {
   const {
-    className, title, text, theme = TextTheme.PRIMARY, aling = TextAling.LEFT,
+    className, title, text, theme = TextTheme.PRIMARY, size = TextSize.M, aling = TextAling.LEFT,
   } = props;
 
-  const mods: Mods = {};
+  const mods: Mods = {
+    [cls[size]]: true,
+  };
 
   return (
     <div className={classNames(cls.Text, mods, [className, cls[theme], cls[aling]])}>

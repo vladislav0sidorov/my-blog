@@ -1,11 +1,9 @@
 .title {
   color: var(--primary-color);
-  font: var(--font-l);
 }
 
 .text {
   color: var(--primary-color);
-  font: var(--font-m);
 }
 
 .primaryInverted {
@@ -58,4 +56,34 @@
 
 .right {
   text-align: right;
+}
+
+.size_s {
+  .title {
+    font: var(--font-m);
+  }
+
+  .text {
+    font: var(--font-s);
+  }
+}
+
+.size_m {
+  .title {
+    font: var(--font-l);
+  }
+
+  .text {
+    font: var(--font-m);
+  }
+}
+
+.size_l {
+  .title {
+    font: var(--font-xl);
+  }
+
+  .text {
+    font: var(--font-l);
+  }
 }
