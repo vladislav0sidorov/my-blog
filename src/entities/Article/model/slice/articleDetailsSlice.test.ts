@@ -96,6 +96,7 @@ describe('articleDetailsSlice.test', () => {
     expect(
       articleDetailsReducer(
         state as ArticleDetailsSchema,
+        // @ts-ignore
         fetchArticleById.fulfilled(data),
       ),
     ).toEqual({
