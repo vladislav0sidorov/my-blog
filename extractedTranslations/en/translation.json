@@ -1,6 +1,9 @@
 {
   "Article Details": "Article Details",
+  "ArticleCodeBlockComponent": "ArticleCodeBlockComponent",
   "ArticleDetailsPage": "ArticleDetailsPage",
+  "ArticleImageBlockComponent": "ArticleImageBlockComponent",
+  "ArticleTextBlockComponent": "ArticleTextBlockComponent",
   "Error": "Error",
   "Loading": {
     "": {

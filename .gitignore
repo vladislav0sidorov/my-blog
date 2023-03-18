@@ -1,6 +1,7 @@
 /build
 node_modules
 .idea
+.fttemplates
 .vscode
 /storybook-static
 .loki/report.html

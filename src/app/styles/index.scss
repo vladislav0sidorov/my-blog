@@ -25,4 +25,5 @@ body {
   transition: var(--main-transition);
   height: calc(100vh - var(--navbar-height));
   overflow: auto;
+  width: 100%;
 }
