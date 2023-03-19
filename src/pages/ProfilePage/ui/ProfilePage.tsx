@@ -21,6 +21,7 @@ import { Country } from 'entities/Country';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -54,11 +55,9 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
     [ValidateProfileError.SERVER_ERROR]: t('Ошибка на сервере'),
   };
 
-  React.useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
-    }
-  }, [dispatch]);
+  useInitialEffect(() => {
+    dispatch(fetchProfileData());
+  });
 
   const onEdit = React.useCallback(() => {
     dispatch(profileActions.setReadonly(false));
