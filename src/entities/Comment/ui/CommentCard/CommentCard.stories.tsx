@@ -1,8 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Avatar from 'shared/assets/test/avatar.jpg';
 import { CommentCard } from './CommentCard';
 
 export default {
-  title: 'shared/CommentCard',
+  title: 'entities/Comment/CommentCard',
   component: CommentCard,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -14,4 +15,28 @@ const Template: ComponentStory<typeof CommentCard> = (args) => (
 );
 
 export const Normal = Template.bind({});
-Normal.args = {};
+Normal.args = {
+  isLoading: false,
+  comment: {
+    id: '1',
+    text: 'text1',
+    user: {
+      id: '1',
+      username: 'userName',
+      avatar: Avatar,
+    },
+  },
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  comment: {
+    id: '1',
+    text: 'text1',
+    user: {
+      id: '1',
+      username: 'userName',
+      avatar: Avatar,
+    },
+  },
+};

@@ -13,16 +13,30 @@
       "avatar": "https://sun9-36.userapi.com/impf/c850220/v850220268/12e2c7/TxYnZV8Q7N4.jpg?size=1536x2048&quality=96&sign=e3a114e332c19380899361b7d5084f5d&type=album"
     }
   ],
-  "profile": {
-    "firstname": "Vladislavfsv",
-    "lastname": "Sidorov",
-    "age": 22,
-    "currency": "GEL",
-    "country": "Georgia",
-    "city": "Tbilisi",
-    "username": "Ylquiorra",
-    "avatar": "https://sun9-60.userapi.com/impg/eqo5sYxr_jyw_yWO9_pKJRMkx8WVwVENfJrecQ/1zVSkEZs5NM.jpg?size=1620x2160&quality=95&sign=73cab6427b2934395f04d96835eb3720&type=album"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Vladislavfsv",
+      "lastname": "Sidorov",
+      "age": 22,
+      "currency": "GEL",
+      "country": "Georgia",
+      "city": "Tbilisi",
+      "username": "Ylquiorra",
+      "avatar": "https://sun9-60.userapi.com/impg/eqo5sYxr_jyw_yWO9_pKJRMkx8WVwVENfJrecQ/1zVSkEZs5NM.jpg?size=1620x2160&quality=95&sign=73cab6427b2934395f04d96835eb3720&type=album"
+    },
+    {
+      "id": "2",
+      "firstname": "Ksy Красотка",
+      "lastname": "Zykova",
+      "age": 22,
+      "currency": "GEL",
+      "country": "Georgia",
+      "city": "Tbilisi",
+      "username": "SeniaZy",
+      "avatar": "https://sun9-36.userapi.com/impf/c850220/v850220268/12e2c7/TxYnZV8Q7N4.jpg?size=1536x2048&quality=96&sign=e3a114e332c19380899361b7d5084f5d&type=album"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -31,8 +45,10 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
-      "blocks": [ 
+      "type": [
+        "IT"
+      ],
+      "blocks": [
         {
           "id": "1",
           "type": "TEXT",
@@ -91,7 +107,6 @@
             "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы."
           ]
         }
-        
       ]
     }
   ],
@@ -107,6 +122,66 @@
       "text": "Да, согласна",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "DFFFFE",
+      "id": "mLCsQNr"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Мне тоже это нравится",
+      "id": "H9mxVVU"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "ТОЖЕ ВАУ",
+      "id": "YRpF94w"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "НОРМ",
+      "id": "v6nRNp9"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "афыаафаы",
+      "id": "x57aBrl"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "gagsgagsag",
+      "id": "bSgKC3C"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "fafssafafa",
+      "id": "ajebFso"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "gsgdsgsg",
+      "id": "gvD7pdQ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "fafsaaf",
+      "id": "FApAf98"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Ну-ка",
+      "id": "HASHDSe"
     }
   ]
 }

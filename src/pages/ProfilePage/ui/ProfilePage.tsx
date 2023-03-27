@@ -22,6 +22,7 @@ import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -41,6 +42,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
   const error = useSelector(getProfileError);
   const validateErrors = useSelector(getProfileValidateErrors);
   const readonly = useSelector(getProfileReadOnly);
+  const { id } = useParams<{ id: string }>();
 
   //! типизация отвалилась
   const validateErrorTranslates: any = {
@@ -56,7 +58,9 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
   };
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData());
+    if (id) {
+      dispatch(fetchProfileData(id));
+    }
   });
 
   const onEdit = React.useCallback(() => {
