@@ -1,0 +1,19 @@
+.ArticleList {}
+
+
+
+.LIST {
+  .card {
+    margin: 0 0 32px 0;
+  }
+}
+
+.PLATE {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .card {
+    margin: 0 32px 32px 0;
+  }
+}
