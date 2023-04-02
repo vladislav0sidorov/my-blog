@@ -1,35 +1,34 @@
-name: CI
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+name: linting, testing, building
 on:
-push:
-branches: [ master, develop ]
-pull_request:
-branches: [ master, develop ]
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 jobs:
-pipeline:
-runs-on: ${{ matrix.os }}
-strategy:
-matrix:
-os: [ ubuntu-latest ]
-node-version: [ 17.x ]
+  pipeline:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+        node-version: [ 17.x ]
 
-steps:
-- uses: actions/checkout@v2
-- name: Staring Node.js ${{ matrix.node-version }}
-uses: actions/setup-node@v1
-with:
-node-version: ${{ matrix.node-version }}
-- name: install modules
-run: npm ci
-- name: build production project
-run: npm run build:prod
-- name: linting typescript
-run: npm run lint:ts
-- name: linting css
-run: npm run lint:scss
-- name: unit testing
-run: npm run test:unit
-- name: build storybook
-run: npm run storybook:build
-- name: screenshot testing
-run: npm run test:ui:ci
+    steps:
+    - uses: actions/checkout@v2
+    - name: Staring Node.js ${{ matrix.node-version }}
+    uses: actions/setup-node@v1
+    with:
+    node-version: ${{ matrix.node-version }}
+    - name: install modules
+    run: npm ci
+    - name: build production project
+    run: npm run build:prod
+    - name: linting typescript
+    run: npm run lint:ts
+    - name: linting css
+    run: npm run lint:scss
+    - name: unit testing
+    run: npm run test:unit
+    - name: build storybook
+    run: npm run storybook:build
+    - name: screenshot testing
+    run: npm run test:ui:ci
