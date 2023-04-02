@@ -23,6 +23,7 @@ import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { ValidateProfileError } from 'entities/Profile/model/types/profile';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -137,7 +138,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div>
+      <Page>
         <ProfilePageHeader onEdit={onEdit} onCancelEdit={onCancelEdit} onSave={onSave} />
         {validateErrors?.length && validateErrors?.map((error) => <Text key={error} theme={TextTheme.ERROR} text={validateErrorTranslates[error]} />)}
         <ProfileCard
@@ -154,7 +155,7 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
           error={error}
           readonly={readonly}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

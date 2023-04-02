@@ -1,24 +1,37 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Article } from 'entities/Article';
-import { Comment } from 'entities/Comment';
+import { getArticlesPageLimit } from '../../selectors/getArticlesPageLimit/getArticlesPageLimit';
 
-export const fetchArticlesList = createAsyncThunk<Article[], void, ThunkConfig<string>>('articlesPage/fetchArticlesList', async (_, thunkApi) => {
-  const { extra, rejectWithValue } = thunkApi;
+interface FetchArticlesListProps {
+  page?: number;
+}
 
-  try {
-    const response = await extra.api.get<Article[]>('/articles', {
-      params: {
-        _expand: 'user',
-      },
-    });
+export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListProps, ThunkConfig<string>>(
+  'articlesPage/fetchArticlesList',
+  async (props, thunkApi) => {
+    const {
+      extra, rejectWithValue, getState, dispatch,
+    } = thunkApi;
+    const { page = 1 } = props;
+    const limit = getArticlesPageLimit(getState());
 
-    if (!response.data) {
-      throw new Error();
+    try {
+      const response = await extra.api.get<Article[]>('/articles', {
+        params: {
+          _expand: 'user',
+          _limit: limit,
+          _page: page,
+        },
+      });
+
+      if (!response.data) {
+        throw new Error();
+      }
+
+      return response.data;
+    } catch (e) {
+      return rejectWithValue('error');
     }
-
-    return response.data;
-  } catch (e) {
-    return rejectWithValue('error');
-  }
-});
+  },
+);

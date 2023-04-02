@@ -23,11 +23,13 @@ export const ArticleList: FC<ArticleListProps> = React.memo((props) => {
     .fill(0)
     .map((item, index) => <ArticleListItemSkeleton className={cls.card} key={index} view={view} />);
 
-  if (isLoading) {
-    return <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>{getSkeleton(view)}</div>;
-  }
-
   const renderArtcile = (article: Article) => <ArticleListItem className={cls.card} key={article.id} article={article} view={view} />;
 
-  return <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>{articles.length > 0 ? articles.map(renderArtcile) : null}</div>;
+  return (
+    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+      {articles.length > 0 ? articles.map(renderArtcile) : null}
+      {' '}
+      {isLoading && getSkeleton(view)}
+    </div>
+  );
 });

@@ -11,6 +11,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import React, { useCallback } from 'react';
 import { Button, ButtonVariables } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slice/articleDetailsCommentsSlice';
 import { getArticleCommentsLoading } from '../model/selectors/getArticleCommentsLoading/getArticleCommentsLoading';
@@ -49,12 +50,12 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = (props) => {
   });
 
   if (!id) {
-    return <div>{t('Не удалось загрузить страницу!')}</div>;
+    return <Page>{t('Не удалось загрузить страницу!')}</Page>;
   }
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div>
+      <Page>
         <Button onClick={onBackToList} theme={ButtonVariables.OUTLINE}>
           {t('Назад к списку')}
         </Button>
@@ -62,7 +63,7 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = (props) => {
         <Text className={cls.commentTitle} title={t('Комментарии')} />
         <AddCommentForm onSendComment={onSendComment} />
         <CommentList isLoading={commentsIsLoading} comments={comments} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

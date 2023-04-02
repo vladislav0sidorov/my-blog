@@ -34,20 +34,20 @@ export const Navbar: React.FC<NavbarProps> = memo((props) => {
 
   if (authData) {
     return (
-      <div className={classNames(cls.Navbar, {}, [className])}>
+      <nav className={classNames(cls.Navbar, {}, [className])}>
         <Button onClick={onLogout} theme={ButtonVariables.CLEAR_INVERTED} className={cls.links}>
           {t('Выйти')}
         </Button>
-      </div>
+      </nav>
     );
   }
 
   return (
-    <div className={classNames(cls.Navbar, {}, [className])}>
+    <nav className={classNames(cls.Navbar, {}, [className])}>
       <Button onClick={onShowModal} theme={ButtonVariables.CLEAR_INVERTED} className={cls.links}>
         {t('Войти')}
       </Button>
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
-    </div>
+    </nav>
   );
 });

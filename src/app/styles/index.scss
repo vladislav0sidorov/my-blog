@@ -18,11 +18,3 @@ body {
 .content-page {
   display: flex;
 }
-
-.page-wrapper {
-  flex-grow: 1;
-  padding: 2rem 1rem 2rem 3rem;
-  height: calc(100vh - var(--navbar-height));
-  width: calc(100% - var(--sidebar-width));
-  overflow-y: auto;
-}
