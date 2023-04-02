@@ -1,4 +1,4 @@
-import { addCommentFormSchema } from '../types/addCommentForm';
+import { AddCommentFormSchema } from '../types/addCommentForm';
 import {
   addCommentFormActions,
   addCommentFormReducer,
@@ -6,10 +6,10 @@ import {
 
 describe('loginSlice.test', () => {
   test('test set username', () => {
-    const state: DeepPartial<addCommentFormSchema> = { text: 'mail' };
+    const state: DeepPartial<AddCommentFormSchema> = { text: 'mail' };
     expect(
       addCommentFormReducer(
-        state as addCommentFormSchema,
+        state as AddCommentFormSchema,
         addCommentFormActions.setText('mail123'),
       ),
     ).toEqual({ text: 'mail123' });

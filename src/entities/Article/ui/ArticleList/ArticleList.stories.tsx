@@ -66,7 +66,7 @@ const Template: ComponentStory<typeof ArticleList> = (args) => (
 export const Plate = Template.bind({});
 Plate.args = {
   isLoading: false,
-  articles: new Array(9).fill(0).map((item, index) => ({
+  articles: new Array(9).fill(0).map((_, index) => ({
     ...article,
     id: String(index),
   })),
@@ -76,7 +76,7 @@ Plate.args = {
 export const PlateDark = Template.bind({});
 PlateDark.args = {
   isLoading: false,
-  articles: new Array(9).fill(0).map((item, index) => ({
+  articles: new Array(9).fill(0).map((_, index) => ({
     ...article,
     id: String(index),
   })),
