@@ -10,6 +10,8 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
 
   let keysToRemove: Array<StateSchemaKey> = [];
 
+  const mountedReducers: OptionalRecord<StateSchemaKey, boolean> = {};
+
   return {
     getReducerMap: () => reducers,
     reduce: (state: StateSchema, action: AnyAction) => {

@@ -18,6 +18,8 @@ import { getArticlesPageError } from '../model/selectors/getArticlesPageError/ge
 import { getArticlesPageNumber } from '../model/selectors/getArticlesPageNumber/getArticlesPageNumber';
 import { getArticlesPageHasMore } from '../model/selectors/getArticlesPageHasMore/getArticlesPageHasMore';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { getArticlesPageInited } from '../model/selectors/getArticlesPageInited/getArticlesPageInited';
+import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 // import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -34,6 +36,7 @@ const ArticlesPage: React.FC<ArticlesPageProps> = (props) => {
   const page = useSelector(getArticlesPageNumber);
   const view = useSelector(getArticlesPageView);
   const error = useSelector(getArticlesPageError);
+  const inited = useSelector(getArticlesPageInited);
 
   const onChangeView = React.useCallback(
     (view: ArticleView) => {
@@ -47,8 +50,7 @@ const ArticlesPage: React.FC<ArticlesPageProps> = (props) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlePageActions.initialState());
-    dispatch(fetchArticlesList({ page: 1 }));
+    dispatch(initArticlesPage());
   });
 
   const reducers: ReducersList = {
