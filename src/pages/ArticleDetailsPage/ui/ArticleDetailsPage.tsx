@@ -11,7 +11,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import React, { useCallback } from 'react';
 import { Button, ButtonVariables } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 import cls from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer, getArticleComments } from '../model/slice/articleDetailsCommentsSlice';
 import { getArticleCommentsLoading } from '../model/selectors/getArticleCommentsLoading/getArticleCommentsLoading';

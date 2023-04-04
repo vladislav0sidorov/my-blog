@@ -7,7 +7,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ArticleViewSelector } from 'features/articleViewSelector';
 import React from 'react';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 import { Text } from 'shared/ui/Text';
 import { articlePageActions, articlePageReducer, getArticles } from '../model/slice/articlePageSlice';
 import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList';
