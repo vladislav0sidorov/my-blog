@@ -80,9 +80,9 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = React.memo((props
     (value: ArticleType) => {
       dispatch(articlePageActions.setType(value));
       dispatch(articlePageActions.setPage(1));
-      debouncedFetchData();
+      fetchData();
     },
-    [dispatch, debouncedFetchData],
+    [dispatch, fetchData],
   );
 
   return (
