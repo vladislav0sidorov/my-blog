@@ -6,6 +6,12 @@ export enum ArticleBlockType {
   TEXT = 'TEXT',
 }
 
+export enum ArticleSortField {
+  VIEWS = 'views',
+  TITLE = 'title',
+  CREATED = 'created',
+}
+
 export interface ArticleBlockBase {
   id: string;
   type: ArticleBlockType;
@@ -35,9 +41,10 @@ export enum ArticleView {
   PLATE = 'PLATE',
 }
 export enum ArticleType {
+  ALL = 'ALL',
   IT = 'IT',
   SCIENCE = 'SCIENCE',
-  ECONOMICS = 'SCIENCE',
+  ECONOMICS = 'ECONOMICS',
 }
 
 export interface Article {
