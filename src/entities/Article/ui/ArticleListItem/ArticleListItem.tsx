@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { Text } from 'shared/ui/Text';
@@ -8,8 +8,8 @@ import { TextSize } from 'shared/ui/Text/ui/Text';
 import { Card } from 'shared/ui/Card';
 import { Avatar } from 'shared/ui/Avatar';
 import { Button, ButtonVariables } from 'shared/ui/Button';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import {
   Article, ArticleBlockType, ArticleTextBlock, ArticleView,
 } from '../../model/types/article';
@@ -20,16 +20,14 @@ interface ArticleListItemProps {
   className?: string;
   article: Article;
   view: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem: FC<ArticleListItemProps> = React.memo((props) => {
-  const { className, article, view } = props;
+  const {
+    className, article, view, target,
+  } = props;
   const { t } = useTranslation('article-list');
-  const navigate = useNavigate();
-
-  const onOpenArticle = React.useCallback(() => {
-    navigate(RoutePath.article_details + article.id);
-  }, [article.id, navigate]);
 
   const types = <Text className={cls.types} text={article.type.join(', ')} />;
   const views = (
@@ -46,7 +44,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = React.memo((props) => {
       <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
         <Card className={cls.card}>
           <div className={cls.header}>
-            <Avatar size={30} src={article.user.avatar} />
+            {article.user.avatar && <Avatar size={30} src={article.user.avatar} />}
             <Text className={cls.username} text={article.user.username} />
             <Text text={article.createdAt} className={cls.date} />
           </div>
@@ -55,9 +53,10 @@ export const ArticleListItem: FC<ArticleListItemProps> = React.memo((props) => {
           {image}
           {textBlock && <ArticleTextBlockComponent className={cls.textBlock} block={textBlock} />}
           <div className={cls.footer}>
-            <Button onClick={onOpenArticle} theme={ButtonVariables.OUTLINE}>
-              {t('Читать далее')}
-            </Button>
+            <AppLink target={target} to={RoutePath.article_details + article.id}>
+              <Button theme={ButtonVariables.OUTLINE}>{t('Читать далее')}</Button>
+            </AppLink>
+
             {views}
           </div>
         </Card>
@@ -66,8 +65,8 @@ export const ArticleListItem: FC<ArticleListItemProps> = React.memo((props) => {
   }
 
   return (
-    <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-      <Card onClick={onOpenArticle} className={cls.card}>
+    <AppLink target={target} to={RoutePath.article_details + article.id} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+      <Card className={cls.card}>
         <div className={cls.imageWrapper}>
           {image}
           <Text text={article.createdAt} className={cls.date} />
@@ -78,6 +77,6 @@ export const ArticleListItem: FC<ArticleListItemProps> = React.memo((props) => {
         </div>
         <Text size={TextSize.S} className={cls.title} title={article.title} />
       </Card>
-    </div>
+    </AppLink>
   );
 });

@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { Tabs } from 'shared/ui/Tabs';
 import { ArticleType } from 'entities/Article/model/types/article';
 import { TabItem } from 'shared/ui/Tabs/ui/Tabs';
-import cls from './ArticleTypeTabs.module.scss';
+// import cls from './ArticleTypeTabs.module.scss';
 
 interface ArticleTypeTabsProps {
   className?: string;
@@ -33,5 +33,5 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = React.memo((props) => {
     [onChangeType],
   );
 
-  return <Tabs tabs={typeTabs} value={value} onTabClick={onTabClick} className={classNames(cls.ArticleTypeTabs, {}, [className])} />;
+  return <Tabs tabs={typeTabs} value={value} onTabClick={onTabClick} className={classNames('', {}, [className])} />;
 });

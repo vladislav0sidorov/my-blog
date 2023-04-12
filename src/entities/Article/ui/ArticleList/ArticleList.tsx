@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { Text } from 'shared/ui/Text';
@@ -13,11 +13,12 @@ interface ArticleListProps {
   articles: Article[];
   isLoading?: boolean;
   view?: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleList: FC<ArticleListProps> = React.memo((props) => {
   const {
-    className, articles, isLoading, view = ArticleView.LIST,
+    className, articles, isLoading, target, view = ArticleView.PLATE,
   } = props;
   const { t } = useTranslation();
 
@@ -25,7 +26,7 @@ export const ArticleList: FC<ArticleListProps> = React.memo((props) => {
     .fill(0)
     .map((item, index) => <ArticleListItemSkeleton className={cls.card} key={index} view={view} />);
 
-  const renderArtcile = (article: Article) => <ArticleListItem className={cls.card} key={article.id} article={article} view={view} />;
+  const renderArtcile = (article: Article) => <ArticleListItem target={target} className={cls.card} key={article.id} article={article} view={view} />;
 
   if (!isLoading && !articles.length) {
     return (

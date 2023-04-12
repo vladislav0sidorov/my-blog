@@ -31,7 +31,7 @@ export const CommentList: FC<CommentListProps> = React.memo((props) => {
       {comments?.length ? (
         comments.map((comment) => <CommentCard key={comment.id} isLoading={isLoading} className={cls.comment} comment={comment} />)
       ) : (
-        <Text text={t('Комментарии отсутствуют')} />
+        <Text className={cls.noComments} text={t('Комментарии отсутствуют')} />
       )}
     </div>
   );
