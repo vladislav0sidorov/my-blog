@@ -9,10 +9,18 @@
   transition: var(--main-transition);
 }
 
-.links {
+.loginLink {
   margin-left: auto;
+}
+
+.links {
+  margin-left: 8px;
 }
 
 .firstLink {
   margin: 0 16px;
+}
+
+.createArticle {
+  margin-left: auto;
 }

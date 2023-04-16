@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { Button, ButtonVariables } from 'shared/ui/Button';
+import { AppLink, ApplinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -32,21 +34,22 @@ export const Navbar: React.FC<NavbarProps> = memo((props) => {
     dispatch(userActions.logout());
   }, [dispatch]);
 
-  if (authData) {
-    return (
-      <nav className={classNames(cls.Navbar, {}, [className])}>
+  return (
+    <nav className={classNames(cls.Navbar, {}, [className])}>
+      {authData ? (
+        <AppLink className={cls.createArticle} theme={ApplinkTheme.THIRD} to={RoutePath.article_create}>
+          {t('Создать статью')}
+        </AppLink>
+      ) : null}
+      {authData ? (
         <Button onClick={onLogout} theme={ButtonVariables.CLEAR_INVERTED} className={cls.links}>
           {t('Выйти')}
         </Button>
-      </nav>
-    );
-  }
-
-  return (
-    <nav className={classNames(cls.Navbar, {}, [className])}>
-      <Button onClick={onShowModal} theme={ButtonVariables.CLEAR_INVERTED} className={cls.links}>
-        {t('Войти')}
-      </Button>
+      ) : (
+        <Button onClick={onShowModal} theme={ButtonVariables.CLEAR_INVERTED} className={cls.loginLink}>
+          {t('Войти')}
+        </Button>
+      )}
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
     </nav>
   );
