@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { classNames } from 'shared/lib/ClassNames/ClassNames';
-import { Button, ButtonVariables } from 'shared/ui/Button';
 import CopyIcon from 'shared/assets/icons/copy.svg';
 import DoneIcon from 'shared/assets/icons/done.svg';
+import { Button, ButtonVariables } from '../../Button';
 
 import cls from './Code.module.scss';
 

@@ -7,13 +7,13 @@ import { Input } from 'shared/ui/Input';
 
 import { useSelector } from 'react-redux';
 
-import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { InputVariable } from 'shared/ui/Input/ui/Input';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginLoading';
@@ -74,14 +74,7 @@ const LoginForm: React.FC<LoginFormProps> = React.memo((props) => {
           className={cls.input}
           type="text"
         />
-        <Input
-          value={password}
-          theme={InputVariable.PRIMARY_INVERTED}
-          onChange={onChangePassword}
-          placeholder={t('Введите пароль')}
-          className={cls.input}
-          type="text"
-        />
+        <Input value={password} theme={InputVariable.PRIMARY_INVERTED} onChange={onChangePassword} placeholder={t('Введите пароль')} className={cls.input} type="text" />
         <Button disabled={isLoading} onClick={onLoginClick} theme={ButtonVariables.OUTLINE_INVERTED} className={cls.loginBtn}>
           {t('Войти')}
         </Button>

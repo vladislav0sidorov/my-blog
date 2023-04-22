@@ -1,8 +1,9 @@
 import React, { FC, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/ClassNames/ClassNames';
-import { Card } from 'shared/ui/Card';
+// eslint-disable-next-line ylquiorra-plugin/path-checker
 import { CardVariables } from 'shared/ui/Card/ui/Card';
+import { Card } from '../../Card';
 import cls from './Tabs.module.scss';
 
 export interface TabItem {
@@ -33,12 +34,7 @@ export const Tabs: FC<TabsProps> = React.memo((props) => {
   return (
     <div className={classNames(cls.Tabs, {}, [className])}>
       {tabs.map((tab) => (
-        <Card
-          onClick={clickHandle(tab)}
-          theme={tab.value === value ? CardVariables.NORMAL : CardVariables.OUTLINED}
-          key={tab.value}
-          className={cls.tab}
-        >
+        <Card onClick={clickHandle(tab)} theme={tab.value === value ? CardVariables.NORMAL : CardVariables.OUTLINED} key={tab.value} className={cls.tab}>
           {tab.content}
         </Card>
       ))}

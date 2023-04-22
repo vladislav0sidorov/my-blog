@@ -11,15 +11,15 @@ import { AddCommentForm } from 'features/addCommentForm';
 import React from 'react';
 
 import { Page } from 'widgets/Page';
-import { getArticleCommentsLoading } from 'pages/ArticleDetailsPage/model/selectors/getArticleCommentsLoading/getArticleCommentsLoading';
+import { getArticleCommentsLoading } from '../../model/selectors/getArticleCommentsLoading/getArticleCommentsLoading';
 
-import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
-import { fetchArticleRecomendations } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecomendations/fetchArticleRecomendations';
-import { fetchCommentsByArticleId } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slice';
-import { getArticleComments } from 'pages/ArticleDetailsPage/model/slice/articleDetailsCommentsSlice';
-import { getArticleRecomendations } from 'pages/ArticleDetailsPage/model/slice/articleDetailsRecomendationsSlice';
-import { getArticleRecomendationsLoading } from 'pages/ArticleDetailsPage/model/selectors/getArticleRecomendationsLoading/getArticleRecomendationsLoading';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchArticleRecomendations } from '../../model/services/fetchArticleRecomendations/fetchArticleRecomendations';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { articleDetailsPageReducer } from '../../model/slice';
+import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
+import { getArticleRecomendations } from '../../model/slice/articleDetailsRecomendationsSlice';
+import { getArticleRecomendationsLoading } from '../../model/selectors/getArticleRecomendationsLoading/getArticleRecomendationsLoading';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 

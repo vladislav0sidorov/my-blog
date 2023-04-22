@@ -1,12 +1,12 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/stroybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
 import {
   Article,
   ArticleBlockType,
   ArticleType,
   ArticleView,
-} from 'entities/Article/model/types/article';
-import { ThemeDecorator } from 'shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+} from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 
 export default {
