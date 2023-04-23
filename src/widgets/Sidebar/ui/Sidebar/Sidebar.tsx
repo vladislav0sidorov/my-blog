@@ -30,17 +30,17 @@ export const Sidebar: React.FC<SidebarProps> = memo((props) => {
     setCollapsed((prev) => !prev);
   };
   return (
-    <menu data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
+    <aside data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
       <Button data-testid="sidebar-toggle" type="button" onClick={onToggle} className={cls.collapsedBtn} theme={ButtonVariables.BACKGROUND_INVERTED} size={ButtonSizes.L} square>
         {collapsed ? '>' : '<'}
       </Button>
-      <VStack gap="16" className={cls.items}>
+      <VStack role="navigation" gap="16" className={cls.items}>
         {itemList}
       </VStack>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} className={cls.lang} />
       </div>
-    </menu>
+    </aside>
   );
 });

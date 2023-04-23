@@ -22,6 +22,14 @@ export enum TextSize {
   L = 'size_l',
 }
 
+type HeaderTagType = 'h1' | 'h2' | 'h3';
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+  [TextSize.S]: 'h3',
+  [TextSize.M]: 'h2',
+  [TextSize.L]: 'h1',
+};
+
 interface TextProps {
   className?: string;
   title?: string;
@@ -36,13 +44,15 @@ export const Text: React.FC<TextProps> = memo((props) => {
     className, title, text, theme = TextTheme.PRIMARY, size = TextSize.M, aling = TextAling.LEFT,
   } = props;
 
+  const HeaderTag = mapSizeToHeaderTag[size];
+
   const mods: Mods = {
     [cls[size]]: true,
   };
 
   return (
     <div className={classNames(cls.Text, mods, [className, cls[theme], cls[aling]])}>
-      {title && <p className={cls.title}>{title}</p>}
+      {title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
       {text && <p className={cls.text}>{text}</p>}
     </div>
   );

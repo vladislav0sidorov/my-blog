@@ -69,6 +69,13 @@ SizeS.args = {
   text: 'Lorem Ipsum is Lorem Ipsum is Lorem Ipsum is Lorem Ipsum is Lorem Ipsum is Lore  mipsum. Lorem Ipsum is Lorem Ipsum is Lorem',
 };
 
+export const SizeM = Template.bind({});
+SizeM.args = {
+  size: TextSize.M,
+  title: 'Lorem Ipsum is Lorem Ipsum',
+  text: 'Lorem Ipsum is Lorem Ipsum is Lorem Ipsum is Lorem Ipsum is Lorem Ipsum is Lore  mipsum. Lorem Ipsum is Lorem Ipsum is Lorem',
+};
+
 export const SizeL = Template.bind({});
 SizeL.args = {
   size: TextSize.L,

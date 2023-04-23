@@ -39,9 +39,9 @@ export const Page: FC<PageProps> = React.memo((props) => {
   }, 1000);
 
   return (
-    <section onScroll={onScroll} ref={wrapperRef} className={classNames(cls.pageWrapper, {}, [className])}>
+    <main onScroll={onScroll} ref={wrapperRef} className={classNames(cls.pageWrapper, {}, [className])}>
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
-    </section>
+    </main>
   );
 });
