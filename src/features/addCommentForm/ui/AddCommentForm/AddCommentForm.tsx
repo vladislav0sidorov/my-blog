@@ -6,6 +6,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonVariables } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { HStack } from 'shared/ui/Stack';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
 import { getAddCommnetFormError } from '../../model/selectors/getAddCommnetFormError/getAddCommnetFormError';
 import { getAddCommnetFormText } from '../../model/selectors/getAddCommnetFormText/getAddCommnetFormText';
@@ -41,12 +42,12 @@ const AddCommentForm: FC<AddCommentFormProps> = React.memo((props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cls.AddCommentForm, {}, [className])}>
+      <HStack max className={classNames(cls.AddCommentForm, {}, [className])}>
         <Input className={cls.input} onChange={onCommentTextChange} value={text} placeholder={t('Введите текст комментария')} />
         <Button onClick={onSendHandler} theme={ButtonVariables.OUTLINE}>
           {t('Отправить')}
         </Button>
-      </div>
+      </HStack>
     </DynamicModuleLoader>
   );
 });

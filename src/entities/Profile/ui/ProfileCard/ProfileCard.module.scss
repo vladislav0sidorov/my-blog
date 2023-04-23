@@ -3,27 +3,9 @@
   border: 2px solid var(--inverted-bg-color);
 }
 
-.input {
-  margin-top: 10px;
-}
-
-.loading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 300px;
-}
-
+.loading,
 .error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 300px;
-}
-
-.avatar {
-  display: flex;
-  justify-content: center;
 }
 
 .editing {

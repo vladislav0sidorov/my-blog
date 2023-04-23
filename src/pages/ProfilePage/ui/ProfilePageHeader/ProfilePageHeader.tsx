@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { getProfileData, getProfileReadOnly } from 'entities/Profile';
 import React from 'react';
 import { getUserAuthData } from 'entities/User';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack } from 'shared/ui/Stack';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -26,26 +26,26 @@ export const ProfilePageHeader: React.FC<ProfilePageHeaderProps> = (props) => {
   const readonly = useSelector(getProfileReadOnly);
 
   return (
-    <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+    <HStack max justify="between" className={classNames('', {}, [className])}>
       <Text title={t('Профиль')} />
       {canEdit && (
-        <div className={cls.btnWrapper}>
+        <div>
           {readonly ? (
-            <Button className={cls.editBtn} theme={ButtonVariables.OUTLINE} onClick={onEdit}>
+            <Button theme={ButtonVariables.OUTLINE} onClick={onEdit}>
               {t('Редактировать')}
             </Button>
           ) : (
-            <>
-              <Button className={cls.editBtn} theme={ButtonVariables.OUTLINE_RED} onClick={onCancelEdit}>
+            <HStack gap="16">
+              <Button theme={ButtonVariables.OUTLINE_RED} onClick={onCancelEdit}>
                 {t('Отменить')}
               </Button>
-              <Button className={cls.saveBtn} theme={ButtonVariables.OUTLINE} onClick={onSave}>
+              <Button theme={ButtonVariables.OUTLINE} onClick={onSave}>
                 {t('Сохранить')}
               </Button>
-            </>
+            </HStack>
           )}
         </div>
       )}
-    </div>
+    </HStack>
   );
 };

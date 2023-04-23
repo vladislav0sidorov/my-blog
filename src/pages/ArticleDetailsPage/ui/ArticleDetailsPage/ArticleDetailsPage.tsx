@@ -11,6 +11,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import React from 'react';
 
 import { Page } from 'widgets/Page';
+import { VStack } from 'shared/ui/Stack';
 import { getArticleCommentsLoading } from '../../model/selectors/getArticleCommentsLoading/getArticleCommentsLoading';
 
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -61,13 +62,15 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = (props) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекомендуем')} />
-        <ArticleList target="_blank" articles={recomendations} isLoading={recomendationsIsLoading} />
-        <Text size={TextSize.L} className={cls.commentTitle} title={t('Комментарии')} />
-        <AddCommentForm onSendComment={onSendComment} />
-        <CommentList isLoading={commentsIsLoading} comments={comments} />
+        <VStack max gap="16">
+          <ArticleDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <Text size={TextSize.L} className={cls.commentTitle} title={t('Рекомендуем')} />
+          <ArticleList target="_blank" articles={recomendations} isLoading={recomendationsIsLoading} />
+          <Text size={TextSize.L} className={cls.commentTitle} title={t('Комментарии')} />
+          <AddCommentForm onSendComment={onSendComment} />
+          <CommentList isLoading={commentsIsLoading} comments={comments} />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );
