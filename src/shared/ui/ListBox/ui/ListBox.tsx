@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { Button, ButtonVariables } from 'shared/ui/Button';
 // eslint-disable-next-line ylquiorra-plugin/path-checker
 import { HStack } from 'shared/ui/Stack';
+import { DropdownDirection } from 'shared/types/ui';
 import cls from './ListBox.module.scss';
 
 export interface ListBoxItem {
@@ -13,8 +14,6 @@ export interface ListBoxItem {
   content: ReactNode;
   disabled?: boolean;
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 interface ListBoxProps {
   items: ListBoxItem[];
@@ -27,15 +26,17 @@ interface ListBoxProps {
   label?: string;
 }
 
+const mapDirectionClass: Record<DropdownDirection, string> = {
+  'bottom left': cls.bottomLeftDirectionOptions,
+  'bottom right': cls.bottomRightDirectionOptions,
+  'top left': cls.topLeftDirectionOptions,
+  'top right': cls.topRightDirectionOptions,
+};
+
 export function ListBox(props: ListBoxProps) {
   const {
-    items, className, value, defaultValue, onChange, readonly, direction = 'bottom', label,
+    items, className, value, defaultValue, onChange, readonly, direction = 'bottom right', label,
   } = props;
-
-  const mapDirectionClass: Record<DropdownDirection, string> = {
-    bottom: cls.bottomDirectionOptions,
-    top: cls.topDirectionOptions,
-  };
 
   const optionClasses = [mapDirectionClass[direction]];
 

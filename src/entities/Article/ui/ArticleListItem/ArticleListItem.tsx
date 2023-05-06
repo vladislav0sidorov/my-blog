@@ -9,7 +9,7 @@ import { Card } from 'shared/ui/Card';
 import { Avatar } from 'shared/ui/Avatar';
 import { Button, ButtonVariables } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { AppLink } from 'shared/ui/AppLink';
 import {
   Article, ArticleBlockType, ArticleTextBlock, ArticleView,
 } from '../../model/types/article';
