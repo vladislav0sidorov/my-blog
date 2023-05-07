@@ -19,7 +19,7 @@
       "firstname": "Vladislav",
       "lastname": "Sidorov",
       "age": 22,
-      "currency": "USD",
+      "currency": "GEL",
       "country": "Georgia",
       "city": "Tbilisi",
       "username": "Ylquiorra",
@@ -639,6 +639,12 @@
       "userId": "1",
       "text": "fafaff",
       "id": "5wo3nJz"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Мое почтение",
+      "id": "PjjbLcz"
     }
   ]
 }

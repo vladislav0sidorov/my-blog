@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ScrollRestoration } from './ScrollRestoration';
 
 export default {
-  title: 'shared/ScrollRestoration',
+  title: 'features/ScrollRestoration',
   component: ScrollRestoration,
   argTypes: {
     backgroundColor: { control: 'color' },

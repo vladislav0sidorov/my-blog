@@ -11,8 +11,6 @@ import { ArticleSortSelector } from 'features/Article/ArticleSortSelector';
 import { SortOrder } from 'shared/types/sort';
 import { ArticleSortField, ArticleType } from 'entities/Article/model/types/article';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { Tabs } from 'shared/ui/Tabs';
-import { TabItem } from 'shared/ui/Tabs/ui/Tabs';
 import { getArticlesPageSort } from '../../model/selectors/getArticlesPageSort/getArticlesPageSort';
 import { getArticlesPageOrder } from '../../model/selectors/getArticlesPageOrder/getArticlesPageOrder';
 import { getArticlesPageSearch } from '../../model/selectors/getArticlesPageSearch/getArticlesPageSearch';

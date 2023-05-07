@@ -11,5 +11,7 @@
   "Все статьи": "All articles",
   "Айти": "IT",
   "Экономика": "Economics",
-  "Наука": "Science"
+  "Наука": "Science",
+  "Не удалось загрузить список рекомендаций": "The list of recommendations could not be loaded",
+  "Идет загрузка": "Loading"
 }

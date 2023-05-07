@@ -21,5 +21,6 @@
     "Нет информации о профиле": "No information about profile",
     "Ошибка на сервере": "Error from server",
     "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
-    "Мы уже работаем, не переживайте": "We are already working, don`t worry"
+    "Мы уже работаем, не переживайте": "We are already working, don`t worry",
+    "Мы не смогли найти этого пользователя": "We couldn't find current user"
 }
