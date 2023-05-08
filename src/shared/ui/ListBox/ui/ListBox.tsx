@@ -51,7 +51,7 @@ export function ListBox(props: ListBoxProps) {
         </HListBox.Button>
         <HListBox.Options className={classNames(cls.options, {}, optionClasses)}>
           {items?.map((item) => (
-            <HListBox.Option key={item.value} value={item.value} disabled={item.disabled} as={Fragment}>
+            <HListBox.Option key={item.value} value={item.value} disabled={item.disabled}>
               {({ active, selected }) => <li className={classNames(cls.item, { [cls.active]: active, [cls.disabled]: item.disabled })}>{item.content}</li>}
             </HListBox.Option>
           ))}

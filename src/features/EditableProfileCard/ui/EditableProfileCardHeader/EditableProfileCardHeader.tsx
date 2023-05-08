@@ -11,13 +11,13 @@ import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly/get
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { profileActions } from '../../model/slice/profileSlice';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
-import cls from './EditableProdileCardHeader.module.scss';
+import cls from './EditableProfileCardHeader.module.scss';
 
-interface EditableProdileCardHeaderProps {
+interface EditableProfileCardHeaderProps {
   className?: string;
 }
 
-export const EditableProdileCardHeader: FC<EditableProdileCardHeaderProps> = React.memo((props) => {
+export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = React.memo((props) => {
   const { className } = props;
   const { t } = useTranslation('profile');
   const authData = useSelector(getUserAuthData);
@@ -45,15 +45,15 @@ export const EditableProdileCardHeader: FC<EditableProdileCardHeaderProps> = Rea
       {canEdit && (
         <div>
           {readonly ? (
-            <Button theme={ButtonVariables.OUTLINE} onClick={onEdit}>
+            <Button data-testid="EditableProfileCardHeader.EditButton" theme={ButtonVariables.OUTLINE} onClick={onEdit}>
               {t('Редактировать')}
             </Button>
           ) : (
             <HStack gap="16">
-              <Button theme={ButtonVariables.OUTLINE_RED} onClick={onCancelEdit}>
+              <Button data-testid="EditableProfileCardHeader.CancelButton" theme={ButtonVariables.OUTLINE_RED} onClick={onCancelEdit}>
                 {t('Отменить')}
               </Button>
-              <Button theme={ButtonVariables.OUTLINE} onClick={onSave}>
+              <Button data-testid="EditableProfileCardHeader.SaveButton" theme={ButtonVariables.OUTLINE} onClick={onSave}>
                 {t('Сохранить')}
               </Button>
             </HStack>

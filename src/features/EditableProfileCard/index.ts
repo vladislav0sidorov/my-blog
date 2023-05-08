@@ -5,7 +5,7 @@ export { getProfileData } from '../../features/EditableProfileCard/model/selecto
 export { getProfileError } from '../../features/EditableProfileCard/model/selectors/getProfileError/getProfileError';
 export { getProfileIsLoading } from '../../features/EditableProfileCard/model/selectors/getProfileIsLoading/getProfileIsLoading';
 
-export { EditableProdileCardHeader } from './ui/EditableProdileCardHeader/EditableProdileCardHeader';
+export { EditableProfileCardHeader } from './ui/EditableProfileCardHeader/EditableProfileCardHeader';
 export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
 
 export { ProfileSchema, ValidateProfileError } from './model/types/EditableProfileCardSchema';

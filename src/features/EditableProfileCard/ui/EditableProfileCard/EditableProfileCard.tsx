@@ -19,13 +19,13 @@ import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/g
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly/getProfileReadOnly';
-import { EditableProdileCardHeader } from '../EditableProdileCardHeader/EditableProdileCardHeader';
+import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 // import cls from './EditableProfileCard.module.scss';
 
 interface EditableProfileCardProps {
   className?: string;
-  id?: string;
+  id: string;
 }
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
@@ -124,8 +124,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <EditableProdileCardHeader />
-      {validateErrors?.length && validateErrors?.map((error) => <Text key={error} theme={TextTheme.ERROR} text={validateErrorTranslates[error]} />)}
+      <EditableProfileCardHeader />
+      {validateErrors?.length
+        && validateErrors?.map((error) => <Text data-testid="EditableProfileCard.Error" key={error} theme={TextTheme.ERROR} text={validateErrorTranslates[error]} />)}
       <ProfileCard
         onChangeFirstname={onChangeFirstname}
         onChangeLastname={onChangeLastname}

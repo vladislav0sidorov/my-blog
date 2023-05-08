@@ -73,12 +73,12 @@ export const ProfileCard = (props: ProfileCardProps) => {
           <Avatar size={150} src={data?.avatar} />
         </HStack>
       )}
-      <Input value={data?.firstname} placeholder={t('Ваше имя')} onChange={onChangeFirstname} readonly={readonly} />
-      <Input value={data?.lastname} placeholder={t('Ваша фамилия')} onChange={onChangeLastname} readonly={readonly} />
-      <Input value={data?.age} placeholder={t('Ваш возраст')} onChange={onChangeAge} readonly={readonly} />
-      <Input value={data?.username} placeholder={t('Ваше имя пользователя')} onChange={onChangeUsername} readonly={readonly} />
-      <Input value={data?.city} placeholder={t('Ваш город')} onChange={onChangeCity} readonly={readonly} />
-      <Input value={data?.avatar} placeholder={t('Ваше фото профиля')} onChange={onChangeAvatar} readonly={readonly} />
+      <Input data-testid="ProfileCard.FirstName" value={data?.firstname} placeholder={t('Ваше имя')} onChange={onChangeFirstname} readonly={readonly} />
+      <Input data-testid="ProfileCard.LastName" value={data?.lastname} placeholder={t('Ваша фамилия')} onChange={onChangeLastname} readonly={readonly} />
+      <Input data-testid="ProfileCard.Age" value={data?.age} placeholder={t('Ваш возраст')} onChange={onChangeAge} readonly={readonly} />
+      <Input data-testid="ProfileCard.Username" value={data?.username} placeholder={t('Ваше имя пользователя')} onChange={onChangeUsername} readonly={readonly} />
+      <Input data-testid="ProfileCard.City" value={data?.city} placeholder={t('Ваш город')} onChange={onChangeCity} readonly={readonly} />
+      <Input data-testid="ProfileCard.Avatar" value={data?.avatar} placeholder={t('Ваше фото профиля')} onChange={onChangeAvatar} readonly={readonly} />
       <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
       <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
     </VStack>
