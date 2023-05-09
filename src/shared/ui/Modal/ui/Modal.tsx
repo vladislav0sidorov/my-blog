@@ -14,7 +14,7 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 50;
 
-export const Modal: React.FC<ModalProps> = (props) => {
+export const Modal = (props: ModalProps) => {
   const {
     className, children, isOpen, onClose, lazy,
   } = props;

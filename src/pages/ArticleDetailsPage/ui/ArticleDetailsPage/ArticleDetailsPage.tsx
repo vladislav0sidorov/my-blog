@@ -27,10 +27,6 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = (props) => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation('article-details');
 
-  if (!id) {
-    return <Page>{t('Не удалось загрузить страницу!')}</Page>;
-  }
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page>

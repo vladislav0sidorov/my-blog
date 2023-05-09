@@ -23,21 +23,23 @@ const Template: ComponentStory<typeof ProfilePage> = (args) => (
   <ProfilePage {...args} />
 );
 
+const formData = {
+  firstname: 'Venya',
+  lastname: 'Pak',
+  age: 22,
+  username: 'VenyaPakTV',
+  currency: Currency.USD,
+  country: Country.Russia,
+  city: 'Surgut',
+  avatar,
+};
+
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.decorators = [
   StoreDecorator({
     profile: {
-      data: {
-        firstname: 'Venya',
-        lastname: 'Pak',
-        age: 22,
-        username: 'VenyaPakTV',
-        currency: Currency.USD,
-        country: Country.Russia,
-        city: 'Surgut',
-        avatar,
-      },
+      form: formData,
     },
   }),
 ];
@@ -48,16 +50,7 @@ Dark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({
     profile: {
-      data: {
-        firstname: 'Venya',
-        lastname: 'Pak',
-        age: 22,
-        username: 'VenyaPakTV',
-        currency: Currency.USD,
-        country: Country.Russia,
-        city: 'Surgut',
-        avatar,
-      },
+      form: formData,
     },
   }),
 ];

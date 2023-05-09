@@ -41,7 +41,7 @@ interface TextProps {
   'data-testid'?: string;
 }
 
-export const Text: React.FC<TextProps> = memo((props) => {
+export const Text = memo((props: TextProps) => {
   const {
     className, title, text, theme = TextTheme.PRIMARY, size = TextSize.M, aling = TextAling.LEFT, 'data-testid': dataTestId = 'Text',
   } = props;

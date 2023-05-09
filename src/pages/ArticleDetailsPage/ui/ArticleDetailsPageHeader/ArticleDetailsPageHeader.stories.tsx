@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/stroybook/StoreDecorator/StoreDecorator';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 export default {
@@ -7,6 +8,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticleDetailsPageHeader>;
 
 const Template: ComponentStory<typeof ArticleDetailsPageHeader> = (args) => (

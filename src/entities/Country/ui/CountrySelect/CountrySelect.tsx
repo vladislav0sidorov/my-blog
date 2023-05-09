@@ -18,7 +18,7 @@ const options = [
   { value: Country.Kazakhstan, content: Country.Kazakhstan },
   { value: Country.Ukraine, content: Country.Ukraine },
 ];
-export const CountrySelect: React.FC<CountrySelectProps> = memo((props) => {
+export const CountrySelect = memo((props: CountrySelectProps) => {
   const {
     className, value, onChange, readonly,
   } = props;
@@ -42,15 +42,4 @@ export const CountrySelect: React.FC<CountrySelectProps> = memo((props) => {
       direction="top right"
     />
   );
-
-  // return (
-  //   <Select
-  //     className={classNames('', {}, [className])}
-  //     label={t('Укажите cтрану')}
-  //     value={value}
-  //     onChange={onChangeHandler}
-  //     options={options}
-  //     readonly={readonly}
-  //   />
-  // );
 });

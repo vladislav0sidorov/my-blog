@@ -6,6 +6,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { CommentList } from 'entities/Comment';
 import { useDispatch, useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentsSlice';
@@ -14,7 +15,7 @@ import { getArticleCommentsLoading } from '../../model/selectors/getArticleComme
 
 interface ArticleDetailsCommentsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = React.memo((props) => {
@@ -37,10 +38,10 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = React.mem
   });
 
   return (
-    <>
+    <VStack gap="8" max>
       <Text size={TextSize.L} title={t('Комментарии')} />
       <AddCommentForm onSendComment={onSendComment} />
       <CommentList isLoading={commentsIsLoading} comments={comments} />
-    </>
+    </VStack>
   );
 });

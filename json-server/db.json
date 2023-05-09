@@ -4,18 +4,21 @@
       "id": "1",
       "username": "Vladislav",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://sun9-60.userapi.com/impg/eqo5sYxr_jyw_yWO9_pKJRMkx8WVwVENfJrecQ/1zVSkEZs5NM.jpg?size=1620x2160&quality=95&sign=73cab6427b2934395f04d96835eb3720&type=album"
     },
     {
       "id": "2",
       "username": "Ksu",
       "password": "1234",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://sun9-36.userapi.com/impf/c850220/v850220268/12e2c7/TxYnZV8Q7N4.jpg?size=1536x2048&quality=96&sign=e3a114e332c19380899361b7d5084f5d&type=album"
     }
   ],
-  
   "profile": [
     {
       "id": "1",
@@ -648,6 +651,12 @@
       "userId": "1",
       "text": "Мое почтение",
       "id": "PjjbLcz"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "fdfdfd",
+      "id": "motGvHY"
     }
   ]
 }

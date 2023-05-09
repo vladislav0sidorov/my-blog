@@ -28,7 +28,7 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 
 interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {
@@ -106,7 +106,7 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = React.memo((props) 
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <VStack gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack max gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
       </VStack>
     </DynamicModuleLoader>

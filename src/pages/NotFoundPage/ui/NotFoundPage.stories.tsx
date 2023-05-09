@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/stroybook/ThemeDecorator/ThemeDecorator';
+import { StoreDecorator } from 'shared/config/stroybook/StoreDecorator/StoreDecorator';
 import NotFoundPage from './NotFoundPage';
 
 export default {
@@ -13,16 +14,16 @@ export default {
     to: '/',
     children: 'text',
   },
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof NotFoundPage>;
 
-const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage {...args} />;
+const Template: ComponentStory<typeof NotFoundPage> = (args) => (
+  <NotFoundPage {...args} />
+);
 
 export const Primary = Template.bind({});
-Primary.args = {
-};
+Primary.args = {};
 
 export const SecondaryDark = Template.bind({});
-SecondaryDark.args = {
-
-};
+SecondaryDark.args = {};
 SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];

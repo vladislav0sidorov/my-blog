@@ -20,6 +20,10 @@ export const fetchArticleById = createAsyncThunk<Article, string | undefined, Th
       throw new Error();
     }
 
+    if (!articleId) {
+      throw new Error('Не удалось загрузить страницу!');
+    }
+
     return response.data;
   } catch (e) {
     return rejectWithValue('error');

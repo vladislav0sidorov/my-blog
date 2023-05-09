@@ -3,6 +3,7 @@ import { addDecorator } from '@storybook/react';
 import { StyleDecorator } from '../../src/shared/config/stroybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
 import { RouteDecorator } from '../../src/shared/config/stroybook/RouteDecorator/RouteDecorator';
+// import { SuspenseDecorator } from '../../src/shared/config/stroybook/SuspenseDecorator/SuspenseDecorator';
 
 import { Theme } from '../../src/app/providers/ThemeProvider';
 
@@ -19,3 +20,4 @@ export const parameters = {
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouteDecorator);
+// addDecorator(SuspenseDecorator);

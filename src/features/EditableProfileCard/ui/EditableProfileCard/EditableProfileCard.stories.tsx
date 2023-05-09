@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
+import { StoreDecorator } from 'shared/config/stroybook/StoreDecorator/StoreDecorator';
 import { EditableProfileCard } from './EditableProfileCard';
 
 export default {
@@ -9,6 +10,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof EditableProfileCard>;
 
 const Template: ComponentStory<typeof EditableProfileCard> = (args) => (

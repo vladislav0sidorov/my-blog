@@ -16,7 +16,7 @@ interface PageProps {
   onScrollEnd?: () => void;
 }
 
-export const Page: FC<PageProps> = React.memo((props) => {
+export const Page = React.memo((props: PageProps) => {
   const { className, children, onScrollEnd } = props;
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();

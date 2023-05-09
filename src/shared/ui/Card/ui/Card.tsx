@@ -13,7 +13,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   theme?: CardVariables;
 }
 
-export const Card: FC<CardProps> = React.memo((props) => {
+export const Card = React.memo((props: CardProps) => {
   const {
     className, children, theme = CardVariables.NORMAL, ...otherProps
   } = props;

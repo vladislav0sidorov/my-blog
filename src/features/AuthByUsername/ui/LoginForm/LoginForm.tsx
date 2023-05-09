@@ -29,7 +29,7 @@ const initialReducers: ReducersList = {
   login: loginReducer,
 };
 
-const LoginForm: React.FC<LoginFormProps> = React.memo((props) => {
+const LoginForm = React.memo((props: LoginFormProps) => {
   const { className, onSuccess } = props;
   const { t } = useTranslation('modal-auth');
   const dispatch = useAppDispatch();
@@ -59,12 +59,11 @@ const LoginForm: React.FC<LoginFormProps> = React.memo((props) => {
       onSuccess();
     }
   }, [dispatch, username, password, onSuccess]);
-
   return (
     <DynamicModuleLoader removeAfterUnmount={false} reducers={initialReducers}>
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Форма авторизации')} theme={TextTheme.SECONDORY_INVERTED} />
-        {error && <Text text={t('Вы ввели невереный логин или пароль')} theme={TextTheme.ERROR} />}
+        {error === 'ERROR' && <Text text={t('Вы ввели невереный логин или пароль')} theme={TextTheme.ERROR} />}
         <Input
           value={username}
           theme={InputVariable.PRIMARY_INVERTED}

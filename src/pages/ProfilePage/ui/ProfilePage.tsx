@@ -17,10 +17,6 @@ const ProfilePage: React.FC<ProfilePageProps> = (props) => {
 
   const { id } = useParams<{ id: string }>();
 
-  if (!id) {
-    return <Text title={t('Мы не смогли найти этого пользователя')} />;
-  }
-
   return (
     <Page>
       <VStack max gap="16">
