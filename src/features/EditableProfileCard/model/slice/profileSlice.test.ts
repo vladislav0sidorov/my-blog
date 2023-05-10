@@ -3,10 +3,8 @@ import { Currency } from 'entities/Currency';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 
 import { profileActions, profileReducer } from './profileSlice';
-import {
-  ProfileSchema,
-  ValidateProfileError,
-} from '../types/EditableProfileCardSchema';
+import { ProfileSchema } from '../types/EditableProfileCardSchema';
+import { ValidateProfileError } from '../consts/consts';
 
 const data = {
   firstname: 'Venya',

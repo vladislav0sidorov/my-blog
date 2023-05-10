@@ -2,4 +2,4 @@ export { getScrollRestorationByPath } from './model/selectors/getScrollRestorati
 
 export { ScrollRestorationReducer, ScrollRestorationActions } from './model/slice/scrollSlice';
 
-export { ScrollRestorationSchema } from './model/types/scrollRestoration';
+export type { ScrollRestorationSchema } from './model/types/scrollRestoration';

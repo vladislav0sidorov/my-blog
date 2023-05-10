@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/stroybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { Article } from '../../model/types/article';
+import { ArticleListItem } from './ArticleListItem';
 import {
-  Article,
   ArticleBlockType,
   ArticleType,
   ArticleView,
-} from '../../model/types/article';
-import { ArticleListItem } from './ArticleListItem';
+} from '../../model/consts/consts';
 
 export default {
   title: 'entities/Article/ArticleListItem',

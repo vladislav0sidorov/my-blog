@@ -8,7 +8,9 @@ export { getProfileIsLoading } from '../../features/EditableProfileCard/model/se
 export { EditableProfileCardHeader } from './ui/EditableProfileCardHeader/EditableProfileCardHeader';
 export { EditableProfileCard } from './ui/EditableProfileCard/EditableProfileCard';
 
-export { ProfileSchema, ValidateProfileError } from './model/types/EditableProfileCardSchema';
+export { ValidateProfileError } from './model/consts/consts';
+
+export type { ProfileSchema } from './model/types/EditableProfileCardSchema';
 
 export { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData';
 export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
