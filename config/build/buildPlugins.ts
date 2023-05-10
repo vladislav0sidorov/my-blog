@@ -27,16 +27,18 @@ export function buildPlugins({
     new CopyPlugin({
       patterns: [{ from: paths.locales, to: paths.buildLocales }],
     }),
-    new CircularDependencyPlugin({
-      exclude: /node_modules/,
-      failOnError: true,
-    }),
   ];
 
   if (isDev) {
     plugins.push(new webpack.HotModuleReplacementPlugin());
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
     plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(
+      new CircularDependencyPlugin({
+        exclude: /node_modules/,
+        failOnError: true,
+      }),
+    );
   }
 
   return plugins;
