@@ -1,0 +1,19 @@
+.Overlay {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-color);
+}
+
+.alingStart {
+  align-items: start;
+}
+
+.alingCenter {
+  align-items: center;
+}
+
+.alingEnd {
+  align-items: end;
+}

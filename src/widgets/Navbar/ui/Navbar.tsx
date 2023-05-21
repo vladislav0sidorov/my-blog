@@ -12,6 +12,8 @@ import { AppLink, ApplinkTheme } from 'shared/ui/AppLink';
 import { HStack } from 'shared/ui/Stack';
 import { NotificationButton } from 'features/NotificationButton';
 import { AvatarDropdown } from 'features/AvatarDropdown/AvatarDropdown';
+import { Drawer } from 'shared/ui/Drawer';
+import { NotificationList } from 'entities/Notification';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

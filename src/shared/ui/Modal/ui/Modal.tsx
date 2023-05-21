@@ -1,6 +1,8 @@
 import { useTheme } from 'app/providers/ThemeProvider';
 import React, { MutableRefObject, ReactNode } from 'react';
 import { classNames, Mods } from 'shared/lib/ClassNames/ClassNames';
+// eslint-disable-next-line ylquiorra-plugin/path-checker
+import { Overlay } from 'shared/ui/Overlay';
 import { Portal } from '../../Portal';
 import cls from './Modal.module.scss';
 
@@ -76,11 +78,11 @@ export const Modal = (props: ModalProps) => {
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className, theme])}>
-        <div className={cls.overlay} onClick={closeHandler}>
+        <Overlay className={cls.overlay} onClick={closeHandler}>
           <div className={cls.content} onClick={onContentClick}>
             {children}
           </div>
-        </div>
+        </Overlay>
       </div>
     </Portal>
   );
