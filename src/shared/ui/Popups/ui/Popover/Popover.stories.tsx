@@ -1,12 +1,15 @@
+/* eslint-disable ylquiorra-plugin/path-checker */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Country } from 'entities/Country';
+import { Button, ButtonVariables } from 'shared/ui/Button';
+import { Icon } from 'shared/ui/Icon';
+import Notification from 'shared/assets/icons/notification.svg';
 import { ThemeDecorator } from 'shared/config/stroybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { ListBox } from './ListBox';
+import { Popover } from './Popover';
 
 export default {
-  title: 'shared/ListBox',
-  component: ListBox,
+  title: 'shared/Popups/Popover',
+  component: Popover,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
@@ -17,100 +20,97 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof ListBox>;
+} as ComponentMeta<typeof Popover>;
 
-const Template: ComponentStory<typeof ListBox> = (args) => (
-  <ListBox {...args} />
+const Template: ComponentStory<typeof Popover> = (args) => (
+  <Popover {...args} />
 );
 
-const options = [
-  { value: Country.Armenia, content: Country.Armenia },
-  { value: Country.Russia, content: Country.Russia },
-  { value: Country.Belarus, content: Country.Belarus },
-  { value: Country.Georgia, content: Country.Georgia },
-  { value: Country.Kazakhstan, content: Country.Kazakhstan },
-  { value: Country.Ukraine, content: Country.Ukraine },
-];
+const trigger = (
+  <Button theme={ButtonVariables.BACKGROUND_INVERTED}>
+    <Icon Svg={Notification} />
+  </Button>
+);
 
-export const Default = Template.bind({});
-Default.args = {
-  value: options[3].value,
-  label: 'Укажите страну',
-  items: options,
+const children = (
+  <>
+    <div>firts</div>
+    <div>second</div>
+    <div>third</div>
+    <div>fourth</div>
+    <div>fifth</div>
+  </>
+);
+
+export const Normal = Template.bind({});
+Normal.args = {
+  trigger,
+  children,
 };
 
 export const TopLeft = Template.bind({});
 TopLeft.args = {
   direction: 'top left',
-  value: options[3].value,
-  label: 'Укажите страну',
-  items: options,
+  trigger,
+  children,
 };
 
 export const TopRight = Template.bind({});
 TopRight.args = {
   direction: 'top right',
-  value: options[3].value,
-  label: 'Укажите страну',
-  items: options,
+  trigger,
+  children,
 };
 
 export const BottomLeft = Template.bind({});
 BottomLeft.args = {
   direction: 'bottom left',
-  value: options[3].value,
-  label: 'Укажите страну',
-  items: options,
+  trigger,
+  children,
 };
 
 export const BottomRight = Template.bind({});
 BottomRight.args = {
   direction: 'bottom right',
-  label: 'Укажите страну',
-  value: options[3].value,
-  items: options,
+  trigger,
+  children,
 };
 
 export const DefaultDark = Template.bind({});
 DefaultDark.args = {
-  value: options[3].value,
-  label: 'Укажите страну',
-  items: options,
+  trigger,
+  children,
 };
 DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const TopLeftDark = Template.bind({});
 TopLeftDark.args = {
   direction: 'top left',
-  value: options[3].value,
-  label: 'Укажите страну',
-  items: options,
+  trigger,
+  children,
 };
 TopLeftDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const TopRightDark = Template.bind({});
 TopRightDark.args = {
   direction: 'top right',
-  value: options[3].value,
-  label: 'Укажите страну',
-  items: options,
+  trigger,
+  children,
 };
 TopRightDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const BottomLeftDark = Template.bind({});
 BottomLeftDark.args = {
   direction: 'bottom left',
-  value: options[3].value,
-  label: 'Укажите страну',
-  items: options,
+  trigger,
+  children,
 };
 BottomLeftDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const BottomRightDark = Template.bind({});
 BottomRightDark.args = {
   direction: 'bottom right',
-  label: 'Укажите страну',
-  value: options[3].value,
-  items: options,
+  trigger,
+  children,
 };
 BottomRightDark.decorators = [ThemeDecorator(Theme.DARK)];

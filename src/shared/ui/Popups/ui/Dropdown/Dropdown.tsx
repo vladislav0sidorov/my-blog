@@ -7,6 +7,8 @@ import { DropdownDirection } from 'shared/types/ui';
 // eslint-disable-next-line ylquiorra-plugin/path-checker
 import { AppLink } from 'shared/ui/AppLink';
 import cls from './Dropdown.module.scss';
+import popupCls from '../../styles/Popups.module.scss';
+import { mapDirectionClass } from '../../styles/const';
 
 export interface DropdownItems {
   disabled?: boolean;
@@ -22,13 +24,6 @@ interface DropdownProps {
   direction?: DropdownDirection;
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-  'bottom left': cls.bottomLeftDirectionOptions,
-  'bottom right': cls.bottomRightDirectionOptions,
-  'top left': cls.topLeftDirectionOptions,
-  'top right': cls.topRightDirectionOptions,
-};
-
 export const Dropdown: FC<DropdownProps> = React.memo((props) => {
   const {
     className, items, trigger, direction = 'bottom right',
@@ -38,12 +33,12 @@ export const Dropdown: FC<DropdownProps> = React.memo((props) => {
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
-    <Menu as="div" className={classNames(cls.Dropdown, {}, [className])}>
-      <Menu.Button className={cls.button}>{trigger}</Menu.Button>
+    <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.Popups])}>
+      <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
         {items.map((item) => {
           const content = ({ active }: { active: boolean }) => (
-            <button onClick={item.onClick} disabled={item.disabled} type="button" className={classNames(cls.item, { [cls.active]: active })}>
+            <button onClick={item.onClick} disabled={item.disabled} type="button" className={classNames(cls.item, { [popupCls.active]: active })}>
               {item.content}
             </button>
           );

@@ -1,0 +1,16 @@
+.trigger {
+  outline: none;
+  background: none;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+}
+
+.panel {
+  position: absolute;
+  background: var(--listbox-bg);
+  z-index: 3;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid var(--primary-color);
+}

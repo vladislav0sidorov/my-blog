@@ -33,7 +33,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'linebreak-style': 'off',
     'react/prop-types': 'warn',
-    'i18next/no-literal-string': [2, { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'max', 'role', 'as'] }],
+    'i18next/no-literal-string': [2, { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'max', 'role', 'as', 'border'] }],
     'max-len': [2, { ignoreComments: true, code: 200 }],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',

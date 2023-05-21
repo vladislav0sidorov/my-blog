@@ -1,0 +1,19 @@
+.menu {
+  position: absolute;
+  background: var(--listbox-bg);
+  z-index: 3;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  flex-direction: column;
+  display: flex;
+}
+
+.item {
+  padding: 8px 10px;
+  color: var(--primary-color);
+  outline: none;
+  border: none;
+  background: none;
+  width: 100%;
+  cursor: pointer;
+}
