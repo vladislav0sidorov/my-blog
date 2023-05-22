@@ -3,6 +3,7 @@ import React, { MutableRefObject, ReactNode } from 'react';
 import { classNames, Mods } from 'shared/lib/ClassNames/ClassNames';
 // eslint-disable-next-line ylquiorra-plugin/path-checker
 import { Overlay } from 'shared/ui/Overlay';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import { Portal } from '../../Portal';
 import cls from './Modal.module.scss';
 
@@ -20,52 +21,18 @@ export const Modal = (props: ModalProps) => {
   const {
     className, children, isOpen, onClose, lazy,
   } = props;
-
-  const [isClosing, setIsClosing] = React.useState(false);
-  const [isMounted, setIsMounted] = React.useState(false);
-  const timerRef = React.useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+  const { isClosing, isMounted, closeHandler } = useModal({
+    onClose,
+    isOpen,
+    lazy,
+    animationDelay: ANIMATION_DELAY,
+  });
   const { theme } = useTheme();
-
-  React.useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true);
-    }
-  }, [isOpen]);
 
   const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
-
-  const closeHandler = React.useCallback(() => {
-    if (onClose) {
-      setIsClosing(true);
-      timerRef.current = setTimeout(() => {
-        onClose();
-        setIsClosing(false);
-      }, ANIMATION_DELAY);
-    }
-  }, [onClose]);
-
-  const onKeyDown = React.useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        closeHandler();
-      }
-    },
-    [closeHandler],
-  );
-
-  React.useEffect(() => {
-    if (isOpen) {
-      window.addEventListener('keydown', onKeyDown);
-    }
-
-    return () => {
-      clearTimeout(timerRef.current);
-      window.removeEventListener('keydown', onKeyDown);
-    };
-  }, [isOpen, onKeyDown]);
 
   const onContentClick: React.MouseEventHandler<HTMLDivElement> = (e: React.MouseEvent) => {
     e.stopPropagation();

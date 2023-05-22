@@ -29,7 +29,7 @@
 }
 
 .content::before {
-  content: "";
+  content: '';
   position: relative;
   display: block;
   width: 100px;
@@ -47,5 +47,11 @@
 
   .content {
     transform: translateY(0%);
+  }
+}
+
+.isClosing {
+  .content {
+    transform: translateY(100%);
   }
 }
