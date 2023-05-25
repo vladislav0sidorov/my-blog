@@ -1,4 +1,3 @@
-import { useTheme } from 'app/providers/ThemeProvider';
 import React, { MutableRefObject } from 'react';
 
 interface UseModalProps {

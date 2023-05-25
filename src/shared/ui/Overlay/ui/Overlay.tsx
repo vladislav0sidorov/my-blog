@@ -7,7 +7,7 @@ type flexAlingParams = 'start' | 'center' | 'end';
 interface OverlayProps {
   className?: string;
   onClick?: () => void;
-  children: ReactNode;
+  children?: ReactNode;
   flexAling?: flexAlingParams;
 }
 
