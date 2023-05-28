@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes, ReactNode } from 'react';
+import React, { HTMLAttributes, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import cls from './Card.module.scss';
 

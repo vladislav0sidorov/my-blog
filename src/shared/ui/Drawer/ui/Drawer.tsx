@@ -6,7 +6,7 @@ import { Portal } from '@/shared/ui/Portal';
 import { useTheme } from '@/app/providers/ThemeProvider';
 // eslint-disable-next-line ylquiorra-plugin/path-checker
 import { Overlay } from '@/shared/ui/Overlay';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import cls from './Drawer.module.scss';
 
 interface DrawerProps {
@@ -89,7 +89,7 @@ export const DrawerContent = React.memo((props: DrawerProps) => {
   );
 });
 
-export const Drawer = React.memo((props: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -97,4 +97,10 @@ export const Drawer = React.memo((props: DrawerProps) => {
   }
 
   return <DrawerContent {...props} />;
-});
+};
+
+export const Drawer = (props: DrawerProps) => (
+  <AnimationProvider>
+    <DrawerAsync {...props} />
+  </AnimationProvider>
+);

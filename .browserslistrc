@@ -1,0 +1,6 @@
+# Browsers that we support
+chrome >= 60
+firefox >= 54
+not IE 11
+not Safari 9
+not Edge 15
