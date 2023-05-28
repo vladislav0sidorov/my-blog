@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { useTranslation } from 'react-i18next';
-import { ReducersList, DynamicModuleLoader } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import React from 'react';
-import { Page } from 'widgets/Page';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+import { ReducersList, DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Page } from '@/widgets/Page';
 import { articlePageReducer } from '../../model/slice/articlePageSlice';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';

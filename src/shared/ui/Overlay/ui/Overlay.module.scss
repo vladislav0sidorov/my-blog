@@ -4,6 +4,7 @@
   width: 100%;
   height: 100%;
   background: var(--overlay-color);
+  z-index: var(--overlay-z-index);
 }
 
 .alingStart {

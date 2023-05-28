@@ -1,6 +1,6 @@
 import React from 'react';
-import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import cls from './Skeleton.module.scss';
 
 interface SkeletonProps {

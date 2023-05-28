@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { classNames } from 'shared/lib/ClassNames/ClassNames';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { AppRouter } from 'app/providers/router';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/lodalStorage';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserInited, userActions } from 'entities/User';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { AppRouter } from '@/app/providers/router';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/lodalStorage';
+import { getUserInited, userActions } from '@/entities/User';
 
 function App() {
   const { theme } = useTheme();

@@ -1,16 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import React, { memo } from 'react';
 
-import { classNames } from 'shared/lib/ClassNames/ClassNames';
-import { ProfileCard } from 'entities/Profile';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Text } from 'shared/ui/Text';
-import { TextTheme } from 'shared/ui/Text/ui/Text';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+import { ProfileCard } from '@/entities/Profile';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Text } from '@/shared/ui/Text';
+import { TextTheme } from '@/shared/ui/Text/ui/Text';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ValidateProfileError } from '../../model/consts/consts';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';

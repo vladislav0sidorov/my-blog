@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/ClassNames/ClassNames';
-import { ArticleView } from 'entities/Article';
-import PlateIcon from 'shared/assets/icons/plate.svg';
-import ListIcon from 'shared/assets/icons/list.svg';
-import { Icon } from 'shared/ui/Icon';
-import { Button, ButtonVariables } from 'shared/ui/Button';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+import { ArticleView } from '@/entities/Article';
+import PlateIcon from '@/shared/assets/icons/plate.svg';
+import ListIcon from '@/shared/assets/icons/list.svg';
+import { Icon } from '@/shared/ui/Icon';
+import { Button, ButtonVariables } from '@/shared/ui/Button';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {

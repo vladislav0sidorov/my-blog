@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Country } from 'entities/Country';
-import { ThemeDecorator } from 'shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { Country } from '@/entities/Country';
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { ListBox } from './ListBox';
 
 export default {

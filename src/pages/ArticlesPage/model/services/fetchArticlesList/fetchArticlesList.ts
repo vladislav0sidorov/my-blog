@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
-import { Article, ArticleType } from 'entities/Article';
-import { addQuaryParams } from 'shared/lib/url/addQuaryParams/addQuaryParams';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { Article, ArticleType } from '@/entities/Article';
+import { addQuaryParams } from '@/shared/lib/url/addQuaryParams/addQuaryParams';
 import { getArticlesPageLimit } from '../../selectors/getArticlesPageLimit/getArticlesPageLimit';
 import { getArticlesPageSort } from '../../selectors/getArticlesPageSort/getArticlesPageSort';
 import { getArticlesPageOrder } from '../../selectors/getArticlesPageOrder/getArticlesPageOrder';

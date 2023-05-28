@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { ThemeDecorator } from 'shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import avatar from 'shared/assets/test/avatar.jpg';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
+import avatar from '@/shared/assets/test/avatar.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {

@@ -1,17 +1,16 @@
 import React from 'react';
 
-import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonVariables } from 'shared/ui/Button';
-import { Input } from 'shared/ui/Input';
-
 import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+import { Button, ButtonVariables } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
 
-import { Text } from 'shared/ui/Text';
-import { TextTheme } from 'shared/ui/Text/ui/Text';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { InputVariable } from 'shared/ui/Input/ui/Input';
+import { Text } from '@/shared/ui/Text';
+import { TextTheme } from '@/shared/ui/Text/ui/Text';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { InputVariable } from '@/shared/ui/Input/ui/Input';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';

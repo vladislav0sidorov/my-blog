@@ -1,17 +1,17 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/ClassNames/ClassNames';
-import { ArticleViewSelector } from 'features/Article/ArticleViewSelector';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+import { ArticleViewSelector } from '@/features/Article/ArticleViewSelector';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   ArticleSortField, ArticleType, ArticleTypeTabs, ArticleView,
-} from 'entities/Article';
-import { useSelector } from 'react-redux';
-import { Card } from 'shared/ui/Card';
-import { Input } from 'shared/ui/Input';
-import { ArticleSortSelector } from 'features/Article/ArticleSortSelector';
-import { SortOrder } from 'shared/types/sort';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
+} from '@/entities/Article';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
+import { ArticleSortSelector } from '@/features/Article/ArticleSortSelector';
+import { SortOrder } from '@/shared/types/sort';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { getArticlesPageSort } from '../../model/selectors/getArticlesPageSort/getArticlesPageSort';
 import { getArticlesPageOrder } from '../../model/selectors/getArticlesPageOrder/getArticlesPageOrder';
 import { getArticlesPageSearch } from '../../model/selectors/getArticlesPageSearch/getArticlesPageSearch';

@@ -1,10 +1,10 @@
 /* eslint-disable ylquiorra-plugin/path-checker */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button, ButtonVariables } from 'shared/ui/Button';
-import { Icon } from 'shared/ui/Icon';
-import Notification from 'shared/assets/icons/notification.svg';
-import { ThemeDecorator } from 'shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { Button, ButtonVariables } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
+import Notification from '@/shared/assets/icons/notification.svg';
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { Popover } from './Popover';
 
 export default {

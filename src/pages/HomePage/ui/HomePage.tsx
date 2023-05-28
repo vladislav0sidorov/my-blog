@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { useTranslation } from 'react-i18next';
-import { Page } from 'widgets/Page';
-import { Text } from 'shared/ui/Text';
+import { Page } from '@/widgets/Page';
+import { Text } from '@/shared/ui/Text';
 
 const HomePage = () => {
   const { t } = useTranslation('home');

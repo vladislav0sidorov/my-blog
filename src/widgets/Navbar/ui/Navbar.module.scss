@@ -4,13 +4,9 @@
   background: var(--inverted-bg-color);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
   padding: 22px;
   transition: var(--main-transition);
-}
-
-.loginLink {
-  margin-left: auto;
 }
 
 .links {
@@ -19,10 +15,6 @@
 
 .firstLink {
   margin: 0 16px;
-}
-
-.createArticle {
-  margin-left: auto;
 }
 
 .actions {

@@ -1,6 +1,6 @@
-import { classNames, Mods } from 'shared/lib/ClassNames/ClassNames';
 import { useTranslation } from 'react-i18next';
 import React, { ChangeEvent } from 'react';
+import { classNames, Mods } from '@/shared/lib/ClassNames/ClassNames';
 import cls from './Select.module.scss';
 
 export interface SelectOption<T extends string> {

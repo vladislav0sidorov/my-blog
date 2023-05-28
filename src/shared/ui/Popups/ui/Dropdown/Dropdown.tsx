@@ -1,11 +1,11 @@
 import React, { FC, Fragment, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/ClassNames/ClassNames';
 import { Menu } from '@headlessui/react';
-import { DropdownDirection } from 'shared/types/ui';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+import { DropdownDirection } from '@/shared/types/ui';
 
 // eslint-disable-next-line ylquiorra-plugin/path-checker
-import { AppLink } from 'shared/ui/AppLink';
+import { AppLink } from '@/shared/ui/AppLink';
 import cls from './Dropdown.module.scss';
 import popupCls from '../../styles/Popups.module.scss';
 import { mapDirectionClass } from '../../styles/const';

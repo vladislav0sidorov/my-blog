@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 // eslint-disable-next-line ylquiorra-plugin/path-checker
-import { Button } from 'shared/ui/Button';
+import { Button } from '@/shared/ui/Button';
 import { Dropdown } from './Dropdown';
 
 export default {
