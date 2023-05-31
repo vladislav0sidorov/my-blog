@@ -39,7 +39,7 @@ export const ListBox = (props: ListBoxProps) => {
     <HStack gap="8">
       {label && <span className={cls.label}>{`${label} >`}</span>}
       <HListBox disabled={readonly} className={classNames(cls.ListBox, {}, [className, popupCls.Popups])} as="div" value={value} onChange={onChange}>
-        <HListBox.Button disabled={readonly} className={cls.trigger}>
+        <HListBox.Button as="div" className={cls.trigger}>
           <Button disabled={readonly} theme={ButtonVariables.OUTLINE}>
             {value ?? defaultValue}
           </Button>
@@ -47,7 +47,7 @@ export const ListBox = (props: ListBoxProps) => {
         <HListBox.Options className={classNames(cls.options, {}, optionClasses)}>
           {items?.map((item) => (
             <HListBox.Option key={item.value} value={item.value} disabled={item.disabled}>
-              {({ active, selected }) => <li className={classNames(cls.item, { [popupCls.active]: active, [popupCls.disabled]: item.disabled })}>{item.content}</li>}
+              {({ active, selected }) => <div className={classNames(cls.item, { [popupCls.active]: active, [popupCls.disabled]: item.disabled })}>{item.content}</div>}
             </HListBox.Option>
           ))}
         </HListBox.Options>

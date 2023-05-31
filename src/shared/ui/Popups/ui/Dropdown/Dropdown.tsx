@@ -36,7 +36,7 @@ export const Dropdown: FC<DropdownProps> = React.memo((props) => {
     <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.Popups])}>
       <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button onClick={item.onClick} disabled={item.disabled} type="button" className={classNames(cls.item, { [popupCls.active]: active })}>
               {item.content}
@@ -45,14 +45,14 @@ export const Dropdown: FC<DropdownProps> = React.memo((props) => {
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item key={`Dropdown-key${index}`} as={AppLink} to={item.href} disabled={item.disabled}>
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item key={`Dropdown-key${index}`} as={Fragment} disabled={item.disabled}>
               {content}
             </Menu.Item>
           );
