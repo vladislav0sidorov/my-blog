@@ -1,6 +1,9 @@
-{ 
+{
     "Не удалось загрузить страницу!": "The page could not load",
     "Комментарии": "Comment",
     "Рекомендуем": "Recomendation",
-    "Назад к списку": "Back to list"
+    "Назад к списку": "Back to list",
+    "Оцените статью": "Rate the article",
+    "Оставьте свой отзыв, это поможет нам улучшить качество": "Leave your feedback, it will help us improve the quality",
+    "Спасибо за ваш отзыв!": "Thank for your feedback!"
 }
