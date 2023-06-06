@@ -8,6 +8,13 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ background: 'var(--inverted-bg-color)', height: '100vh' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof LoginForm>;
 
 const Template: ComponentStory<typeof LoginForm> = (args) => (
