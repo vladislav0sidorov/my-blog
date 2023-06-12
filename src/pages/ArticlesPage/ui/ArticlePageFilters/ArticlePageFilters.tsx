@@ -2,14 +2,12 @@ import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
-import { ArticleViewSelector } from '@/features/Article/ArticleViewSelector';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   ArticleSortField, ArticleType, ArticleTypeTabs, ArticleView,
 } from '@/entities/Article';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
-import { ArticleSortSelector } from '@/features/Article/ArticleSortSelector';
 import { SortOrder } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { getArticlesPageSort } from '../../model/selectors/getArticlesPageSort/getArticlesPageSort';
@@ -20,6 +18,7 @@ import { getArticlesPageType } from '../../model/selectors/getArticlesPageType/g
 import { getArticlesPageView } from '../../model/selectors/getArticlesPageView/getArticlesPageView';
 import { articlePageActions } from '../../model/slice/articlePageSlice';
 import cls from './ArticlePageFilters.module.scss';
+import { ArticleSortSelector, ArticleViewSelector } from '@/features/Article';
 
 interface ArticlePageFiltersProps {
   className?: string;

@@ -1,10 +1,14 @@
+export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
+
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 
 export { ArticleList } from './ui/ArticleList/ArticleList';
 
 export { getArticleDetailsData } from './model/selectors/getArticleDetailsData/getArticleDetailsData';
 
-export { ArticleView, ArticleType, ArticleSortField } from './model/consts/consts';
+export {
+  ArticleView, ArticleType, ArticleSortField, ArticleBlockType,
+} from './model/consts/consts';
 export type { Article } from './model/types/article';
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 

@@ -46,6 +46,7 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'ylquiorra-plugin/path-checker': ['error', { alias: '@' }],
+    'ylquiorra-plugin/public-api-imports': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,
