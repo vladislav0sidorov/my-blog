@@ -35,7 +35,10 @@ module.exports = {
     'react/prop-types': 'warn',
     'i18next/no-literal-string': [
       2,
-      { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'max', 'role', 'as', 'border', 'flexAling'] },
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'max', 'role', 'as', 'border', 'flexAling'],
+      },
     ],
     'max-len': [2, { ignoreComments: true, code: 200 }],
     'jsx-a11y/click-events-have-key-events': 'off',
@@ -46,7 +49,13 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'ylquiorra-plugin/path-checker': ['error', { alias: '@' }],
-    'ylquiorra-plugin/public-api-imports': ['error', { alias: '@' }],
+    'ylquiorra-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: ['**/*.test.ts', '**/*.test.ts', '**/StoreDecorator.tsx'],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

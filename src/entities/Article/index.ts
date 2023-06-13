@@ -1,5 +1,3 @@
-export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
-
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 
 export { ArticleList } from './ui/ArticleList/ArticleList';
