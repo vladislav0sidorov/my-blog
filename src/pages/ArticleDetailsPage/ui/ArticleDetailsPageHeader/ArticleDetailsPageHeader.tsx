@@ -2,13 +2,13 @@ import React, { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
+import { getCanEditArticle } from '../../model/selectors/getCanEditArticle/getCanEditArticle';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { Button, ButtonVariables } from '@/shared/ui/Button';
 import { getArticleDetailsData } from '@/entities/Article';
-
 import { HStack } from '@/shared/ui/Stack';
-import { getCanEditArticle } from '../../model/selectors/getCanEditArticle/getCanEditArticle';
-import cls from './ArticleDetailsPageHeader.module.scss';
 import { RoutePath } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {

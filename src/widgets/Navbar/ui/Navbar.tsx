@@ -1,17 +1,17 @@
 import React, { memo } from 'react';
-
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
+import cls from './Navbar.module.scss';
+
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
-
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { Button, ButtonVariables } from '@/shared/ui/Button';
 import { AppLink, ApplinkTheme } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
-import cls from './Navbar.module.scss';
 import { RoutePath } from '@/shared/const/router';
 
 interface NavbarProps {

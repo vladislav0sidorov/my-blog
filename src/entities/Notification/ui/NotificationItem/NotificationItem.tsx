@@ -1,11 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { Notification } from '../../model/types/notification';
+import cls from './NotificationItem.module.scss';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { Card } from '@/shared/ui/Card';
 import { CardVariables } from '@/shared/ui/Card/ui/Card';
 import { Text } from '@/shared/ui/Text';
-import { Notification } from '../../model/types/notification';
-import cls from './NotificationItem.module.scss';
 
 interface NotificationItemProps {
   className?: string;

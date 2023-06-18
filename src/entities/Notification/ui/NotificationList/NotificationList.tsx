@@ -1,11 +1,13 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { getNotifications } from '../../api/notificationApi';
+import { NotificationItem } from '../NotificationItem/NotificationItem';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { VStack } from '@/shared/ui/Stack';
 import { Skeleton } from '@/shared/ui/Skeleton';
-import { getNotifications } from '../../api/notificationApi';
 // import cls from './NotificationList.module.scss';
-import { NotificationItem } from '../NotificationItem/NotificationItem';
 
 interface NotificationListProps {
   className?: string;

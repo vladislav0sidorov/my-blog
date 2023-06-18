@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { Comment } from '../../model/types/comment';
+import cls from './CommentCard.module.scss';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text } from '@/shared/ui/Text';
 import { VStack } from '@/shared/ui/Stack';
 import { AppLink } from '@/shared/ui/AppLink';
-import { Comment } from '../../model/types/comment';
-import cls from './CommentCard.module.scss';
 import { RoutePath } from '@/shared/const/router';
 
 interface CommentCardProps {

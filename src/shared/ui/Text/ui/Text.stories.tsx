@@ -1,7 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import { Text, TextSize, TextTheme } from './Text';
+
 import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import { Text, TextSize, TextTheme } from './Text';
 
 export default {
   title: 'shared/Text',

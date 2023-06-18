@@ -1,5 +1,6 @@
-import { DropdownDirection } from '@/shared/types/ui';
 import popupsCls from './Popups.module.scss';
+
+import { DropdownDirection } from '@/shared/types/ui';
 
 export const mapDirectionClass: Record<DropdownDirection, string> = {
   'bottom left': popupsCls.bottomLeftDirectionOptions,

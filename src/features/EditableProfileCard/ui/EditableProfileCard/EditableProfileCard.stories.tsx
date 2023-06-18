@@ -1,8 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
 import { EditableProfileCard } from './EditableProfileCard';
+
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
 
 export default {
   title: 'features/EditableProfileCard/EditableProfileCard',

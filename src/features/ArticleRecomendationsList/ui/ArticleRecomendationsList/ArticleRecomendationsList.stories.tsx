@@ -1,10 +1,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import wihtMock from 'storybook-addon-mock';
+
+import { ArticleRecomendationsList } from './ArticleRecomendationsList';
+
 import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
 import { Article } from '@/entities/Article';
-import { ArticleRecomendationsList } from './ArticleRecomendationsList';
 
 export default {
   title: 'features/ArticleRecomendationsList',

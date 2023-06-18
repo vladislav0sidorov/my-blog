@@ -1,10 +1,12 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+
+import cls from './ArticleImageBlockComponent.module.scss';
+import { ArticleImageBlock } from '../../model/types/article';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { Text } from '@/shared/ui/Text';
 import { TextAling } from '@/shared/ui/Text/ui/Text';
-import cls from './ArticleImageBlockComponent.module.scss';
-import { ArticleImageBlock } from '../../model/types/article';
 
 interface ArticleImageBlockComponentProps {
   className?: string;

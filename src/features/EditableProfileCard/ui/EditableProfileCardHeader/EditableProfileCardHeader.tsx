@@ -1,17 +1,18 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
+import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly/getProfileReadOnly';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { profileActions } from '../../model/slice/profileSlice';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';
 import { HStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 import { Button, ButtonVariables } from '@/shared/ui/Button';
-import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly/getProfileReadOnly';
-import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
-import { profileActions } from '../../model/slice/profileSlice';
-import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
-import cls from './EditableProfileCardHeader.module.scss';
 
 interface EditableProfileCardHeaderProps {
   className?: string;

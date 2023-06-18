@@ -1,11 +1,8 @@
 import { useTranslation } from 'react-i18next';
-
 import React from 'react';
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 
 import { Page } from '@/widgets/Page';
 import { Text } from '@/shared/ui/Text';
-import cls from './ArticleDetailsPage.module.scss';
 
 interface AdminPanelPageProps {
   className?: string;

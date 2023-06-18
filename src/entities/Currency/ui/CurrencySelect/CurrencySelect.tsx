@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import React, { memo } from 'react';
+
+import { Currency } from '../../model/types/currency';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { ListBox } from '@/shared/ui/Popups/ui/ListBox/ListBox';
-import { Currency } from '../../model/types/currency';
 
 interface CurrencySelectProps {
   className?: string;

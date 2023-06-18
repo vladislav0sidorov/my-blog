@@ -1,7 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 // eslint-disable-next-line ulbi-tv-plugin/path-checker
-import { Button } from '@/shared/ui/Button';
 import { Dropdown } from './Dropdown';
+import { Button } from '../../../Button';
 
 export default {
   title: 'shared/Popups/Dropdown',

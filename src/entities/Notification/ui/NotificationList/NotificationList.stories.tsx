@@ -1,6 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import withMock from 'storybook-addon-mock';
+
 import { NotificationList } from './NotificationList';
+
 import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/app/providers/ThemeProvider';

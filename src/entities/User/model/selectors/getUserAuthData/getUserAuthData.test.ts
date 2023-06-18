@@ -1,5 +1,6 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
 import { getUserAuthData } from './getUserAuthData';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 const authData = {
   id: '2',

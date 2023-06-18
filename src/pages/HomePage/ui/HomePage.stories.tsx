@@ -1,8 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import HomePage from './HomePage';
+
 import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
 import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
-import HomePage from './HomePage';
 
 export default {
   title: 'pages/HomePage',

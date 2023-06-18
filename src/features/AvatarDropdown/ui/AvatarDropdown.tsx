@@ -1,13 +1,12 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+
 import { Dropdown } from '@/shared/ui/Popups';
 import { Avatar } from '@/shared/ui/Avatar';
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import cls from './AvatarDropdown.module.scss';
 import { RoutePath } from '@/shared/const/router';
 
 interface AvatarDropdownProps {

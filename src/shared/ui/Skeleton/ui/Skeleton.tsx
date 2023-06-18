@@ -1,7 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+
 import cls from './Skeleton.module.scss';
+
+import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 
 interface SkeletonProps {
   className?: string;

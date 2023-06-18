@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { RatingCart } from './RatingCart';
 
 export default {

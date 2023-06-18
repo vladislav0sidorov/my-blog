@@ -1,10 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Article, ArticleType, ArticleBlockType } from '@/entities/Article';
-
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
+
+import { Article, ArticleType, ArticleBlockType } from '@/entities/Article';
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
 
 export default {
   title: 'pages/ArticleDetails/ArticleDetailsPage',

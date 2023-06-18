@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { AppRouter } from '@/app/providers/router';

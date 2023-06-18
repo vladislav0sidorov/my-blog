@@ -1,4 +1,5 @@
 import { memo } from 'react';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import './Loader.scss';
 

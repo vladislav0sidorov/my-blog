@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+
 import { Article } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
 import {
@@ -8,6 +7,9 @@ import {
   ArticleType,
   ArticleView,
 } from '../../model/consts/consts';
+
+import { Theme } from '@/app/providers/ThemeProvider';
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
 
 export default {
   title: 'entities/Article/ArticleListItem',

@@ -1,7 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
+import { Button, ButtonSizes, ButtonVariables } from './Button';
+
 import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import { Button, ButtonSizes, ButtonVariables } from './Button';
 
 export default {
   title: 'shared/Button',

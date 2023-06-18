@@ -1,18 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import React from 'react';
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+
+import { articleDetailsPageReducer } from '../../model/slice';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
+
 import { ArticleDetails } from '@/entities/Article';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-
 import { Page } from '@/widgets/Page';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList';
-
-import { articleDetailsPageReducer } from '../../model/slice';
-import cls from './ArticleDetailsPage.module.scss';
-import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/ArticleRating';
 
 interface ArticleDetailsPageProps {

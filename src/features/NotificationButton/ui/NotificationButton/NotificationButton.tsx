@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
+
+import cls from './NotificationButton.module.scss';
+
 import { Button, ButtonVariables } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
 import { NotificationList } from '@/entities/Notification';
 import { Popover } from '@/shared/ui/Popups';
 import Notification from '@/shared/assets/icons/notification.svg';
 import { Drawer } from '@/shared/ui/Drawer';
-import { AnimationProvider } from '@/shared/lib/components/AnimationProvider';
-import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
   className?: string;

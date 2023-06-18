@@ -1,15 +1,16 @@
 import { ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 
+import popupCls from '../../styles/Popups.module.scss';
+import cls from './ListBox.module.scss';
+import { mapDirectionClass } from '../../styles/const';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 // eslint-disable-next-line ulbi-tv-plugin/path-checker
 import { Button, ButtonVariables } from '@/shared/ui/Button';
 // eslint-disable-next-line ulbi-tv-plugin/path-checker
 import { HStack } from '@/shared/ui/Stack';
 import { DropdownDirection } from '@/shared/types/ui';
-import popupCls from '../../styles/Popups.module.scss';
-import cls from './ListBox.module.scss';
-import { mapDirectionClass } from '../../styles/const';
 
 export interface ListBoxItem {
   value: string;

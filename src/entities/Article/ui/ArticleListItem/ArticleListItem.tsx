@@ -1,5 +1,11 @@
 import React, { FC, HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
+import { Article, ArticleTextBlock } from '../../model/types/article';
+import cls from './ArticleListItem.module.scss';
+import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { Text } from '@/shared/ui/Text';
 import { Icon } from '@/shared/ui/Icon';
@@ -9,10 +15,6 @@ import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonVariables } from '@/shared/ui/Button';
 import { AppLink } from '@/shared/ui/AppLink';
-import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
-import { Article, ArticleTextBlock } from '../../model/types/article';
-import cls from './ArticleListItem.module.scss';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { RoutePath } from '@/shared/const/router';
 
 interface ArticleListItemProps {

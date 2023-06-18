@@ -1,5 +1,6 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
 import { getUserInited } from './getUserInited';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getUserInited.test', () => {
   test('should return error', () => {

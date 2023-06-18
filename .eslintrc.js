@@ -13,10 +13,20 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ulbi-tv-plugin'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ulbi-tv-plugin', 'unused-imports', 'import'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
+    'unused-imports/no-unused-imports': 'error',
+    'import/no-unresolved': 'error',
+    'import/no-extraneous-dependencies': 'error',
+    'import/order': [
+      'error',
+      {
+        groups: [['builtin', 'external'], 'internal', ['parent', 'sibling', 'index']],
+        'newlines-between': 'always',
+      },
+    ],
     indent: [2, 2],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
     'import/no-unresolved': 'off',

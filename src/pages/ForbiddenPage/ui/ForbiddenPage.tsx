@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+
 import { Page } from '@/widgets/Page';
 import { Text } from '@/shared/ui/Text';
 // import cls from './ForbiddenPage.module.scss';

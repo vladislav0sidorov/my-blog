@@ -1,6 +1,8 @@
 import React, { HTMLAttributes, ReactNode } from 'react';
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+
 import cls from './Card.module.scss';
+
+import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 
 export enum CardVariables {
   NORMAL = 'normal',

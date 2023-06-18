@@ -1,11 +1,13 @@
-import React, { MutableRefObject, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
+
+import { Portal } from '../../Portal';
+import cls from './Modal.module.scss';
+
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { classNames, Mods } from '@/shared/lib/ClassNames/ClassNames';
 // eslint-disable-next-line ulbi-tv-plugin/path-checker
 import { Overlay } from '@/shared/ui/Overlay';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
-import { Portal } from '../../Portal';
-import cls from './Modal.module.scss';
 
 interface ModalProps {
   className?: string;
