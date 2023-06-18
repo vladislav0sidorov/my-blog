@@ -1,4 +1,4 @@
-/* eslint-disable ylquiorra-plugin/path-checker */
+/* eslint-disable ulbi-tv-plugin/path-checker */
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button, ButtonVariables } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';

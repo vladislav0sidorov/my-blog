@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
-// eslint-disable-next-line ylquiorra-plugin/path-checker
+// eslint-disable-next-line ulbi-tv-plugin/path-checker
 import { Portal } from '@/shared/ui/Portal';
 import { useTheme } from '@/app/providers/ThemeProvider';
-// eslint-disable-next-line ylquiorra-plugin/path-checker
+// eslint-disable-next-line ulbi-tv-plugin/path-checker
 import { Overlay } from '@/shared/ui/Overlay';
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import cls from './Drawer.module.scss';

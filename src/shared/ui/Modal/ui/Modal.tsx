@@ -1,7 +1,7 @@
 import React, { MutableRefObject, ReactNode } from 'react';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { classNames, Mods } from '@/shared/lib/ClassNames/ClassNames';
-// eslint-disable-next-line ylquiorra-plugin/path-checker
+// eslint-disable-next-line ulbi-tv-plugin/path-checker
 import { Overlay } from '@/shared/ui/Overlay';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Portal } from '../../Portal';

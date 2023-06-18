@@ -4,7 +4,7 @@ import { Menu } from '@headlessui/react';
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { DropdownDirection } from '@/shared/types/ui';
 
-// eslint-disable-next-line ylquiorra-plugin/path-checker
+// eslint-disable-next-line ulbi-tv-plugin/path-checker
 import { AppLink } from '@/shared/ui/AppLink';
 import cls from './Dropdown.module.scss';
 import popupCls from '../../styles/Popups.module.scss';

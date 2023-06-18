@@ -13,7 +13,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ylquiorra-plugin'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ulbi-tv-plugin'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -48,8 +48,15 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
-    'ylquiorra-plugin/path-checker': ['error', { alias: '@' }],
-    'ylquiorra-plugin/public-api-imports': [
+    'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
+    'ulbi-tv-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider'],
+      },
+    ],
+    'ulbi-tv-plugin/public-api-imports': [
       'error',
       {
         alias: '@',

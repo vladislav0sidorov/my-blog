@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames';
-// eslint-disable-next-line ylquiorra-plugin/path-checker
+// eslint-disable-next-line ulbi-tv-plugin/path-checker
 import { Button, ButtonVariables } from '@/shared/ui/Button';
-// eslint-disable-next-line ylquiorra-plugin/path-checker
+// eslint-disable-next-line ulbi-tv-plugin/path-checker
 import { HStack } from '@/shared/ui/Stack';
 import { DropdownDirection } from '@/shared/types/ui';
 import popupCls from '../../styles/Popups.module.scss';

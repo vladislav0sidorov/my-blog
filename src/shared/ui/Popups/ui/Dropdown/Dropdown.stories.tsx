@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-// eslint-disable-next-line ylquiorra-plugin/path-checker
+// eslint-disable-next-line ulbi-tv-plugin/path-checker
 import { Button } from '@/shared/ui/Button';
 import { Dropdown } from './Dropdown';
 
