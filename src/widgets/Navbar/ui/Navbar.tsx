@@ -12,7 +12,7 @@ import { AppLink, ApplinkTheme } from '@/shared/ui/AppLink';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
   className?: string;
@@ -36,7 +36,7 @@ export const Navbar: React.FC<NavbarProps> = memo((props) => {
   return (
     <nav className={classNames(cls.Navbar, {}, [className])}>
       {authData ? (
-        <AppLink theme={ApplinkTheme.THIRD} to={RoutePath.article_create}>
+        <AppLink theme={ApplinkTheme.THIRD} to={getRouteArticleCreate()}>
           {t('Создать статью')}
         </AppLink>
       ) : null}

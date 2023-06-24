@@ -46,6 +46,12 @@
       "rate": 5,
       "feedback": "Супер говно",
       "id": "oJHjSQD"
+    },
+    {
+      "userId": "1",
+      "articleId": "12",
+      "rate": 4,
+      "id": "5BN66g-"
     }
   ],
   "profile-ratings": [
