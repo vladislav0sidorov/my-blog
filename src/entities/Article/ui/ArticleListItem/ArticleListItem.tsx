@@ -10,12 +10,15 @@ import { classNames } from '@/shared/lib/ClassNames/ClassNames';
 import { Text } from '@/shared/ui/Text';
 import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
-import { TextSize } from '@/shared/ui/Text/ui/Text';
+import { TextAling, TextSize } from '@/shared/ui/Text/ui/Text';
 import { Card } from '@/shared/ui/Card';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonVariables } from '@/shared/ui/Button';
 import { AppLink } from '@/shared/ui/AppLink';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { VStack } from '@/shared/ui/Stack';
 
 interface ArticleListItemProps {
   className?: string;
@@ -37,7 +40,14 @@ export const ArticleListItem: FC<ArticleListItemProps> = React.memo((props) => {
       <Icon Svg={EyeIcon} />
     </>
   );
-  const image = <img className={cls.img} src={article.img} alt={article.title} />;
+
+  const errorIconFallback = (
+    <VStack heightMax justify="center">
+      <Text text={t('Нам неудалось загрузить изображение. Попробуйте снова.')} size={TextSize.S} aling={TextAling.CENTER} />
+    </VStack>
+  );
+
+  const image = <AppImage className={cls.img} src={article.img} alt={article.title} fallback={<Skeleton height="100%" width="100%" />} errorFallback={errorIconFallback} />;
 
   if (view === ArticleView.LIST) {
     const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
