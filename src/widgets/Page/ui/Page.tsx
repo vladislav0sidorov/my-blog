@@ -11,8 +11,9 @@ import { ScrollRestorationActions, getScrollRestorationByPath } from '@/features
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import { TestProps } from '@/shared/types/test';
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
@@ -41,7 +42,7 @@ export const Page = React.memo((props: PageProps) => {
   }, 1000);
 
   return (
-    <main onScroll={onScroll} ref={wrapperRef} className={classNames(cls.pageWrapper, {}, [className])}>
+    <main data-testid={props['data-testid'] ?? 'Page'} onScroll={onScroll} ref={wrapperRef} className={classNames(cls.pageWrapper, {}, [className])}>
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
     </main>

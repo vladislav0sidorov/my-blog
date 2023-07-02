@@ -13,7 +13,7 @@ const AdminPanelPage: React.FC<AdminPanelPageProps> = (props) => {
   const { t } = useTranslation('admin');
 
   return (
-    <Page>
+    <Page data-testid="AdminPanelPage">
       <Text title={t('Это панель администратора')} />
     </Page>
   );

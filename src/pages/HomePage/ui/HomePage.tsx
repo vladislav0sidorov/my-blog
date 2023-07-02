@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Page } from '@/widgets/Page';
@@ -9,7 +8,7 @@ const HomePage = () => {
   const { t } = useTranslation('home');
 
   return (
-    <Page>
+    <Page data-testid="HomePage">
       <Text text={t('Домашняя страница')} />
       <RatingCart hasFeedback feedbackTitle={t('Как вам сервис?')} />
     </Page>
