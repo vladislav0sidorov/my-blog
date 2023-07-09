@@ -7,7 +7,7 @@ import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import avatar from '@/shared/assets/test/avatar.jpg';
+import avatar from '@/shared/assets/storybook/avatar.jpg';
 
 export default {
   title: 'pages/ProfilePage',

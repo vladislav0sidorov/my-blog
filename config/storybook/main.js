@@ -12,7 +12,7 @@ module.exports = {
     'storybook-addon-mock',
     'storybook-addon-themes',
   ],
-  staticDirs: ['../../src/shared'],
+  staticDirs: ['../../src/shared/assets/storybook'],
   framework: '@storybook/react',
   core: {
     builder: 'webpack5',
