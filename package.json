@@ -129,6 +129,7 @@
     "react-router-dom": "^6.2.1"
   },
   "loki": {
+    "chromeEnableAnimations": false,
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",
