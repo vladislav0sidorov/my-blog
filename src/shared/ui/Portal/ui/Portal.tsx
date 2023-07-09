@@ -8,8 +8,12 @@ interface PortalProps {
 
 export const Portal = (props: PortalProps) => {
   const { children, elementId = 'root' } = props;
-
   const nodeElement = document.getElementById(elementId);
 
-  return createPortal(children, nodeElement!);
+  if (!nodeElement) {
+    alert(`Element with ID '${elementId}' does not exist in the DOM.`);
+    return null;
+  }
+
+  return createPortal(children, nodeElement);
 };
