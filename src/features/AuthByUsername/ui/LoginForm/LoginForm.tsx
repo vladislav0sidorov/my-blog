@@ -61,19 +61,11 @@ const LoginForm = React.memo((props: LoginFormProps) => {
   return (
     <DynamicModuleLoader removeAfterUnmount={false} reducers={initialReducers}>
       <div className={classNames(cls.LoginForm, {}, [className])}>
-        <Text title={t('Форма авторизации')} theme={TextTheme.SECONDORY_INVERTED} />
+        <Text title={t('Форма авторизации')} theme={TextTheme.SECONDORY} />
         {error === 'ERROR' && <Text text={t('Вы ввели невереный логин или пароль')} theme={TextTheme.ERROR} />}
-        <Input
-          value={username}
-          theme={InputVariable.PRIMARY_INVERTED}
-          onChange={onChangeUsername}
-          autoFocus
-          placeholder={t('Введите имя пользователя')}
-          className={cls.input}
-          type="text"
-        />
-        <Input value={password} theme={InputVariable.PRIMARY_INVERTED} onChange={onChangePassword} placeholder={t('Введите пароль')} className={cls.input} type="text" />
-        <Button disabled={isLoading} onClick={onLoginClick} theme={ButtonVariables.OUTLINE_INVERTED} className={cls.loginBtn}>
+        <Input value={username} theme={InputVariable.PRIMARY} onChange={onChangeUsername} autoFocus placeholder={t('Введите имя пользователя')} className={cls.input} type="text" />
+        <Input value={password} theme={InputVariable.PRIMARY} onChange={onChangePassword} placeholder={t('Введите пароль')} className={cls.input} type="text" />
+        <Button disabled={isLoading} onClick={onLoginClick} theme={ButtonVariables.OUTLINE} className={cls.loginBtn}>
           {t('Войти')}
         </Button>
       </div>
