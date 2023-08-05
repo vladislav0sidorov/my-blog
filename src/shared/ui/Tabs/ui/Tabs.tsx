@@ -11,6 +11,7 @@ import { CardVariables } from '@/shared/ui/Card/ui/Card';
 export interface TabItem {
   value: string;
   content: ReactNode;
+  'data-testid': string;
 }
 
 interface TabsProps {
@@ -36,7 +37,7 @@ export const Tabs: FC<TabsProps> = React.memo((props) => {
   return (
     <div className={classNames(cls.Tabs, {}, [className])}>
       {tabs.map((tab) => (
-        <Card onClick={clickHandle(tab)} theme={tab.value === value ? CardVariables.NORMAL : CardVariables.OUTLINED} key={tab.value} className={cls.tab}>
+        <Card data-testid={tab['data-testid']} onClick={clickHandle(tab)} theme={tab.value === value ? CardVariables.NORMAL : CardVariables.OUTLINED} key={tab.value} className={cls.tab}>
           {tab.content}
         </Card>
       ))}

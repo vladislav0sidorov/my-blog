@@ -38,7 +38,7 @@ export const ArticleList: FC<ArticleListProps> = React.memo((props) => {
   }
 
   return (
-    <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+    <div data-testid="ArticleList" className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0 ? articles.map(renderArtcile) : null}
       {isLoading && getSkeleton(view)}
     </div>

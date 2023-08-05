@@ -92,7 +92,7 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = React.memo((props
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </div>
       <Card className={cls.search}>
-        <Input value={search} onChange={onChangeSearch} placeholder={t('Поиск')} />
+        <Input data-testid="ArticlesPage.ArticlesSearchInput" value={search} onChange={onChangeSearch} placeholder={t('Поиск')} />
       </Card>
       <ArticleTypeTabs className={cls.tabs} value={type} onChangeType={onChangeType} />
     </div>

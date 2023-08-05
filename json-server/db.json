@@ -128,7 +128,7 @@
       "username": "test-user",
       "password": "123",
       "roles": [
-        "USER"
+        "ADMIN"
       ],
       "avatar": "https://sun9-34.userapi.com/impg/UzNXUUdynHLaVwLdtI9UYpHGAIQ_PhRPsOlbgA/AGeZ7EkXPqo.jpg?size=749x811&quality=95&sign=3969dbae6e15b69972c3db5c3d5cb93c&type=album"
     }
@@ -155,6 +155,17 @@
       "city": "Tbilisi",
       "username": "SeniaZy",
       "avatar": "https://sun9-36.userapi.com/impf/c850220/v850220268/12e2c7/TxYnZV8Q7N4.jpg?size=1536x2048&quality=96&sign=e3a114e332c19380899361b7d5084f5d&type=album"
+    },
+    {
+      "id": "3",
+      "firstname": "Test-user",
+      "lastname": "Test",
+      "age": 22,
+      "currency": "GEL",
+      "country": "Georgia",
+      "city": "Tbilisi",
+      "username": "Test-username",
+      "avatar": "https://sun9-34.userapi.com/impg/UzNXUUdynHLaVwLdtI9UYpHGAIQ_PhRPsOlbgA/AGeZ7EkXPqo.jpg?size=749x811&quality=95&sign=3969dbae6e15b69972c3db5c3d5cb93c&type=album"
     }
   ],
   "articles": [

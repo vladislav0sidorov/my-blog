@@ -59,6 +59,8 @@ export const StarRating = memo((props: StarRatingProps) => {
           width={size}
           Svg={StartIcon}
           onClick={onClick(starNumber)}
+          data-testid={`ArticleDetailsPage.RatingCart.${starNumber}`}
+          data-selected={currentStatusCount >= starNumber}
         />
       ))}
     </div>

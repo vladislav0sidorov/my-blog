@@ -18,7 +18,7 @@ interface AvatarProps {
 
 export const Avatar: React.FC<AvatarProps> = (props) => {
   const {
-    className, src, alt, size = 100,
+    className, src, alt, size = 100, ...otherProps
   } = props;
   const { t } = useTranslation();
   const mods: Mods = {};
@@ -34,5 +34,5 @@ export const Avatar: React.FC<AvatarProps> = (props) => {
   const fallback = <Skeleton width={size} height={size} border="50%" />;
   const errorFallback = <Icon width={size} height={size} Svg={UserImage} />;
 
-  return <AppImage src={src} alt={alt} style={styles} fallback={fallback} errorFallback={errorFallback} className={classNames(cls.Avatar, mods, [className])} />;
+  return <AppImage {...otherProps} src={src} alt={alt} style={styles} fallback={fallback} errorFallback={errorFallback} className={classNames(cls.Avatar, mods, [className])} />;
 };

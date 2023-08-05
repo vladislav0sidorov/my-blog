@@ -52,7 +52,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = React.memo((props) => {
   if (view === ArticleView.LIST) {
     const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
     return (
-      <div className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+      <div data-testid="ArticleListItem" className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
         <Card className={cls.card}>
           <div className={cls.header}>
             {article.user.avatar && <Avatar size={30} src={article.user.avatar} />}
@@ -76,7 +76,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = React.memo((props) => {
   }
 
   return (
-    <AppLink target={target} to={getRouteArticleDetails(article.id)} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+    <AppLink data-testid="ArticleListItem" target={target} to={getRouteArticleDetails(article.id)} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
           {image}

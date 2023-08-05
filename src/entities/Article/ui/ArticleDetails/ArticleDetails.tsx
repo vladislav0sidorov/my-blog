@@ -87,7 +87,7 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = React.memo((props) 
     content = (
       <>
         <HStack max justify="center">
-          <Avatar className={cls.avatar} src={article?.img} size={200} />
+          <Avatar data-testid="ArticleDetailsPage.Avatar" className={cls.avatar} src={article?.img} size={200} />
         </HStack>
         <VStack max gap="32">
           <Text size={TextSize.L} title={article?.title} text={article?.subtitle} />

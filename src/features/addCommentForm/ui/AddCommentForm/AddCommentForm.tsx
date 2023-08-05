@@ -44,9 +44,9 @@ const AddCommentForm: FC<AddCommentFormProps> = React.memo((props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <HStack max className={classNames(cls.AddCommentForm, {}, [className])}>
-        <Input className={cls.input} onChange={onCommentTextChange} value={text} placeholder={t('Введите текст комментария')} />
-        <Button onClick={onSendHandler} theme={ButtonVariables.OUTLINE}>
+      <HStack data-testid="ArticleDetailsPage.AddCommentForm" max className={classNames(cls.AddCommentForm, {}, [className])}>
+        <Input data-testid="ArticleDetailsPage.AddCommentForm.Input" className={cls.input} onChange={onCommentTextChange} value={text} placeholder={t('Введите текст комментария')} />
+        <Button data-testid="ArticleDetailsPage.AddCommentForm.Button" onClick={onSendHandler} theme={ButtonVariables.OUTLINE}>
           {t('Отправить')}
         </Button>
       </HStack>

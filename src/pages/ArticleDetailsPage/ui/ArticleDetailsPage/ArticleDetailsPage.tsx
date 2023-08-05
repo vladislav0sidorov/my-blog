@@ -33,7 +33,7 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = (props) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page>
-        <VStack max gap="16">
+        <VStack data-testid="ArticleDetailsPage.ParentBlock" max gap="16">
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
           <ArticleRating articleId={id} />

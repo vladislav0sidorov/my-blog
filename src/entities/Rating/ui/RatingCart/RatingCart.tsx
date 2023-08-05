@@ -59,12 +59,12 @@ export const RatingCart = React.memo((props: RatingCartProps) => {
   const modalContent = (
     <>
       <Text title={feedbackTitle} />
-      <Input value={feedback} onChange={setFeedback} placeholder={t('Ваш отзыв')} />
+      <Input data-testid="ArticleDetailsPage.RatingCart.FeedbackInput" value={feedback} onChange={setFeedback} placeholder={t('Ваш отзыв')} />
     </>
   );
 
   return (
-    <Card max className={classNames('', {}, [className])}>
+    <Card data-testid="ArticleDetailsPage.RatingCart" max className={classNames('', {}, [className])}>
       <VStack max align="center">
         <Text title={starsCount ? successfulTitle : title} />
         <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
@@ -74,10 +74,12 @@ export const RatingCart = React.memo((props: RatingCartProps) => {
           <VStack max gap="32">
             {modalContent}
             <HStack max gap="16" justify="end">
-              <Button onClick={cancelHandler} theme={ButtonVariables.OUTLINE_RED}>
+              <Button data-testid="ArticleDetailsPage.RatingCart.Close" onClick={cancelHandler} theme={ButtonVariables.OUTLINE_RED}>
                 {t('Закрыть')}
               </Button>
-              <Button onClick={acceptHandler}>{t('Отправить')}</Button>
+              <Button data-testid="ArticleDetailsPage.RatingCart.Send" onClick={acceptHandler}>
+                {t('Отправить')}
+              </Button>
             </HStack>
           </VStack>
         </Modal>

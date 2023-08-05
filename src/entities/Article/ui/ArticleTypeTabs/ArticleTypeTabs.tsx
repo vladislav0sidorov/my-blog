@@ -21,10 +21,10 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = React.memo((props) => {
 
   const typeTabs = useMemo<TabItem[]>(
     () => [
-      { value: ArticleType.ALL, content: t('Все статьи') },
-      { value: ArticleType.IT, content: t('Айти') },
-      { value: ArticleType.SCIENCE, content: t('Наука') },
-      { value: ArticleType.ECONOMICS, content: t('Экономика') },
+      { value: ArticleType.ALL, content: t('Все статьи'), 'data-testid': 'ArticlesPage.ArticlesTabs.All' },
+      { value: ArticleType.IT, content: t('Айти'), 'data-testid': 'ArticlesPage.ArticlesTabs.It' },
+      { value: ArticleType.SCIENCE, content: t('Наука'), 'data-testid': 'ArticlesPage.ArticlesTabs.Science' },
+      { value: ArticleType.ECONOMICS, content: t('Экономика'), 'data-testid': 'ArticlesPage.ArticlesTabs.Economics' },
     ],
     [t],
   );
