@@ -30,7 +30,7 @@ const ArticlesPage: React.FC<ArticlesPageProps> = (props) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <Page onScrollEnd={onLoadNextPart}>
+      <Page data-testid="ArticlesPage" onScrollEnd={onLoadNextPart}>
         <ArticlePageFilters />
         <ArticlesPageInfiniteList className={cls.list} />
       </Page>
