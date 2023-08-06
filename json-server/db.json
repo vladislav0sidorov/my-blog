@@ -782,6 +782,12 @@
       "userId": "1",
       "text": "fdfdfd",
       "id": "motGvHY"
+    },
+    {
+      "articleId": "2",
+      "userId": "3",
+      "text": "Тестовый комментарий",
+      "id": "sRPy2F-"
     }
   ]
 }

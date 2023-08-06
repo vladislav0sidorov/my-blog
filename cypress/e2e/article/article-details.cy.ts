@@ -22,6 +22,7 @@ describe('Пользователь заходит на страницу стат
   });
 
   it('И оставляет комментарий', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
     cy.getByTestId('ArticleDetailsPage.Avatar').should('exist');
     cy.getByTestId('ArticleDetailsPage.AddCommentForm').scrollIntoView();
     cy.addComment('Тестовый комментарий');
@@ -29,6 +30,7 @@ describe('Пользователь заходит на страницу стат
   });
 
   it('И ставит оценку', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
     cy.getByTestId('ArticleDetailsPage.Avatar').should('exist');
     cy.getByTestId('ArticleDetailsPage.RatingCart').scrollIntoView();
     cy.setRate(4, 'feedback');
