@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "firstname": "Test-user",
+  "lastname": "Test",
+  "age": "22",
+  "currency": "GEL",
+  "country": "Georgia",
+  "city": "Tbilisi",
+  "username": "Test-username",
+  "avatar": "https://sun9-34.userapi.com/impg/UzNXUUdynHLaVwLdtI9UYpHGAIQ_PhRPsOlbgA/AGeZ7EkXPqo.jpg?size=749x811&quality=95&sign=3969dbae6e15b69972c3db5c3d5cb93c&type=album"
+}

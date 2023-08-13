@@ -11,7 +11,7 @@ import { CardVariables } from '@/shared/ui/Card/ui/Card';
 export interface TabItem {
   value: string;
   content: ReactNode;
-  'data-testid': string;
+  'data-testid'?: string;
 }
 
 interface TabsProps {
