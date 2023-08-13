@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { NotificationItem } from './NotificationItem';
+import { NotificationItem } from './NotificationItem'
 
 export default {
   title: 'entities/Notification/NotificationItem',
@@ -8,17 +8,15 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof NotificationItem>;
+} as ComponentMeta<typeof NotificationItem>
 
-const Template: ComponentStory<typeof NotificationItem> = (args) => (
-  <NotificationItem {...args} />
-);
+const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />
 
 const item = {
   id: '1',
   title: 'Уведомление 1',
   description: 'Описание под 1 уведомление',
-};
+}
 
-export const Normal = Template.bind({});
-Normal.args = { item };
+export const Normal = Template.bind({})
+Normal.args = { item }

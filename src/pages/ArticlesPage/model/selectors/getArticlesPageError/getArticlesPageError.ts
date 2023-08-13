@@ -1,5 +1,5 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 export function getArticlesPageError(state: StateSchema) {
-  return state.articlesPage?.error;
+  return state.articlesPage?.error
 }

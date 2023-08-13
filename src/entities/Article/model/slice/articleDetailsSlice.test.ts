@@ -1,7 +1,7 @@
-import { ArticleBlockType, ArticleType } from '../consts/consts';
-import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
-import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
-import { articleDetailsReducer } from './articleDetailsSlice';
+import { ArticleBlockType, ArticleType } from '../consts/consts'
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById'
+import { ArticleDetailsSchema } from '../types/articleDetailsSchema'
+import { articleDetailsReducer } from './articleDetailsSlice'
 
 const data = {
   id: '1',
@@ -71,28 +71,23 @@ const data = {
       ],
     },
   ],
-};
+}
 
 describe('articleDetailsSlice.test', () => {
   test('test update profile pending', () => {
     const state: DeepPartial<ArticleDetailsSchema> = {
       isLoading: false,
-    };
-    expect(
-      articleDetailsReducer(
-        state as ArticleDetailsSchema,
-        fetchArticleById.pending,
-      ),
-    ).toEqual({
+    }
+    expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending)).toEqual({
       isLoading: true,
       error: undefined,
-    });
-  });
+    })
+  })
   test('test update profile fulfilled', () => {
     const state: DeepPartial<ArticleDetailsSchema> = {
       isLoading: false,
       data,
-    };
+    }
     expect(
       articleDetailsReducer(
         state as ArticleDetailsSchema,
@@ -103,6 +98,6 @@ describe('articleDetailsSlice.test', () => {
       isLoading: false,
       error: undefined,
       data,
-    });
-  });
-});
+    })
+  })
+})

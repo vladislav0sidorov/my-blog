@@ -1,22 +1,22 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-import { getNotifications } from '../../api/notificationApi';
-import { NotificationItem } from '../NotificationItem/NotificationItem';
+import { getNotifications } from '../../api/notificationApi'
+import { NotificationItem } from '../NotificationItem/NotificationItem'
 
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
-import { VStack } from '@/shared/ui/Stack';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+import { VStack } from '@/shared/ui/Stack'
+import { Skeleton } from '@/shared/ui/Skeleton'
 // import cls from './NotificationList.module.scss';
 
 interface NotificationListProps {
-  className?: string;
+  className?: string
 }
 
 export const NotificationList = React.memo((props: NotificationListProps) => {
-  const { className } = props;
-  const { t } = useTranslation();
-  const { data: notifications, isLoading } = getNotifications(null, { pollingInterval: 5000 });
+  const { className } = props
+  const { t } = useTranslation()
+  const { data: notifications, isLoading } = getNotifications(null, { pollingInterval: 5000 })
 
   if (isLoading) {
     return (
@@ -25,7 +25,7 @@ export const NotificationList = React.memo((props: NotificationListProps) => {
         <Skeleton width="100%" border="8px" height="80px" />
         <Skeleton width="100%" border="8px" height="80px" />
       </VStack>
-    );
+    )
   }
 
   return (
@@ -34,5 +34,5 @@ export const NotificationList = React.memo((props: NotificationListProps) => {
         <NotificationItem key={notification.id} item={notification} />
       ))}
     </VStack>
-  );
-});
+  )
+})

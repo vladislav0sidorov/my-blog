@@ -1,8 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { CommentCard } from './CommentCard';
+import { CommentCard } from './CommentCard'
 
-import Avatar from '@/shared/assets/storybook/avatar.jpg';
+import Avatar from '@/shared/assets/storybook/avatar.jpg'
 
 export default {
   title: 'entities/Comment/CommentCard',
@@ -10,13 +10,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof CommentCard>;
+} as ComponentMeta<typeof CommentCard>
 
-const Template: ComponentStory<typeof CommentCard> = (args) => (
-  <CommentCard {...args} />
-);
+const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />
 
-export const Normal = Template.bind({});
+export const Normal = Template.bind({})
 Normal.args = {
   isLoading: false,
   comment: {
@@ -28,9 +26,9 @@ Normal.args = {
       avatar: Avatar,
     },
   },
-};
+}
 
-export const Loading = Template.bind({});
+export const Loading = Template.bind({})
 Loading.args = {
   comment: {
     id: '1',
@@ -41,4 +39,4 @@ Loading.args = {
       avatar: Avatar,
     },
   },
-};
+}

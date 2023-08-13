@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite';
-import svgr from 'vite-plugin-svgr';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import svgr from 'vite-plugin-svgr'
+import react from '@vitejs/plugin-react'
 
-const port = (process.env.PORT && parseInt(process.env.PORT, 10)) || 3000;
+const port = (process.env.PORT && parseInt(process.env.PORT, 10)) || 3000
 
 export default defineConfig({
   plugins: [svgr({ exportAsDefault: true }), react()],
@@ -17,4 +17,4 @@ export default defineConfig({
     __API__: JSON.stringify('http://localhost:8000'),
     __PROJECT__: JSON.stringify('frontend'),
   },
-});
+})

@@ -1,36 +1,36 @@
-import React from 'react';
-import { BrowserView, MobileView } from 'react-device-detect';
+import React from 'react'
+import { BrowserView, MobileView } from 'react-device-detect'
 
-import cls from './NotificationButton.module.scss';
+import cls from './NotificationButton.module.scss'
 
-import { Button, ButtonVariables } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon';
-import { NotificationList } from '@/entities/Notification';
-import { Popover } from '@/shared/ui/Popups';
-import Notification from '@/shared/assets/icons/notification.svg';
-import { Drawer } from '@/shared/ui/Drawer';
+import { Button, ButtonVariables } from '@/shared/ui/Button'
+import { Icon } from '@/shared/ui/Icon'
+import { NotificationList } from '@/entities/Notification'
+import { Popover } from '@/shared/ui/Popups'
+import Notification from '@/shared/assets/icons/notification.svg'
+import { Drawer } from '@/shared/ui/Drawer'
 
 interface NotificationButtonProps {
-  className?: string;
+  className?: string
 }
 
 export const NotificationButton = React.memo((props: NotificationButtonProps) => {
-  const { className } = props;
-  const [isOpen, setIsOpen] = React.useState(false);
+  const { className } = props
+  const [isOpen, setIsOpen] = React.useState(false)
 
   const onOpenDrawer = React.useCallback(() => {
-    setIsOpen(true);
-  }, []);
+    setIsOpen(true)
+  }, [])
 
   const onCloseDrawer = React.useCallback(() => {
-    setIsOpen(false);
-  }, []);
+    setIsOpen(false)
+  }, [])
 
   const trigger = (
     <Button onClick={onOpenDrawer} theme={ButtonVariables.CLEAR}>
       <Icon Svg={Notification} />
     </Button>
-  );
+  )
 
   return (
     <>
@@ -46,5 +46,5 @@ export const NotificationButton = React.memo((props: NotificationButtonProps) =>
         </Drawer>
       </MobileView>
     </>
-  );
-});
+  )
+})

@@ -1,30 +1,30 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 // const { join: joinPath } = require('path');
 
-const pathToNodeModilesCache = path.resolve(__dirname, '..', 'node_modules', '.cache');
+const pathToNodeModilesCache = path.resolve(__dirname, '..', 'node_modules', '.cache')
 
 function deleteNodeModulesCache(pathToFolder) {
   if (fs.existsSync(pathToFolder)) {
     fs.readdirSync(pathToFolder).forEach((file) => {
-      const curPath = path.join(pathToFolder, file);
+      const curPath = path.join(pathToFolder, file)
 
       if (fs.lstatSync(curPath).isDirectory()) {
-        deleteNodeModulesCache(curPath);
+        deleteNodeModulesCache(curPath)
       } else {
-        fs.unlinkSync(curPath);
+        fs.unlinkSync(curPath)
       }
-    });
+    })
 
-    fs.rmdirSync(pathToFolder);
+    fs.rmdirSync(pathToFolder)
 
-    console.log('Папка .cache успешно удалена');
+    console.log('Папка .cache успешно удалена')
   } else {
-    console.log('Папки .cache не существует');
+    console.log('Папки .cache не существует')
   }
 }
 
-deleteNodeModulesCache(pathToNodeModilesCache);
+deleteNodeModulesCache(pathToNodeModilesCache)
 
 //* Можно написать так
 // const cacheDir = joinPath(__dirname, '..', 'node_modules', '.cache');

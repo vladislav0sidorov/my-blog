@@ -1,10 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { NotificationList } from './NotificationList';
+import { NotificationList } from './NotificationList'
 
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator'
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
 
 export default {
   title: 'entities/Notification/NotificationList',
@@ -12,11 +12,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof NotificationList>;
+} as ComponentMeta<typeof NotificationList>
 
-const Template: ComponentStory<typeof NotificationList> = (args) => (
-  <NotificationList {...args} />
-);
+const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />
 
 const mockNotificationsData = [
   {
@@ -39,11 +37,11 @@ const mockNotificationsData = [
     title: 'Уведомление 4',
     description: 'Описание под 4 уведомление',
   },
-];
+]
 
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [StoreDecorator({})];
+export const Normal = Template.bind({})
+Normal.args = {}
+Normal.decorators = [StoreDecorator({})]
 Normal.parameters = {
   mockData: [
     {
@@ -53,11 +51,11 @@ Normal.parameters = {
       response: mockNotificationsData,
     },
   ],
-};
+}
 
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+export const Dark = Template.bind({})
+Dark.args = {}
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
 Dark.parameters = {
   mockData: [
     {
@@ -67,4 +65,4 @@ Dark.parameters = {
       response: mockNotificationsData,
     },
   ],
-};
+}

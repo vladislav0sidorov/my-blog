@@ -1,13 +1,13 @@
 /* eslint-disable ulbi-tv-plugin/path-checker */
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Popover } from './Popover';
+import { Popover } from './Popover'
 
-import { Button, ButtonVariables } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon';
-import Notification from '@/shared/assets/icons/notification.svg';
-import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Button, ButtonVariables } from '@/shared/ui/Button'
+import { Icon } from '@/shared/ui/Icon'
+import Notification from '@/shared/assets/icons/notification.svg'
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
 
 export default {
   title: 'shared/Popups/Popover',
@@ -22,17 +22,15 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Popover>;
+} as ComponentMeta<typeof Popover>
 
-const Template: ComponentStory<typeof Popover> = (args) => (
-  <Popover {...args} />
-);
+const Template: ComponentStory<typeof Popover> = (args) => <Popover {...args} />
 
 const trigger = (
   <Button theme={ButtonVariables.BACKGROUND_INVERTED}>
     <Icon Svg={Notification} />
   </Button>
-);
+)
 
 const children = (
   <>
@@ -42,77 +40,77 @@ const children = (
     <div>fourth</div>
     <div>fifth</div>
   </>
-);
+)
 
-export const Normal = Template.bind({});
+export const Normal = Template.bind({})
 Normal.args = {
   trigger,
   children,
-};
+}
 
-export const TopLeft = Template.bind({});
+export const TopLeft = Template.bind({})
 TopLeft.args = {
   direction: 'top left',
   trigger,
   children,
-};
+}
 
-export const TopRight = Template.bind({});
+export const TopRight = Template.bind({})
 TopRight.args = {
   direction: 'top right',
   trigger,
   children,
-};
+}
 
-export const BottomLeft = Template.bind({});
+export const BottomLeft = Template.bind({})
 BottomLeft.args = {
   direction: 'bottom left',
   trigger,
   children,
-};
+}
 
-export const BottomRight = Template.bind({});
+export const BottomRight = Template.bind({})
 BottomRight.args = {
   direction: 'bottom right',
   trigger,
   children,
-};
+}
 
-export const DefaultDark = Template.bind({});
+export const DefaultDark = Template.bind({})
 DefaultDark.args = {
   trigger,
   children,
-};
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const TopLeftDark = Template.bind({});
+export const TopLeftDark = Template.bind({})
 TopLeftDark.args = {
   direction: 'top left',
   trigger,
   children,
-};
-TopLeftDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+TopLeftDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const TopRightDark = Template.bind({});
+export const TopRightDark = Template.bind({})
 TopRightDark.args = {
   direction: 'top right',
   trigger,
   children,
-};
-TopRightDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+TopRightDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const BottomLeftDark = Template.bind({});
+export const BottomLeftDark = Template.bind({})
 BottomLeftDark.args = {
   direction: 'bottom left',
   trigger,
   children,
-};
-BottomLeftDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+BottomLeftDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const BottomRightDark = Template.bind({});
+export const BottomRightDark = Template.bind({})
 BottomRightDark.args = {
   direction: 'bottom right',
   trigger,
   children,
-};
-BottomRightDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+BottomRightDark.decorators = [ThemeDecorator(Theme.DARK)]

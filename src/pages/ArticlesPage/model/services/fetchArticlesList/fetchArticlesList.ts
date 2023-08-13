@@ -1,35 +1,38 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit'
 
-import { getArticlesPageLimit } from '../../selectors/getArticlesPageLimit/getArticlesPageLimit';
-import { getArticlesPageSort } from '../../selectors/getArticlesPageSort/getArticlesPageSort';
-import { getArticlesPageOrder } from '../../selectors/getArticlesPageOrder/getArticlesPageOrder';
-import { getArticlesPageSearch } from '../../selectors/getArticlesPageSearch/getArticlesPageSearch';
-import { getArticlesPageNumber } from '../../selectors/getArticlesPageNumber/getArticlesPageNumber';
-import { getArticlesPageType } from '../../selectors/getArticlesPageType/getArticlesPageType';
+import { getArticlesPageLimit } from '../../selectors/getArticlesPageLimit/getArticlesPageLimit'
+import { getArticlesPageSort } from '../../selectors/getArticlesPageSort/getArticlesPageSort'
+import { getArticlesPageOrder } from '../../selectors/getArticlesPageOrder/getArticlesPageOrder'
+import { getArticlesPageSearch } from '../../selectors/getArticlesPageSearch/getArticlesPageSearch'
+import { getArticlesPageNumber } from '../../selectors/getArticlesPageNumber/getArticlesPageNumber'
+import { getArticlesPageType } from '../../selectors/getArticlesPageType/getArticlesPageType'
 
-import { addQuaryParams } from '@/shared/lib/url/addQuaryParams/addQuaryParams';
-import { Article, ArticleType } from '@/entities/Article';
-import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { addQuaryParams } from '@/shared/lib/url/addQuaryParams/addQuaryParams'
+import { Article, ArticleType } from '@/entities/Article'
+import { ThunkConfig } from '@/app/providers/StoreProvider'
 
 interface FetchArticlesListProps {
-  replace?: boolean;
+  replace?: boolean
 }
 
 export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListProps, ThunkConfig<string>>(
   'articlesPage/fetchArticlesList',
   async (_, thunkApi) => {
-    const { extra, rejectWithValue, getState } = thunkApi;
-    const limit = getArticlesPageLimit(getState());
-    const sort = getArticlesPageSort(getState());
-    const order = getArticlesPageOrder(getState());
-    const search = getArticlesPageSearch(getState());
-    const page = getArticlesPageNumber(getState());
-    const type = getArticlesPageType(getState());
+    const { extra, rejectWithValue, getState } = thunkApi
+    const limit = getArticlesPageLimit(getState())
+    const sort = getArticlesPageSort(getState())
+    const order = getArticlesPageOrder(getState())
+    const search = getArticlesPageSearch(getState())
+    const page = getArticlesPageNumber(getState())
+    const type = getArticlesPageType(getState())
 
     try {
       addQuaryParams({
-        sort, order, search, type,
-      });
+        sort,
+        order,
+        search,
+        type,
+      })
       const response = await extra.api.get<Article[]>('/articles', {
         params: {
           _expand: 'user',
@@ -40,15 +43,15 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPr
           q: search,
           type: type === ArticleType.ALL ? undefined : type,
         },
-      });
+      })
 
       if (!response.data) {
-        throw new Error();
+        throw new Error()
       }
 
-      return response.data;
+      return response.data
     } catch (e) {
-      return rejectWithValue('error');
+      return rejectWithValue('error')
     }
   },
-);
+)

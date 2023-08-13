@@ -1,8 +1,8 @@
-import { memo } from 'react';
+import { memo } from 'react'
 
-import cls from './Text.module.scss';
+import cls from './Text.module.scss'
 
-import { classNames, Mods } from '@/shared/lib/ClassNames/ClassNames';
+import { classNames, Mods } from '@/shared/lib/ClassNames/ClassNames'
 
 export enum TextTheme {
   PRIMARY = 'primary',
@@ -24,35 +24,41 @@ export enum TextSize {
   L = 'size_l',
 }
 
-type HeaderTagType = 'h1' | 'h2' | 'h3';
+type HeaderTagType = 'h1' | 'h2' | 'h3'
 
 const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
   [TextSize.S]: 'h3',
   [TextSize.M]: 'h2',
   [TextSize.L]: 'h1',
-};
+}
 
 interface TextProps {
-  className?: string;
-  title?: string;
-  text?: string;
-  theme?: TextTheme;
-  aling?: TextAling;
-  size?: TextSize;
+  className?: string
+  title?: string
+  text?: string
+  theme?: TextTheme
+  aling?: TextAling
+  size?: TextSize
 
-  'data-testid'?: string;
+  'data-testid'?: string
 }
 
 export const Text = memo((props: TextProps) => {
   const {
-    className, title, text, theme = TextTheme.PRIMARY, size = TextSize.M, aling = TextAling.LEFT, 'data-testid': dataTestId = 'Text',
-  } = props;
+    className,
+    title,
+    text,
+    theme = TextTheme.PRIMARY,
+    size = TextSize.M,
+    aling = TextAling.LEFT,
+    'data-testid': dataTestId = 'Text',
+  } = props
 
-  const HeaderTag = mapSizeToHeaderTag[size];
+  const HeaderTag = mapSizeToHeaderTag[size]
 
   const mods: Mods = {
     [cls[size]]: true,
-  };
+  }
 
   return (
     <div className={classNames(cls.Text, mods, [className, cls[theme], cls[aling]])}>
@@ -67,5 +73,5 @@ export const Text = memo((props: TextProps) => {
         </p>
       )}
     </div>
-  );
-});
+  )
+})

@@ -1,8 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 
-import LoginForm from './LoginForm';
+import LoginForm from './LoginForm'
 
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator'
 
 export default {
   title: 'features/LoginForm',
@@ -17,14 +17,12 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof LoginForm>;
+} as ComponentMeta<typeof LoginForm>
 
-const Template: ComponentStory<typeof LoginForm> = (args) => (
-  <LoginForm {...args} />
-);
+const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary = Template.bind({})
+Primary.args = {}
 Primary.decorators = [
   StoreDecorator({
     login: {
@@ -32,10 +30,10 @@ Primary.decorators = [
       password: '123142',
     },
   }),
-];
+]
 
-export const Error = Template.bind({});
-Error.args = {};
+export const Error = Template.bind({})
+Error.args = {}
 Error.decorators = [
   StoreDecorator({
     login: {
@@ -44,10 +42,10 @@ Error.decorators = [
       password: '1231441242',
     },
   }),
-];
+]
 
-export const Pending = Template.bind({});
-Pending.args = {};
+export const Pending = Template.bind({})
+Pending.args = {}
 Pending.decorators = [
   StoreDecorator({
     login: {
@@ -56,4 +54,4 @@ Pending.decorators = [
       isLoading: true,
     },
   }),
-];
+]

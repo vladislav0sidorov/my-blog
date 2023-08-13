@@ -1,1 +1,1 @@
-export { buildSelector } from './buildSelector';
+export { buildSelector } from './buildSelector'

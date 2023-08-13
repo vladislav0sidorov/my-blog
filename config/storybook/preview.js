@@ -1,8 +1,8 @@
-import { addDecorator } from '@storybook/react';
+import { addDecorator } from '@storybook/react'
 
-import { StyleDecorator } from '../../src/shared/config/stroybook/StyleDecorator/StyleDecorator';
-import { RouteDecorator } from '../../src/shared/config/stroybook/RouteDecorator/RouteDecorator';
-import { Theme } from '../../src/shared/const/theme';
+import { StyleDecorator } from '../../src/shared/config/stroybook/StyleDecorator/StyleDecorator'
+import { RouteDecorator } from '../../src/shared/config/stroybook/RouteDecorator/RouteDecorator'
+import { Theme } from '../../src/shared/const/theme'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -22,9 +22,9 @@ export const parameters = {
       { name: 'DARK_GREEN', class: ['app', Theme.DARK_GREEN], color: '#02343f' },
     ],
   },
-};
+}
 
-addDecorator(StyleDecorator);
+addDecorator(StyleDecorator)
 // addDecorator(ThemeDecorator(Theme.LIGHT));
-addDecorator(RouteDecorator);
+addDecorator(RouteDecorator)
 // addDecorator(SuspenseDecorator);

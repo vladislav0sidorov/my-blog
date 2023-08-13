@@ -1,15 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Article } from '../../model/types/article';
-import { ArticleListItem } from './ArticleListItem';
-import {
-  ArticleBlockType,
-  ArticleType,
-  ArticleView,
-} from '../../model/consts/consts';
+import { Article } from '../../model/types/article'
+import { ArticleListItem } from './ArticleListItem'
+import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/consts'
 
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator'
 
 export default {
   title: 'entities/Article/ArticleListItem',
@@ -17,7 +13,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticleListItem>;
+} as ComponentMeta<typeof ArticleListItem>
 
 const article: Article = {
   id: '1',
@@ -59,34 +55,32 @@ const article: Article = {
       ],
     },
   ],
-};
+}
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => (
-  <ArticleListItem {...args} />
-);
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />
 
-export const Plate = Template.bind({});
+export const Plate = Template.bind({})
 Plate.args = {
   view: ArticleView.PLATE,
   article,
-};
-export const PlateDark = Template.bind({});
+}
+export const PlateDark = Template.bind({})
 PlateDark.args = {
   view: ArticleView.PLATE,
   article,
-};
-PlateDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+PlateDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const List = Template.bind({});
+export const List = Template.bind({})
 List.args = {
   view: ArticleView.LIST,
   article,
-};
-PlateDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+PlateDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const ListDark = Template.bind({});
+export const ListDark = Template.bind({})
 ListDark.args = {
   view: ArticleView.LIST,
   article,
-};
-ListDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+ListDark.decorators = [ThemeDecorator(Theme.DARK)]

@@ -1,13 +1,13 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import ProfilePage from './ProfilePage';
+import ProfilePage from './ProfilePage'
 
-import { Theme } from '@/app/providers/ThemeProvider';
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import avatar from '@/shared/assets/storybook/avatar.jpg';
+import { Theme } from '@/app/providers/ThemeProvider'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator'
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator'
+import avatar from '@/shared/assets/storybook/avatar.jpg'
 
 export default {
   title: 'pages/ProfilePage',
@@ -19,11 +19,9 @@ export default {
     to: '/',
     children: 'text',
   },
-} as ComponentMeta<typeof ProfilePage>;
+} as ComponentMeta<typeof ProfilePage>
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => (
-  <ProfilePage {...args} />
-);
+const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />
 
 const formData = {
   firstname: 'Venya',
@@ -34,20 +32,20 @@ const formData = {
   country: Country.Russia,
   city: 'Surgut',
   avatar,
-};
+}
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Normal = Template.bind({})
+Normal.args = {}
 Normal.decorators = [
   StoreDecorator({
     profile: {
       form: formData,
     },
   }),
-];
+]
 
-export const Dark = Template.bind({});
-Dark.args = {};
+export const Dark = Template.bind({})
+Dark.args = {}
 Dark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({
@@ -55,4 +53,4 @@ Dark.decorators = [
       form: formData,
     },
   }),
-];
+]

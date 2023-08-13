@@ -1,2 +1,2 @@
-export { BugButton } from './ui/BugButton';
-export { ErrorBoundary } from './ui/ErrorBoundery';
+export { BugButton } from './ui/BugButton'
+export { ErrorBoundary } from './ui/ErrorBoundery'

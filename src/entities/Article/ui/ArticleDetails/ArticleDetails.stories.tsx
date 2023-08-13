@@ -1,10 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Article } from '../../model/types/article';
-import { ArticleDetails } from './ArticleDetails';
-import { ArticleBlockType, ArticleType } from '../../model/consts/consts';
+import { Article } from '../../model/types/article'
+import { ArticleDetails } from './ArticleDetails'
+import { ArticleBlockType, ArticleType } from '../../model/consts/consts'
 
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator'
 
 export default {
   title: 'entities/ArticleDetails',
@@ -12,11 +12,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticleDetails>;
+} as ComponentMeta<typeof ArticleDetails>
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => (
-  <ArticleDetails {...args} />
-);
+const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />
 
 const article: Article = {
   id: '1',
@@ -90,28 +88,28 @@ const article: Article = {
       ],
     },
   ],
-};
+}
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Normal = Template.bind({})
+Normal.args = {}
 Normal.decorators = [
   StoreDecorator({
     articleDetails: { data: article },
   }),
-];
+]
 
-export const Loading = Template.bind({});
-Loading.args = {};
+export const Loading = Template.bind({})
+Loading.args = {}
 Loading.decorators = [
   StoreDecorator({
     articleDetails: { isLoading: true },
   }),
-];
+]
 
-export const Error = Template.bind({});
-Error.args = {};
+export const Error = Template.bind({})
+Error.args = {}
 Error.decorators = [
   StoreDecorator({
     articleDetails: { error: 'error' },
   }),
-];
+]

@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { ScrollRestoration } from './ScrollRestoration';
+import { ScrollRestoration } from './ScrollRestoration'
 
 export default {
   title: 'features/ScrollRestoration',
@@ -8,11 +8,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ScrollRestoration>;
+} as ComponentMeta<typeof ScrollRestoration>
 
-const Template: ComponentStory<typeof ScrollRestoration> = (args) => (
-  <ScrollRestoration {...args} />
-);
+const Template: ComponentStory<typeof ScrollRestoration> = (args) => <ScrollRestoration {...args} />
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Normal = Template.bind({})
+Normal.args = {}

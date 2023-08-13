@@ -1,50 +1,48 @@
-import { memo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { memo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
-import cls from './StarRating.module.scss';
-import StartIcon from '../../../assets/icons/star.svg';
-import { Icon } from '../../Icon';
+import cls from './StarRating.module.scss'
+import StartIcon from '../../../assets/icons/star.svg'
+import { Icon } from '../../Icon'
 
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 
 interface StarRatingProps {
-  className?: string;
-  onSelect?: (startCount: number) => void;
-  size?: number;
-  selectedStars?: number;
-  inverted?: boolean;
+  className?: string
+  onSelect?: (startCount: number) => void
+  size?: number
+  selectedStars?: number
+  inverted?: boolean
 }
 
-const stars = [1, 2, 3, 4, 5];
+const stars = [1, 2, 3, 4, 5]
 
 export const StarRating = memo((props: StarRatingProps) => {
-  const {
-    className, onSelect, size = 30, selectedStars = 0, inverted,
-  } = props;
-  const { t } = useTranslation();
+  const { className, onSelect, size = 30, selectedStars = 0, inverted } = props
+  const { t } = useTranslation()
 
-  const [currentStatusCount, setCurrentStatusCount] = useState(selectedStars);
-  const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
+  const [currentStatusCount, setCurrentStatusCount] = useState(selectedStars)
+  const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
 
   const onHover = (starCount: number) => () => {
     if (!isSelected) {
-      setCurrentStatusCount(starCount);
+      setCurrentStatusCount(starCount)
     }
-  };
+  }
 
   const onLeave = () => {
     if (!isSelected) {
-      setCurrentStatusCount(0);
+      setCurrentStatusCount(0)
     }
-  };
+  }
 
   const onClick = (starCount: number) => () => {
     if (!isSelected) {
-      onSelect?.(starCount);
-      setIsSelected(true);
-      setCurrentStatusCount(starCount);
+      onSelect?.(starCount)
+      setIsSelected(true)
+      setCurrentStatusCount(starCount)
     }
-  };
+  }
 
   return (
     <div className={classNames(cls.StarRating, {}, [className])}>
@@ -54,7 +52,9 @@ export const StarRating = memo((props: StarRatingProps) => {
           onMouseLeave={onLeave}
           inverted={inverted}
           key={starNumber}
-          className={classNames(cls.starIcon, { [cls.selected]: isSelected }, [currentStatusCount >= starNumber ? cls.hovered : cls.normal])}
+          className={classNames(cls.starIcon, { [cls.selected]: isSelected }, [
+            currentStatusCount >= starNumber ? cls.hovered : cls.normal,
+          ])}
           height={size}
           width={size}
           Svg={StartIcon}
@@ -64,5 +64,5 @@ export const StarRating = memo((props: StarRatingProps) => {
         />
       ))}
     </div>
-  );
-});
+  )
+})

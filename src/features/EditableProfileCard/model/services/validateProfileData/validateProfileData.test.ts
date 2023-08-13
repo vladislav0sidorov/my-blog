@@ -1,8 +1,8 @@
-import { validateProfileData } from './validateProfileData';
-import { ValidateProfileError } from '../../consts/consts';
+import { validateProfileData } from './validateProfileData'
+import { ValidateProfileError } from '../../consts/consts'
 
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
 
 describe('validateProfileData.test', () => {
   const data = {
@@ -14,13 +14,13 @@ describe('validateProfileData.test', () => {
     country: Country.Russia,
     city: 'Surgut',
     avatar: 'link',
-  };
+  }
 
   test('success', async () => {
-    const result = await validateProfileData(data);
+    const result = await validateProfileData(data)
 
-    expect(result).toEqual([]);
-  });
+    expect(result).toEqual([])
+  })
 
   test('incorrect all', async () => {
     const result = await validateProfileData({
@@ -32,7 +32,7 @@ describe('validateProfileData.test', () => {
       country: undefined,
       city: '',
       avatar: '',
-    });
+    })
 
     expect(result).toEqual([
       ValidateProfileError.INCORECT_FIRST_NAME,
@@ -43,54 +43,54 @@ describe('validateProfileData.test', () => {
       ValidateProfileError.INCORECT_COUNTRY,
       ValidateProfileError.INCORECT_AVATAR,
       ValidateProfileError.INCORECT_CITY,
-    ]);
-  });
+    ])
+  })
 
   test('incorrect first name', async () => {
-    const result = await validateProfileData({ ...data, firstname: '' });
+    const result = await validateProfileData({ ...data, firstname: '' })
 
-    expect(result).toEqual([ValidateProfileError.INCORECT_FIRST_NAME]);
-  });
+    expect(result).toEqual([ValidateProfileError.INCORECT_FIRST_NAME])
+  })
 
   test('incorrect last name', async () => {
-    const result = await validateProfileData({ ...data, lastname: '' });
+    const result = await validateProfileData({ ...data, lastname: '' })
 
-    expect(result).toEqual([ValidateProfileError.INCORECT_LAST_NAME]);
-  });
+    expect(result).toEqual([ValidateProfileError.INCORECT_LAST_NAME])
+  })
 
   test('incorrect age', async () => {
-    const result = await validateProfileData({ ...data, age: undefined });
+    const result = await validateProfileData({ ...data, age: undefined })
 
-    expect(result).toEqual([ValidateProfileError.INCORECT_AGE]);
-  });
+    expect(result).toEqual([ValidateProfileError.INCORECT_AGE])
+  })
 
   test('incorrect user name', async () => {
-    const result = await validateProfileData({ ...data, username: '' });
+    const result = await validateProfileData({ ...data, username: '' })
 
-    expect(result).toEqual([ValidateProfileError.INCORECT_USERNAME]);
-  });
+    expect(result).toEqual([ValidateProfileError.INCORECT_USERNAME])
+  })
 
   test('incorrect country', async () => {
-    const result = await validateProfileData({ ...data, country: undefined });
+    const result = await validateProfileData({ ...data, country: undefined })
 
-    expect(result).toEqual([ValidateProfileError.INCORECT_COUNTRY]);
-  });
+    expect(result).toEqual([ValidateProfileError.INCORECT_COUNTRY])
+  })
 
   test('incorrect currency', async () => {
-    const result = await validateProfileData({ ...data, currency: undefined });
+    const result = await validateProfileData({ ...data, currency: undefined })
 
-    expect(result).toEqual([ValidateProfileError.INCORECT_CURRENCY]);
-  });
+    expect(result).toEqual([ValidateProfileError.INCORECT_CURRENCY])
+  })
 
   test('incorrect city', async () => {
-    const result = await validateProfileData({ ...data, city: '' });
+    const result = await validateProfileData({ ...data, city: '' })
 
-    expect(result).toEqual([ValidateProfileError.INCORECT_CITY]);
-  });
+    expect(result).toEqual([ValidateProfileError.INCORECT_CITY])
+  })
 
   test('incorrect avatar', async () => {
-    const result = await validateProfileData({ ...data, avatar: '' });
+    const result = await validateProfileData({ ...data, avatar: '' })
 
-    expect(result).toEqual([ValidateProfileError.INCORECT_AVATAR]);
-  });
-});
+    expect(result).toEqual([ValidateProfileError.INCORECT_AVATAR])
+  })
+})

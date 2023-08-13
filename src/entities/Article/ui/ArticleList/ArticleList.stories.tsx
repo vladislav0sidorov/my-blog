@@ -1,15 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Article } from '../../model/types/article';
-import {
-  ArticleType,
-  ArticleBlockType,
-  ArticleView,
-} from '../../model/consts/consts';
-import { ArticleList } from './ArticleList';
+import { Article } from '../../model/types/article'
+import { ArticleType, ArticleBlockType, ArticleView } from '../../model/consts/consts'
+import { ArticleList } from './ArticleList'
 
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator'
 
 export default {
   title: 'entities/Article/ArticleList',
@@ -17,7 +13,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticleList>;
+} as ComponentMeta<typeof ArticleList>
 
 const article: Article = {
   id: '1',
@@ -59,13 +55,11 @@ const article: Article = {
       ],
     },
   ],
-};
+}
 
-const Template: ComponentStory<typeof ArticleList> = (args) => (
-  <ArticleList {...args} />
-);
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />
 
-export const Plate = Template.bind({});
+export const Plate = Template.bind({})
 Plate.args = {
   isLoading: false,
   articles: new Array(9).fill(0).map((_, index) => ({
@@ -73,9 +67,9 @@ Plate.args = {
     id: String(index),
   })),
   view: ArticleView.PLATE,
-};
+}
 
-export const PlateDark = Template.bind({});
+export const PlateDark = Template.bind({})
 PlateDark.args = {
   isLoading: false,
   articles: new Array(9).fill(0).map((_, index) => ({
@@ -83,25 +77,25 @@ PlateDark.args = {
     id: String(index),
   })),
   view: ArticleView.PLATE,
-};
-PlateDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+PlateDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const IsLoadingPlate = Template.bind({});
+export const IsLoadingPlate = Template.bind({})
 IsLoadingPlate.args = {
   isLoading: true,
   articles: [],
   view: ArticleView.PLATE,
-};
+}
 
-export const IsLoadingPlateDark = Template.bind({});
+export const IsLoadingPlateDark = Template.bind({})
 IsLoadingPlateDark.args = {
   isLoading: true,
   articles: [],
   view: ArticleView.PLATE,
-};
-IsLoadingPlateDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+IsLoadingPlateDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const List = Template.bind({});
+export const List = Template.bind({})
 List.args = {
   isLoading: false,
   articles: new Array(9).fill(0).map((item, index) => ({
@@ -109,9 +103,9 @@ List.args = {
     id: String(index),
   })),
   view: ArticleView.LIST,
-};
+}
 
-export const ListDark = Template.bind({});
+export const ListDark = Template.bind({})
 ListDark.args = {
   isLoading: false,
   articles: new Array(9).fill(0).map((item, index) => ({
@@ -119,20 +113,20 @@ ListDark.args = {
     id: String(index),
   })),
   view: ArticleView.LIST,
-};
-ListDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+ListDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const IsLoadingList = Template.bind({});
+export const IsLoadingList = Template.bind({})
 IsLoadingList.args = {
   isLoading: true,
   articles: [],
   view: ArticleView.LIST,
-};
+}
 
-export const IsLoadingListDark = Template.bind({});
+export const IsLoadingListDark = Template.bind({})
 IsLoadingListDark.args = {
   isLoading: true,
   articles: [],
   view: ArticleView.LIST,
-};
-IsLoadingListDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+IsLoadingListDark.decorators = [ThemeDecorator(Theme.DARK)]

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-import { Article } from '../../../src/entities/Article';
-import { headers } from '../../shared/const/common';
+import { Article } from '../../../src/entities/Article'
+import { headers } from '../../shared/const/common'
 
 const defaultArticle = {
   id: '1999',
@@ -71,30 +71,32 @@ const defaultArticle = {
       ],
     },
   ],
-};
+}
 
-export const createArticle = (article?: Article) => cy
-  .request({
-    method: 'POST',
-    url: 'http://localhost:8000/articles',
-    headers,
-    body: article ?? defaultArticle,
-  })
-  .then(({ body }) => body);
+export const createArticle = (article?: Article) =>
+  cy
+    .request({
+      method: 'POST',
+      url: 'http://localhost:8000/articles',
+      headers,
+      body: article ?? defaultArticle,
+    })
+    .then(({ body }) => body)
 
-export const removeArticle = (articleId: string) => cy
-  .request({
-    method: 'DELETE',
-    url: `http://localhost:8000/articles/${articleId}`,
-    headers,
-  })
-  .then(({ body }) => body);
+export const removeArticle = (articleId: string) =>
+  cy
+    .request({
+      method: 'DELETE',
+      url: `http://localhost:8000/articles/${articleId}`,
+      headers,
+    })
+    .then(({ body }) => body)
 
 declare global {
   namespace Cypress {
     interface Chainable {
-      createArticle(article?: Article): Chainable<Article>;
-      removeArticle(articleId: string): Chainable<void>;
+      createArticle(article?: Article): Chainable<Article>
+      removeArticle(articleId: string): Chainable<void>
     }
   }
 }

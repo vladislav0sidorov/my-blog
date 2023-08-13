@@ -1,7 +1,7 @@
-import { getProfileValidateErrors } from './getProfileValidateErrors';
-import { ValidateProfileError } from '../../consts/consts';
+import { getProfileValidateErrors } from './getProfileValidateErrors'
+import { ValidateProfileError } from '../../consts/consts'
 
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getProfileValidateErrors.test', () => {
   test('should work with failed state', () => {
@@ -14,18 +14,16 @@ describe('getProfileValidateErrors.test', () => {
       ValidateProfileError.INCORECT_CURRENCY,
       ValidateProfileError.INCORECT_COUNTRY,
       ValidateProfileError.INCORECT_AVATAR,
-    ];
+    ]
     const state: DeepPartial<StateSchema> = {
       profile: {
         validateError,
       },
-    };
-    expect(getProfileValidateErrors(state as StateSchema)).toEqual(
-      validateError,
-    );
-  });
+    }
+    expect(getProfileValidateErrors(state as StateSchema)).toEqual(validateError)
+  })
   test('should return undefined', () => {
-    const state: DeepPartial<StateSchema> = {};
-    expect(getProfileValidateErrors(state as StateSchema)).toEqual(undefined);
-  });
-});
+    const state: DeepPartial<StateSchema> = {}
+    expect(getProfileValidateErrors(state as StateSchema)).toEqual(undefined)
+  })
+})

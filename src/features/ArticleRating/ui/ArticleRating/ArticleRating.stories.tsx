@@ -1,10 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import ArticleRating from './ArticleRating';
+import ArticleRating from './ArticleRating'
 
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
-import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator'
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from '@/app/providers/ThemeProvider'
 
 export default {
   title: 'features/ArticleRating',
@@ -12,14 +12,12 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticleRating>;
+} as ComponentMeta<typeof ArticleRating>
 
-const Template: ComponentStory<typeof ArticleRating> = (args) => (
-  <ArticleRating {...args} />
-);
+const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Normal = Template.bind({})
+Normal.args = {}
 Normal.decorators = [
   StoreDecorator({
     user: {
@@ -28,7 +26,7 @@ Normal.decorators = [
       },
     },
   }),
-];
+]
 Normal.parameters = {
   mockData: [
     {
@@ -38,10 +36,10 @@ Normal.parameters = {
       response: [{ rate: 4 }],
     },
   ],
-};
+}
 
-export const WithoutMock = Template.bind({});
-WithoutMock.args = {};
+export const WithoutMock = Template.bind({})
+WithoutMock.args = {}
 WithoutMock.decorators = [
   StoreDecorator({
     user: {
@@ -50,7 +48,7 @@ WithoutMock.decorators = [
       },
     },
   }),
-];
+]
 WithoutMock.parameters = {
   mockData: [
     {
@@ -60,10 +58,10 @@ WithoutMock.parameters = {
       response: [],
     },
   ],
-};
+}
 
-export const Dark = Template.bind({});
-Dark.args = {};
+export const Dark = Template.bind({})
+Dark.args = {}
 Dark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({
@@ -73,7 +71,7 @@ Dark.decorators = [
       },
     },
   }),
-];
+]
 Dark.parameters = {
   mockData: [
     {
@@ -83,10 +81,10 @@ Dark.parameters = {
       response: [{ rate: 4 }],
     },
   ],
-};
+}
 
-export const WithoutMockDark = Template.bind({});
-WithoutMockDark.args = {};
+export const WithoutMockDark = Template.bind({})
+WithoutMockDark.args = {}
 WithoutMockDark.decorators = [
   ThemeDecorator(Theme.DARK),
   StoreDecorator({
@@ -96,7 +94,7 @@ WithoutMockDark.decorators = [
       },
     },
   }),
-];
+]
 WithoutMockDark.parameters = {
   mockData: [
     {
@@ -106,4 +104,4 @@ WithoutMockDark.parameters = {
       response: [],
     },
   ],
-};
+}

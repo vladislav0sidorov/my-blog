@@ -1,6 +1,6 @@
-import { getUserInited } from './getUserInited';
+import { getUserInited } from './getUserInited'
 
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getUserInited.test', () => {
   test('should return error', () => {
@@ -8,7 +8,7 @@ describe('getUserInited.test', () => {
       user: {
         _inited: true,
       },
-    };
-    expect(getUserInited(state as StateSchema)).toEqual(true);
-  });
-});
+    }
+    expect(getUserInited(state as StateSchema)).toEqual(true)
+  })
+})

@@ -1,6 +1,6 @@
-import { getProfileReadOnly } from './getProfileReadOnly';
+import { getProfileReadOnly } from './getProfileReadOnly'
 
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getProfileReadOnly.test', () => {
   test('should work with readonly true', () => {
@@ -8,19 +8,19 @@ describe('getProfileReadOnly.test', () => {
       profile: {
         readonly: true,
       },
-    };
-    expect(getProfileReadOnly(state as StateSchema)).toEqual(true);
-  });
+    }
+    expect(getProfileReadOnly(state as StateSchema)).toEqual(true)
+  })
   test('should work with isLoading false', () => {
     const state: DeepPartial<StateSchema> = {
       profile: {
         readonly: false,
       },
-    };
-    expect(getProfileReadOnly(state as StateSchema)).toEqual(false);
-  });
+    }
+    expect(getProfileReadOnly(state as StateSchema)).toEqual(false)
+  })
   test('should return undefined', () => {
-    const state: DeepPartial<StateSchema> = {};
-    expect(getProfileReadOnly(state as StateSchema)).toEqual(undefined);
-  });
-});
+    const state: DeepPartial<StateSchema> = {}
+    expect(getProfileReadOnly(state as StateSchema)).toEqual(undefined)
+  })
+})

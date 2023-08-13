@@ -1,5 +1,5 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 export function getArticlesPageLoading(state: StateSchema) {
-  return state.articlesPage?.isLoading || false;
+  return state.articlesPage?.isLoading || false
 }

@@ -1,3 +1,3 @@
-import { memo } from 'react';
+import { memo } from 'react'
 
-export const typedMemo: <T>(c: T) => T = memo;
+export const typedMemo: <T>(c: T) => T = memo

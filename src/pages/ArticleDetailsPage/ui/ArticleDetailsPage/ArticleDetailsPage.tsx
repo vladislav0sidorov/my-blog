@@ -1,33 +1,33 @@
-import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
-import React from 'react';
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
+import React from 'react'
 
-import { articleDetailsPageReducer } from '../../model/slice';
-import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
+import { articleDetailsPageReducer } from '../../model/slice'
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
+import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 
-import { ArticleDetails } from '@/entities/Article';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from '@/widgets/Page';
-import { VStack } from '@/shared/ui/Stack';
-import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList';
-import { ArticleRating } from '@/features/ArticleRating';
+import { ArticleDetails } from '@/entities/Article'
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { Page } from '@/widgets/Page'
+import { VStack } from '@/shared/ui/Stack'
+import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList'
+import { ArticleRating } from '@/features/ArticleRating'
 
 interface ArticleDetailsPageProps {
-  className?: string;
+  className?: string
 }
 
 const reducers: ReducersList = {
   articlesDetailsPage: articleDetailsPageReducer,
-};
+}
 
 const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = (props) => {
-  const { className } = props;
-  const { id } = useParams<{ id: string }>();
-  const { t } = useTranslation('article-details');
+  const { className } = props
+  const { id } = useParams<{ id: string }>()
+  const { t } = useTranslation('article-details')
 
   if (!id) {
-    return null;
+    return null
   }
 
   return (
@@ -42,6 +42,6 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = (props) => {
         </VStack>
       </Page>
     </DynamicModuleLoader>
-  );
-};
-export default ArticleDetailsPage;
+  )
+}
+export default ArticleDetailsPage

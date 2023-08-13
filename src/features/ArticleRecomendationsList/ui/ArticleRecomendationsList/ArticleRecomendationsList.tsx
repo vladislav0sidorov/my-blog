@@ -1,29 +1,29 @@
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import { useTranslation } from 'react-i18next'
+import { memo } from 'react'
 
-import { getArticleRecomendationsList } from '../../api/ArticleRecomendationsListApi';
+import { getArticleRecomendationsList } from '../../api/ArticleRecomendationsListApi'
 
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
-import { ArticleList } from '@/entities/Article';
-import { Text, TextSize } from '@/shared/ui/Text';
-import { VStack } from '@/shared/ui/Stack';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+import { ArticleList } from '@/entities/Article'
+import { Text, TextSize } from '@/shared/ui/Text'
+import { VStack } from '@/shared/ui/Stack'
 
 // import cls from './ArticleRecomendationsList.module.scss';
 
 interface ArticleRecomendationsListProps {
-  className?: string;
+  className?: string
 }
 
 export const ArticleRecomendationsList = memo((props: ArticleRecomendationsListProps) => {
-  const { className } = props;
-  const { t } = useTranslation('article-list');
-  const { data: artciles, isLoading, error } = getArticleRecomendationsList(3);
+  const { className } = props
+  const { t } = useTranslation('article-list')
+  const { data: artciles, isLoading, error } = getArticleRecomendationsList(3)
 
   if (error) {
-    return <Text title={t('Не удалось загрузить список рекомендаций')} />;
+    return <Text title={t('Не удалось загрузить список рекомендаций')} />
   }
   if (isLoading) {
-    return <Text title={t('Идет загрузка')} />;
+    return <Text title={t('Идет загрузка')} />
   }
 
   return (
@@ -31,5 +31,5 @@ export const ArticleRecomendationsList = memo((props: ArticleRecomendationsListP
       <Text size={TextSize.L} title={t('Рекомендуем')} />
       <ArticleList isLoading={isLoading} target="_blank" articles={artciles} />
     </VStack>
-  );
-});
+  )
+})

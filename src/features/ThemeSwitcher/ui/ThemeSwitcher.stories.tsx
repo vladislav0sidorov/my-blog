@@ -1,6 +1,6 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { ThemeSwitcher } from './ThemeSwitcher';
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 export default {
   title: 'features/ThemeSwitcher',
@@ -12,18 +12,16 @@ export default {
     to: '/',
     children: 'text',
   },
-} as ComponentMeta<typeof ThemeSwitcher>;
+} as ComponentMeta<typeof ThemeSwitcher>
 
-const Template: ComponentStory<typeof ThemeSwitcher> = (args) => (
-  <ThemeSwitcher {...args} />
-);
+const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />
 
-export const Dark = Template.bind({});
-Dark.args = {};
+export const Dark = Template.bind({})
+Dark.args = {}
 Dark.decorators = [
   (Story) => (
     <div style={{ background: 'var(--inverted-bg-color)', height: '100vh' }}>
       <Story />
     </div>
   ),
-];
+]

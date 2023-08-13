@@ -1,8 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { ArticlesPageInfiniteList } from './ArticlesPageInfiniteList';
+import { ArticlesPageInfiniteList } from './ArticlesPageInfiniteList'
 
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator'
 
 export default {
   title: 'pages/ArticlesPageInfiniteList',
@@ -11,11 +11,9 @@ export default {
     backgroundColor: { control: 'color' },
   },
   decorators: [StoreDecorator({})],
-} as ComponentMeta<typeof ArticlesPageInfiniteList>;
+} as ComponentMeta<typeof ArticlesPageInfiniteList>
 
-const Template: ComponentStory<typeof ArticlesPageInfiniteList> = (args) => (
-  <ArticlesPageInfiniteList {...args} />
-);
+const Template: ComponentStory<typeof ArticlesPageInfiniteList> = (args) => <ArticlesPageInfiniteList {...args} />
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Normal = Template.bind({})
+Normal.args = {}

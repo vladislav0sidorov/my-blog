@@ -1,23 +1,23 @@
-import React, { FC, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { FC, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 
-import { ArticleType } from '../../model/consts/consts';
+import { ArticleType } from '../../model/consts/consts'
 
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
-import { Tabs } from '@/shared/ui/Tabs';
-import { TabItem } from '@/shared/ui/Tabs/ui/Tabs';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+import { Tabs } from '@/shared/ui/Tabs'
+import { TabItem } from '@/shared/ui/Tabs/ui/Tabs'
 
 // import cls from './ArticleTypeTabs.module.scss';
 
 interface ArticleTypeTabsProps {
-  className?: string;
-  value: ArticleType;
-  onChangeType: (type: ArticleType) => void;
+  className?: string
+  value: ArticleType
+  onChangeType: (type: ArticleType) => void
 }
 
 export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = React.memo((props) => {
-  const { className, value, onChangeType } = props;
-  const { t } = useTranslation();
+  const { className, value, onChangeType } = props
+  const { t } = useTranslation()
 
   const typeTabs = useMemo<TabItem[]>(
     () => [
@@ -27,14 +27,14 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = React.memo((props) => {
       { value: ArticleType.ECONOMICS, content: t('Экономика'), 'data-testid': 'ArticlesPage.ArticlesTabs.Economics' },
     ],
     [t],
-  );
+  )
 
   const onTabClick = React.useCallback(
     (tab: TabItem) => {
-      onChangeType(tab.value as ArticleType);
+      onChangeType(tab.value as ArticleType)
     },
     [onChangeType],
-  );
+  )
 
-  return <Tabs tabs={typeTabs} value={value} onTabClick={onTabClick} className={classNames('', {}, [className])} />;
-});
+  return <Tabs tabs={typeTabs} value={value} onTabClick={onTabClick} className={classNames('', {}, [className])} />
+})

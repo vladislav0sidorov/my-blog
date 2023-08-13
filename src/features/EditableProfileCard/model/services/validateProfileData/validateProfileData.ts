@@ -1,47 +1,45 @@
-import { ValidateProfileError } from '../../consts/consts';
+import { ValidateProfileError } from '../../consts/consts'
 
-import { Profile } from '@/entities/Profile';
+import { Profile } from '@/entities/Profile'
 
 export const validateProfileData = (profile?: Profile) => {
   if (!profile) {
-    return [ValidateProfileError.NO_DATA];
+    return [ValidateProfileError.NO_DATA]
   }
 
-  const {
-    firstname, lastname, age, username, currency, country, avatar, city,
-  } = profile;
+  const { firstname, lastname, age, username, currency, country, avatar, city } = profile
 
-  const errors: ValidateProfileError[] = [];
+  const errors: ValidateProfileError[] = []
 
   if (!firstname) {
-    errors.push(ValidateProfileError.INCORECT_FIRST_NAME);
+    errors.push(ValidateProfileError.INCORECT_FIRST_NAME)
   }
   if (!lastname) {
-    errors.push(ValidateProfileError.INCORECT_LAST_NAME);
+    errors.push(ValidateProfileError.INCORECT_LAST_NAME)
   }
 
   if (!age || !Number.isInteger(age)) {
-    errors.push(ValidateProfileError.INCORECT_AGE);
+    errors.push(ValidateProfileError.INCORECT_AGE)
   }
 
   if (!username) {
-    errors.push(ValidateProfileError.INCORECT_USERNAME);
+    errors.push(ValidateProfileError.INCORECT_USERNAME)
   }
 
   if (!currency) {
-    errors.push(ValidateProfileError.INCORECT_CURRENCY);
+    errors.push(ValidateProfileError.INCORECT_CURRENCY)
   }
 
   if (!country) {
-    errors.push(ValidateProfileError.INCORECT_COUNTRY);
+    errors.push(ValidateProfileError.INCORECT_COUNTRY)
   }
 
   if (!avatar) {
-    errors.push(ValidateProfileError.INCORECT_AVATAR);
+    errors.push(ValidateProfileError.INCORECT_AVATAR)
   }
 
   if (!city) {
-    errors.push(ValidateProfileError.INCORECT_CITY);
+    errors.push(ValidateProfileError.INCORECT_CITY)
   }
-  return errors;
-};
+  return errors
+}

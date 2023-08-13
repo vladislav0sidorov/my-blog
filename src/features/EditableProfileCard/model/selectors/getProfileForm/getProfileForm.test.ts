@@ -1,8 +1,8 @@
-import { getProfileForm } from './getProfileForm';
+import { getProfileForm } from './getProfileForm'
 
-import { StateSchema } from '@/app/providers/StoreProvider';
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
 
 describe('getProfileError.test', () => {
   test('should return data form', () => {
@@ -14,16 +14,16 @@ describe('getProfileError.test', () => {
       currency: Currency.USD,
       country: Country.Russia,
       city: 'Surgut',
-    };
+    }
     const state: DeepPartial<StateSchema> = {
       profile: {
         form,
       },
-    };
-    expect(getProfileForm(state as StateSchema)).toEqual(form);
-  });
+    }
+    expect(getProfileForm(state as StateSchema)).toEqual(form)
+  })
   test('should return undefined', () => {
-    const state: DeepPartial<StateSchema> = {};
-    expect(getProfileForm(state as StateSchema)).toEqual(undefined);
-  });
-});
+    const state: DeepPartial<StateSchema> = {}
+    expect(getProfileForm(state as StateSchema)).toEqual(undefined)
+  })
+})

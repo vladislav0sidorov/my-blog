@@ -1,12 +1,12 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { ProfileCard } from './ProfileCard';
+import { ProfileCard } from './ProfileCard'
 
-import { Theme } from '@/app/providers/ThemeProvider';
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
-import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import avatar from '@/shared/assets/storybook/avatar.jpg';
+import { Theme } from '@/app/providers/ThemeProvider'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator'
+import avatar from '@/shared/assets/storybook/avatar.jpg'
 
 export default {
   title: 'entities/ProfileCard',
@@ -18,13 +18,11 @@ export default {
     to: '/',
     children: 'text',
   },
-} as ComponentMeta<typeof ProfileCard>;
+} as ComponentMeta<typeof ProfileCard>
 
-const Template: ComponentStory<typeof ProfileCard> = (args) => (
-  <ProfileCard {...args} />
-);
+const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />
 
-export const Primary = Template.bind({});
+export const Primary = Template.bind({})
 Primary.args = {
   data: {
     firstname: 'Venya',
@@ -36,9 +34,9 @@ Primary.args = {
     city: 'Surgut',
     avatar,
   },
-};
+}
 
-export const PrimaryDark = Template.bind({});
+export const PrimaryDark = Template.bind({})
 PrimaryDark.args = {
   data: {
     firstname: 'Venya',
@@ -50,27 +48,27 @@ PrimaryDark.args = {
     city: 'Surgut',
     avatar,
   },
-};
-PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const loading = Template.bind({});
+export const loading = Template.bind({})
 loading.args = {
   isLoading: true,
-};
+}
 
-export const loadingDark = Template.bind({});
+export const loadingDark = Template.bind({})
 loadingDark.args = {
   isLoading: true,
-};
-loadingDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+loadingDark.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const error = Template.bind({});
+export const error = Template.bind({})
 error.args = {
   error: 'error',
-};
+}
 
-export const errorDark = Template.bind({});
+export const errorDark = Template.bind({})
 errorDark.args = {
   error: 'error',
-};
-errorDark.decorators = [ThemeDecorator(Theme.DARK)];
+}
+errorDark.decorators = [ThemeDecorator(Theme.DARK)]

@@ -1,4 +1,4 @@
-const interfaceConst = 'interface';
+const interfaceConst = 'interface'
 
 module.exports = (componentName) => `import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
@@ -18,4 +18,4 @@ export const ${componentName} = memo((props: ${componentName}Props) => {
            
         </div>
     );
-});`;
+});`

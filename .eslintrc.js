@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'plugin:i18next/recommended', 'airbnb'],
+  extends: ['plugin:react/recommended', 'plugin:i18next/recommended', 'airbnb', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -15,11 +15,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ulbi-tv-plugin', 'unused-imports', 'import'],
   rules: {
-    'react/jsx-indent': [2, 2],
-    'react/jsx-indent-props': [2, 2],
     'unused-imports/no-unused-imports': 'error',
-    'import/no-unresolved': 'error',
-    'import/no-extraneous-dependencies': 'error',
     'import/order': [
       'error',
       {
@@ -27,7 +23,6 @@ module.exports = {
         'newlines-between': 'always',
       },
     ],
-    indent: [2, 2],
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
     'import/no-unresolved': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
@@ -47,7 +42,21 @@ module.exports = {
       2,
       {
         markupOnly: true,
-        ignoreAttribute: ['data-testid', 'to', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'max', 'role', 'as', 'border', 'flexAling'],
+        ignoreAttribute: [
+          'data-testid',
+          'to',
+          'name',
+          'target',
+          'justify',
+          'align',
+          'direction',
+          'gap',
+          'max',
+          'role',
+          'as',
+          'border',
+          'flexAling',
+        ],
       },
     ],
     'max-len': [2, { ignoreComments: true, code: 200 }],
@@ -73,6 +82,7 @@ module.exports = {
         testFilesPatterns: ['**/*.test.ts', '**/*.test.ts', '**/StoreDecorator.tsx'],
       },
     ],
+    'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
   },
   globals: {
     __IS_DEV__: true,
@@ -92,4 +102,4 @@ module.exports = {
       },
     },
   ],
-};
+}

@@ -1,6 +1,6 @@
-import { getArticleDetailsError } from './getArticleDetailsError';
+import { getArticleDetailsError } from './getArticleDetailsError'
 
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getArticleDetailsError.test', () => {
   test('should return error', () => {
@@ -8,11 +8,11 @@ describe('getArticleDetailsError.test', () => {
       articleDetails: {
         error: 'error',
       },
-    };
-    expect(getArticleDetailsError(state as StateSchema)).toEqual('error');
-  });
+    }
+    expect(getArticleDetailsError(state as StateSchema)).toEqual('error')
+  })
   test('should return undefined', () => {
-    const state: DeepPartial<StateSchema> = {};
-    expect(getArticleDetailsError(state as StateSchema)).toEqual(undefined);
-  });
-});
+    const state: DeepPartial<StateSchema> = {}
+    expect(getArticleDetailsError(state as StateSchema)).toEqual(undefined)
+  })
+})

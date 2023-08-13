@@ -1,8 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { CommentList } from './CommentList';
+import { CommentList } from './CommentList'
 
-import Avatar from '@/shared/assets/storybook/avatar.jpg';
+import Avatar from '@/shared/assets/storybook/avatar.jpg'
 
 export default {
   title: 'entities/Comment/CommentList',
@@ -10,13 +10,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof CommentList>;
+} as ComponentMeta<typeof CommentList>
 
-const Template: ComponentStory<typeof CommentList> = (args) => (
-  <CommentList {...args} />
-);
+const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />
 
-export const Normal = Template.bind({});
+export const Normal = Template.bind({})
 Normal.args = {
   isLoading: false,
   comments: [
@@ -39,13 +37,13 @@ Normal.args = {
       },
     },
   ],
-};
+}
 
-export const Loading = Template.bind({});
+export const Loading = Template.bind({})
 Loading.args = {
   comments: [],
   isLoading: true,
-};
+}
 
-export const NoComments = Template.bind({});
-NoComments.args = {};
+export const NoComments = Template.bind({})
+NoComments.args = {}

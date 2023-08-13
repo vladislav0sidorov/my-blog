@@ -1,6 +1,6 @@
-import { getArticleDetailsIsLoading } from './getArticleDetailsIsLoading';
+import { getArticleDetailsIsLoading } from './getArticleDetailsIsLoading'
 
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getArticleDetailsIsLoading.test', () => {
   test('should return loading true', () => {
@@ -8,11 +8,11 @@ describe('getArticleDetailsIsLoading.test', () => {
       articleDetails: {
         isLoading: true,
       },
-    };
-    expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true);
-  });
+    }
+    expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(true)
+  })
   test('should return undefined', () => {
-    const state: DeepPartial<StateSchema> = {};
-    expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(undefined);
-  });
-});
+    const state: DeepPartial<StateSchema> = {}
+    expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(undefined)
+  })
+})

@@ -1,1 +1,1 @@
-export const headers = { Authorization: 'Authorization' };
+export const headers = { Authorization: 'Authorization' }

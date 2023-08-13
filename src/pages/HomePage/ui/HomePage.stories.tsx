@@ -1,10 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import HomePage from './HomePage';
+import HomePage from './HomePage'
 
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator';
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
+import { Theme } from '@/app/providers/ThemeProvider'
+import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator'
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator'
 
 export default {
   title: 'pages/HomePage',
@@ -17,13 +17,13 @@ export default {
     children: 'text',
   },
   decorators: [StoreDecorator({})],
-} as ComponentMeta<typeof HomePage>;
+} as ComponentMeta<typeof HomePage>
 
-const Template: ComponentStory<typeof HomePage> = (args) => <HomePage />;
+const Template: ComponentStory<typeof HomePage> = (args) => <HomePage />
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary = Template.bind({})
+Primary.args = {}
 
-export const SecondaryDark = Template.bind({});
-SecondaryDark.args = {};
-SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const SecondaryDark = Template.bind({})
+SecondaryDark.args = {}
+SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)]

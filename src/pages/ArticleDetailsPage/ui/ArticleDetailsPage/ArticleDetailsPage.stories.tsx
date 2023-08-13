@@ -1,10 +1,10 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from 'react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import ArticleDetailsPage from './ArticleDetailsPage';
+import ArticleDetailsPage from './ArticleDetailsPage'
 
-import { Article, ArticleType, ArticleBlockType } from '@/entities/Article';
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
+import { Article, ArticleType, ArticleBlockType } from '@/entities/Article'
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator'
 
 export default {
   title: 'pages/ArticleDetails/ArticleDetailsPage',
@@ -15,11 +15,9 @@ export default {
   parameters: {
     loki: { skip: true },
   },
-} as ComponentMeta<typeof ArticleDetailsPage>;
+} as ComponentMeta<typeof ArticleDetailsPage>
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
-  <ArticleDetailsPage {...args} />
-);
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />
 
 const article: Article = {
   id: '1',
@@ -61,14 +59,14 @@ const article: Article = {
       ],
     },
   ],
-};
+}
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Normal = Template.bind({})
+Normal.args = {}
 Normal.decorators = [
   StoreDecorator({
     articleDetails: {
       data: article,
     },
   }),
-];
+]

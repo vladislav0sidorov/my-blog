@@ -1,5 +1,5 @@
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 export function getArticlesPageHasMore(state: StateSchema) {
-  return state.articlesPage?.hasMore;
+  return state.articlesPage?.hasMore
 }

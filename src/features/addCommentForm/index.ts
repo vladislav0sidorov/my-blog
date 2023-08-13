@@ -1,5 +1,5 @@
-export { getAddCommnetFormText } from './model/selectors/getAddCommnetFormText/getAddCommnetFormText';
+export { getAddCommnetFormText } from './model/selectors/getAddCommnetFormText/getAddCommnetFormText'
 
-export { AddCommentFormAsync as AddCommentForm } from './ui/AddCommentForm/AddCommentForm.async';
+export { AddCommentFormAsync as AddCommentForm } from './ui/AddCommentForm/AddCommentForm.async'
 
-export type { AddCommentFormSchema } from './model/types/addCommentForm';
+export type { AddCommentFormSchema } from './model/types/addCommentForm'

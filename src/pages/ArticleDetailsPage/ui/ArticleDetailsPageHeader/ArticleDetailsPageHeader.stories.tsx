@@ -1,8 +1,8 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
+import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader'
 
-import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/stroybook/StoreDecorator/StoreDecorator'
 
 export default {
   title: 'pages/ArticleDetails/ArticleDetailsPageHeader',
@@ -11,11 +11,9 @@ export default {
     backgroundColor: { control: 'color' },
   },
   decorators: [StoreDecorator({})],
-} as ComponentMeta<typeof ArticleDetailsPageHeader>;
+} as ComponentMeta<typeof ArticleDetailsPageHeader>
 
-const Template: ComponentStory<typeof ArticleDetailsPageHeader> = (args) => (
-  <ArticleDetailsPageHeader {...args} />
-);
+const Template: ComponentStory<typeof ArticleDetailsPageHeader> = (args) => <ArticleDetailsPageHeader {...args} />
 
-export const Normal = Template.bind({});
-Normal.args = {};
+export const Normal = Template.bind({})
+Normal.args = {}

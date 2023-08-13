@@ -1,28 +1,26 @@
-import React, { ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Popover as HPopover } from '@headlessui/react';
+import React, { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Popover as HPopover } from '@headlessui/react'
 
-import cls from './Popover.module.scss';
-import popupCls from '../../styles/Popups.module.scss';
-import { mapDirectionClass } from '../../styles/const';
+import cls from './Popover.module.scss'
+import popupCls from '../../styles/Popups.module.scss'
+import { mapDirectionClass } from '../../styles/const'
 
-import { DropdownDirection } from '@/shared/types/ui';
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
+import { DropdownDirection } from '@/shared/types/ui'
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 
 interface PopoverProps {
-  className?: string;
-  children: ReactNode;
-  trigger: ReactNode;
-  direction?: DropdownDirection;
+  className?: string
+  children: ReactNode
+  trigger: ReactNode
+  direction?: DropdownDirection
 }
 
 export const Popover = (props: PopoverProps) => {
-  const {
-    className, trigger, direction = 'bottom right', children,
-  } = props;
-  const { t } = useTranslation();
+  const { className, trigger, direction = 'bottom right', children } = props
+  const { t } = useTranslation()
 
-  const menuClasses = [mapDirectionClass[direction]];
+  const menuClasses = [mapDirectionClass[direction]]
 
   return (
     <HPopover className={classNames('', {}, [className, popupCls.Popups])}>
@@ -32,5 +30,5 @@ export const Popover = (props: PopoverProps) => {
 
       <HPopover.Panel className={classNames(cls.panel, {}, menuClasses)}>{children}</HPopover.Panel>
     </HPopover>
-  );
-};
+  )
+}

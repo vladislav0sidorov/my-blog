@@ -1,8 +1,8 @@
-import { User } from '@/entities/User';
+import { User } from '@/entities/User'
 
 export interface Comment {
-  id: string;
-  user: User;
-  text: string;
-  avatar?: string;
+  id: string
+  user: User
+  text: string
+  avatar?: string
 }

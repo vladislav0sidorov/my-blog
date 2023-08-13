@@ -1,19 +1,19 @@
-import React from 'react';
+import React from 'react'
 
-import { ArticleView } from '../../model/consts/consts';
-import cls from './ArticleListItem.module.scss';
+import { ArticleView } from '../../model/consts/consts'
+import cls from './ArticleListItem.module.scss'
 
-import { classNames } from '@/shared/lib/ClassNames/ClassNames';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Card } from '@/shared/ui/Card';
+import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { Card } from '@/shared/ui/Card'
 
 interface ArticleListItemSkeletonProps {
-  className?: string;
-  view: ArticleView;
+  className?: string
+  view: ArticleView
 }
 
 export const ArticleListItemSkeleton: React.FC<ArticleListItemSkeletonProps> = React.memo((props) => {
-  const { className, view } = props;
+  const { className, view } = props
 
   if (view === ArticleView.LIST) {
     return (
@@ -31,7 +31,7 @@ export const ArticleListItemSkeleton: React.FC<ArticleListItemSkeletonProps> = R
           </div>
         </Card>
       </div>
-    );
+    )
   }
 
   return (
@@ -46,5 +46,5 @@ export const ArticleListItemSkeleton: React.FC<ArticleListItemSkeletonProps> = R
         <Skeleton width={150} height={16} className={cls.title} />
       </Card>
     </div>
-  );
-});
+  )
+})

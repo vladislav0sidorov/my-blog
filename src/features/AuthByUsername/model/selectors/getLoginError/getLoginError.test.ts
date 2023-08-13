@@ -1,6 +1,6 @@
-import { getLoginError } from './getLoginError';
+import { getLoginError } from './getLoginError'
 
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getLoginError.test', () => {
   test('should return error', () => {
@@ -8,11 +8,11 @@ describe('getLoginError.test', () => {
       login: {
         error: 'error',
       },
-    };
-    expect(getLoginError(state as StateSchema)).toEqual('error');
-  });
+    }
+    expect(getLoginError(state as StateSchema)).toEqual('error')
+  })
   test('should work with epmty state', () => {
-    const state: DeepPartial<StateSchema> = {};
-    expect(getLoginError(state as StateSchema)).toEqual(undefined);
-  });
-});
+    const state: DeepPartial<StateSchema> = {}
+    expect(getLoginError(state as StateSchema)).toEqual(undefined)
+  })
+})

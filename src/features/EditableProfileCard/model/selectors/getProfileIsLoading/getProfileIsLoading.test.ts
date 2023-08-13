@@ -1,6 +1,6 @@
-import { getProfileIsLoading } from './getProfileIsLoading';
+import { getProfileIsLoading } from './getProfileIsLoading'
 
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getProfileIsLoading.test', () => {
   test('should work with isLoading true', () => {
@@ -8,19 +8,19 @@ describe('getProfileIsLoading.test', () => {
       profile: {
         isLoading: true,
       },
-    };
-    expect(getProfileIsLoading(state as StateSchema)).toEqual(true);
-  });
+    }
+    expect(getProfileIsLoading(state as StateSchema)).toEqual(true)
+  })
   test('should work with isLoading false', () => {
     const state: DeepPartial<StateSchema> = {
       profile: {
         isLoading: false,
       },
-    };
-    expect(getProfileIsLoading(state as StateSchema)).toEqual(false);
-  });
+    }
+    expect(getProfileIsLoading(state as StateSchema)).toEqual(false)
+  })
   test('should return undefined', () => {
-    const state: DeepPartial<StateSchema> = {};
-    expect(getProfileIsLoading(state as StateSchema)).toEqual(undefined);
-  });
-});
+    const state: DeepPartial<StateSchema> = {}
+    expect(getProfileIsLoading(state as StateSchema)).toEqual(undefined)
+  })
+})
