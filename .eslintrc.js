@@ -31,6 +31,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'warn',
+    'react/no-unstable-nested-components': 'warn',
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     'import/extensions': 'off',
