@@ -1,39 +1,46 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { useTheme } from '@/app/providers/ThemeProvider'
 import { AppRouter } from '@/app/providers/router'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/lodalStorage'
-import { userActions } from '@/entities/User'
+import { getUserInited, initAuthData } from '@/entities/User'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { PageLoader } from '@/widgets/PageLoader'
 
 function App() {
   const { theme } = useTheme()
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
+  const inited = useSelector(getUserInited)
 
   //* Есть баг в этом участке, следует разобраться
   // const inited = useSelector(getUserInited);
 
   React.useEffect(() => {
-    const user = localStorage.getItem(USER_LOCALSTORAGE_KEY)
-    if (user) {
-      dispatch(userActions.initAuthData(JSON.parse(user)))
-    }
+    dispatch(initAuthData())
   }, [dispatch])
 
-  return (
-    <div className={classNames('app', {}, [theme])}>
-      <React.Suspense fallback="">
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-          <AppRouter />
-        </div>
-      </React.Suspense>
-    </div>
+  let content = (
+    <React.Suspense fallback="">
+      <Navbar />
+      <div className="content-page">
+        <Sidebar />
+        <AppRouter />
+      </div>
+    </React.Suspense>
   )
+
+  if (!inited) {
+    content = (
+      <div className={classNames('app', {}, [theme])}>
+        <PageLoader />
+      </div>
+    )
+  }
+
+  return <div className={classNames('app', {}, [theme])}>{content}</div>
 }
 
 export default App
