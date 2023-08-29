@@ -10,6 +10,7 @@ import { ArticlesPageInfiniteList } from '../ArticlesPageInfiniteList/ArticlesPa
 import { Page } from '@/widgets/Page'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { ReducersList, DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { ArticlePageGetting } from '@/features/articlePageGetting'
 
 interface ArticlesPageProps {
   className?: string
@@ -33,6 +34,7 @@ const ArticlesPage: React.FC<ArticlesPageProps> = (props) => {
       <Page data-testid="ArticlesPage" onScrollEnd={onLoadNextPart}>
         <ArticlePageFilters />
         <ArticlesPageInfiniteList className={cls.list} />
+        <ArticlePageGetting />
       </Page>
     </DynamicModuleLoader>
   )

@@ -42,7 +42,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = React.memo((props) => {
   const errorIconFallback = (
     <VStack heightMax justify="center">
       <Text
-        text={t('Нам неудалось загрузить изображение. Попробуйте снова.')}
+        text={t('Нам не удалось загрузить изображение. Попробуйте снова.')}
         size={TextSize.S}
         aling={TextAling.CENTER}
       />
