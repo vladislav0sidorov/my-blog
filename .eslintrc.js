@@ -57,6 +57,7 @@ module.exports = {
           'as',
           'border',
           'flexAling',
+          'featureName',
         ],
       },
     ],

@@ -12,7 +12,7 @@ import { Page } from '@/widgets/Page'
 import { VStack } from '@/shared/ui/Stack'
 import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList'
 import { ArticleRating } from '@/features/ArticleRating'
-import { toggleFeatures } from '@/shared/lib/features'
+import { ToggleFeaturesComponent, toggleFeatures } from '@/shared/lib/features'
 import { Card } from '@/shared/ui/Card'
 
 interface ArticleDetailsPageProps {
@@ -44,6 +44,7 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = (props) => {
         <VStack data-testid="ArticleDetailsPage.ParentBlock" max gap="16">
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id} />
           {ArticleRatingCard}
           <ArticleRecomendationsList />
           <ArticleDetailsComments id={id} />
