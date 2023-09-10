@@ -12,7 +12,7 @@ import { Page } from '@/widgets/Page'
 import { VStack } from '@/shared/ui/Stack'
 import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList'
 import { ArticleRating } from '@/features/ArticleRating'
-import { ToggleFeaturesComponent, toggleFeatures } from '@/shared/lib/features'
+import { toggleFeatures } from '@/shared/lib/features'
 import { Card } from '@/shared/ui/Card'
 
 interface ArticleDetailsPageProps {

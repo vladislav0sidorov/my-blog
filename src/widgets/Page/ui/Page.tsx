@@ -12,6 +12,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { StateSchema } from '@/app/providers/StoreProvider'
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle'
 import { TestProps } from '@/shared/types/testTypes'
+import { toggleFeatures } from '@/shared/lib/features'
 
 interface PageProps extends TestProps {
   className?: string
@@ -41,12 +42,18 @@ export const Page = React.memo((props: PageProps) => {
     dispatch(ScrollRestorationActions.setScrollPosition({ position: event.currentTarget.scrollTop, path: pathname }))
   }, 1000)
 
+  const actualClassNameOfPage = toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => cls.pageWrapper,
+    on: () => cls.pageWrapperRedesigned,
+  })
+
   return (
     <main
       data-testid={props['data-testid'] ?? 'Page'}
       onScroll={onScroll}
       ref={wrapperRef}
-      className={classNames(cls.pageWrapper, {}, [className])}
+      className={classNames(actualClassNameOfPage, {}, [className])}
     >
       {children}
       {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { useTheme } from '@/app/providers/ThemeProvider'
@@ -9,20 +10,20 @@ import { Sidebar } from '@/widgets/Sidebar'
 import { getUserInited, initAuthData } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { PageLoader } from '@/widgets/PageLoader'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { MainLayout } from '@/shared/layouts/MainLayout'
 
 function App() {
   const { theme } = useTheme()
   const dispatch = useAppDispatch()
   const inited = useSelector(getUserInited)
-
-  //* Есть баг в этом участке, следует разобраться
-  // const inited = useSelector(getUserInited);
+  const { t } = useTranslation()
 
   React.useEffect(() => {
     dispatch(initAuthData())
   }, [dispatch])
 
-  let content = (
+  let deprecatedContent = (
     <React.Suspense fallback="">
       <Navbar />
       <div className="content-page">
@@ -32,15 +33,33 @@ function App() {
     </React.Suspense>
   )
 
+  let redesignedContent = (
+    <React.Suspense fallback="">
+      <MainLayout header={<Navbar />} sidebar={<Sidebar />} content={<AppRouter />} toolbar={t('Toolbar')} />
+    </React.Suspense>
+  )
+
   if (!inited) {
-    content = (
+    deprecatedContent = (
       <div className={classNames('app', {}, [theme])}>
+        <PageLoader />
+      </div>
+    )
+
+    redesignedContent = (
+      <div className={classNames('app_redesigned', {}, [theme])}>
         <PageLoader />
       </div>
     )
   }
 
-  return <div className={classNames('app', {}, [theme])}>{content}</div>
+  return (
+    <ToggleFeaturesComponent
+      featureName="isAppRedesigned"
+      on={<div className={classNames('app_redesigned', {}, [theme])}>{redesignedContent}</div>}
+      off={<div className={classNames('app', {}, [theme])}>{deprecatedContent}</div>}
+    />
+  )
 }
 
 export default App

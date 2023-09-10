@@ -11,6 +11,8 @@ import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { Button, ButtonSizes, ButtonVariables } from '@/shared/ui/Button/ui/Button'
 import { VStack } from '@/shared/ui/Stack'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { AppLogo } from '@/shared/ui/AppLogo/ui/AppLogo'
 
 interface SidebarProps {
   className?: string
@@ -30,7 +32,8 @@ export const Sidebar: React.FC<SidebarProps> = memo((props) => {
   const onToggle = () => {
     setCollapsed((prev) => !prev)
   }
-  return (
+
+  const deprecatedContent = (
     <aside data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
       <Button
         data-testid="sidebar-toggle"
@@ -52,4 +55,16 @@ export const Sidebar: React.FC<SidebarProps> = memo((props) => {
       </div>
     </aside>
   )
+
+  const redesignedContent = (
+    <aside
+      data-testid="sidebar"
+      className={classNames(cls.SidebarRedesigned, { [cls.collapsed]: collapsed }, [className])}
+    >
+      <AppLogo className={cls.appLogo} />
+      {t('gsdggsdg')}
+    </aside>
+  )
+
+  return <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContent} off={deprecatedContent} />
 })
