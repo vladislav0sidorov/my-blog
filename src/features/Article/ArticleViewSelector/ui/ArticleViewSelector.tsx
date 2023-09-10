@@ -39,7 +39,11 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = React.memo((pro
     <div className={classNames(cls.articleViewSelector, {}, [className])}>
       {viewTypes.map((viewType) => (
         <Button key={viewType.view} theme={ButtonVariables.CLEAR} onClick={onClick(viewType.view)}>
-          <Icon className={classNames('', { [cls.notSelected]: viewType.view !== view })} Svg={viewType.icon} />
+          <Icon
+            inverted
+            className={classNames('', { [cls.notSelected]: viewType.view !== view })}
+            Svg={viewType.icon}
+          />
         </Button>
       ))}
     </div>

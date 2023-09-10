@@ -7,6 +7,7 @@ import DarkIcon from '@/shared/assets/icons/orange.svg'
 import { Button, ButtonVariables } from '@/shared/ui/Button'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { saveJsonSettings } from '@/entities/User'
+import { Icon } from '@/shared/ui/Icon'
 
 interface ThemeSwitcherProps {
   className?: string
@@ -25,7 +26,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = memo((props) => {
 
   return (
     <Button theme={ButtonVariables.CLEAR_THIRD} onClick={onToggleHandler} className={classNames('', {}, [className])}>
-      {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+      <Icon height={24} width={24} Svg={theme === Theme.DARK ? DarkIcon : LightIcon} />
     </Button>
   )
 })

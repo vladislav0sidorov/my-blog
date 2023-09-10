@@ -133,7 +133,8 @@
         "isArticleRaitingEnebled": false
       },
       "jsonSettings": {
-        "theme": "app_dark_green"
+        "theme": "app_light_theme",
+        "isArticlePageWasOpen": true
       },
       "avatar": "https://sun9-36.userapi.com/impf/c850220/v850220268/12e2c7/TxYnZV8Q7N4.jpg?size=1536x2048&quality=96&sign=e3a114e332c19380899361b7d5084f5d&type=album"
     },
@@ -259,7 +260,7 @@
       "id": "2",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://fuzeservers.ru/wp-content/uploads/6/e/1/6e139bd203108f0b794f79ce927573ee.png",
+      "img": "https://fuzeservers.ru/wp-content/uploads/6/e/1/6e139bd203108f0b794f79ce927573e.png",
       "views": 5204,
       "createdAt": "26.02.2022",
       "userId": "1",
