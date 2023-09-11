@@ -5,7 +5,7 @@ import { getArticleRecomendationsList } from '../../api/ArticleRecomendationsLis
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { ArticleList } from '@/entities/Article'
-import { Text, TextSize } from '@/shared/ui/Text'
+import { Text, TextSize } from '@/shared/ui/deprecated/Text'
 import { VStack } from '@/shared/ui/Stack'
 
 // import cls from './ArticleRecomendationsList.module.scss';

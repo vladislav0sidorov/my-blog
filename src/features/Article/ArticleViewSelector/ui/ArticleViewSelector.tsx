@@ -7,8 +7,8 @@ import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { ArticleView } from '@/entities/Article'
 import PlateIcon from '@/shared/assets/icons/plate.svg'
 import ListIcon from '@/shared/assets/icons/list.svg'
-import { Icon } from '@/shared/ui/Icon'
-import { Button, ButtonVariables } from '@/shared/ui/Button'
+import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { Icon } from '@/shared/ui/deprecated/Icon'
 
 interface ArticleViewSelectorProps {
   className?: string

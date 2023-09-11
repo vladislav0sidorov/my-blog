@@ -15,17 +15,17 @@ import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/Articl
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { Text } from '@/shared/ui/Text'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { TextAling, TextSize, TextTheme } from '@/shared/ui/Text/ui/Text'
-import { Skeleton } from '@/shared/ui/Skeleton'
-import { Avatar } from '@/shared/ui/Avatar'
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import CalendarIcon from '@/shared/assets/icons/calendar.svg'
-import { Icon } from '@/shared/ui/Icon'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { HStack, VStack } from '@/shared/ui/Stack'
+import { Avatar } from '@/shared/ui/deprecated/Avatar'
+import { Icon } from '@/shared/ui/deprecated/Icon'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
+import { TextSize } from '@/shared/ui/deprecated/Text'
+import { Text, TextAling, TextTheme } from '@/shared/ui/deprecated/Text/ui/Text'
 
 interface ArticleDetailsProps {
   className?: string

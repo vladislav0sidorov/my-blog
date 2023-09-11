@@ -11,13 +11,12 @@ import { getLoginError } from '../../model/selectors/getLoginError/getLoginError
 import cls from './LoginForm.module.scss'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { Button, ButtonVariables } from '@/shared/ui/Button'
-import { Input } from '@/shared/ui/Input'
-import { Text } from '@/shared/ui/Text'
-import { TextTheme } from '@/shared/ui/Text/ui/Text'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { InputVariable } from '@/shared/ui/Input/ui/Input'
+import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { Input } from '@/shared/ui/deprecated/Input'
+import { InputVariable } from '@/shared/ui/deprecated/Input/ui/Input'
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text/ui/Text'
 
 export interface LoginFormProps {
   className?: string

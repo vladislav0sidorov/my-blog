@@ -2,7 +2,8 @@ import React, { FC } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { Page } from '@/widgets/Page'
-import { Text } from '@/shared/ui/Text'
+import { Text } from '@/shared/ui/deprecated/Text'
+
 // import cls from './ForbiddenPage.module.scss';
 
 interface ForbiddenPageProps {

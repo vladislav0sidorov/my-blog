@@ -13,12 +13,12 @@ import cls from './ArticlePageFilters.module.scss'
 
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce'
 import { SortOrder } from '@/shared/types/sort'
-import { Input } from '@/shared/ui/Input'
-import { Card } from '@/shared/ui/Card'
 import { ArticleSortField, ArticleType, ArticleTypeTabs, ArticleView } from '@/entities/Article'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { ArticleSortSelector, ArticleViewSelector } from '@/features/Article'
+import { Card } from '@/shared/ui/deprecated/Card'
+import { Input } from '@/shared/ui/deprecated/Input'
 
 interface ArticlePageFiltersProps {
   className?: string

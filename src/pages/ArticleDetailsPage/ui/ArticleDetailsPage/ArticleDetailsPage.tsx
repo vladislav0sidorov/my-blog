@@ -9,11 +9,11 @@ import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetails
 import { ArticleDetails } from '@/entities/Article'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { Page } from '@/widgets/Page'
-import { VStack } from '@/shared/ui/Stack'
 import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList'
 import { ArticleRating } from '@/features/ArticleRating'
 import { toggleFeatures } from '@/shared/lib/features'
-import { Card } from '@/shared/ui/Card'
+import { Card } from '@/shared/ui/deprecated/Card'
+import { VStack } from '@/shared/ui/Stack'
 
 interface ArticleDetailsPageProps {
   className?: string

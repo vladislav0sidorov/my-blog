@@ -5,8 +5,8 @@ import cls from './ArticleImageBlockComponent.module.scss'
 import { ArticleImageBlock } from '../../model/types/article'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { Text } from '@/shared/ui/Text'
-import { TextAling } from '@/shared/ui/Text/ui/Text'
+import { Text } from '@/shared/ui/deprecated/Text'
+import { TextAling } from '@/shared/ui/deprecated/Text/ui/Text'
 
 interface ArticleImageBlockComponentProps {
   className?: string

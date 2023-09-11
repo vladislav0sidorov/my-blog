@@ -3,11 +3,11 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Popover } from './Popover'
 
-import { Button, ButtonVariables } from '@/shared/ui/Button'
-import { Icon } from '@/shared/ui/Icon'
 import Notification from '@/shared/assets/icons/notification.svg'
 import { ThemeDecorator } from '@/shared/config/stroybook/ThemeDecorator/ThemeDecorator'
 import { Theme } from '@/app/providers/ThemeProvider'
+import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { Icon } from '@/shared/ui/deprecated/Icon'
 
 export default {
   title: 'shared/Popups/Popover',

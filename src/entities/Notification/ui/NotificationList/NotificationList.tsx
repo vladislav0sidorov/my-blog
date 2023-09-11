@@ -5,8 +5,8 @@ import { getNotifications } from '../../api/notificationApi'
 import { NotificationItem } from '../NotificationItem/NotificationItem'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
 import { VStack } from '@/shared/ui/Stack'
-import { Skeleton } from '@/shared/ui/Skeleton'
 // import cls from './NotificationList.module.scss';
 
 interface NotificationListProps {

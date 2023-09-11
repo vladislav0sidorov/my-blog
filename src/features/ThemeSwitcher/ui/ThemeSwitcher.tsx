@@ -4,10 +4,10 @@ import { Theme, useTheme } from '@/app/providers/ThemeProvider'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import LightIcon from '@/shared/assets/icons/white.svg'
 import DarkIcon from '@/shared/assets/icons/orange.svg'
-import { Button, ButtonVariables } from '@/shared/ui/Button'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { saveJsonSettings } from '@/entities/User'
-import { Icon } from '@/shared/ui/Icon'
+import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { Icon } from '@/shared/ui/deprecated/Icon'
 
 interface ThemeSwitcherProps {
   className?: string

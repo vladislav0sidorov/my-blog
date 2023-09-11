@@ -9,10 +9,11 @@ import { SidebarItem } from './SidebarItem/SidebarItem'
 import { LangSwitcher } from '@/features/LangSwitcher'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { Button, ButtonSizes, ButtonVariables } from '@/shared/ui/Button/ui/Button'
-import { VStack } from '@/shared/ui/Stack'
 import { ToggleFeaturesComponent } from '@/shared/lib/features'
-import { AppLogo } from '@/shared/ui/AppLogo/ui/AppLogo'
+import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { ButtonSizes } from '@/shared/ui/deprecated/Button/ui/Button'
+import { VStack } from '@/shared/ui/Stack'
+import { AppLogo } from '@/shared/ui/deprecated/AppLogo'
 
 interface SidebarProps {
   className?: string

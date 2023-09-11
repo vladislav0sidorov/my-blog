@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Button, ButtonVariables } from '@/shared/ui/Button'
+import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
 
 interface BugButtonProps {
   className?: string

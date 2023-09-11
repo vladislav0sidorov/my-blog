@@ -7,13 +7,13 @@ import cls from './Navbar.module.scss'
 import { getUserAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUsername'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { Button, ButtonVariables } from '@/shared/ui/Button'
-import { AppLink, ApplinkTheme } from '@/shared/ui/AppLink'
-import { HStack } from '@/shared/ui/Stack'
 import { NotificationButton } from '@/features/NotificationButton'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
 import { getRouteArticleCreate } from '@/shared/const/router'
 import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { HStack } from '@/shared/ui/Stack'
+import { AppLink, ApplinkTheme } from '@/shared/ui/deprecated/AppLink'
+import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
 
 interface NavbarProps {
   className?: string

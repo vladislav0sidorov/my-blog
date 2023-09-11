@@ -5,9 +5,9 @@ import { Notification } from '../../model/types/notification'
 import cls from './NotificationItem.module.scss'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { Card } from '@/shared/ui/Card'
-import { CardVariables } from '@/shared/ui/Card/ui/Card'
-import { Text } from '@/shared/ui/Text'
+import { Card } from '@/shared/ui/deprecated/Card'
+import { CardVariables } from '@/shared/ui/deprecated/Card/ui/Card'
+import { Text } from '@/shared/ui/deprecated/Text'
 
 interface NotificationItemProps {
   className?: string

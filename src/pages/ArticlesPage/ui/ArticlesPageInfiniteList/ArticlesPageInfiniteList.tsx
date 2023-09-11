@@ -13,12 +13,12 @@ import { getArticlesPageInited } from '../../model/selectors/getArticlesPageInit
 // import cls from './ArticlesPageInfiniteList.module.scss';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 
-import { Text } from '@/shared/ui/Text'
 import { Page } from '@/widgets/Page'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { ArticleList } from '@/entities/Article'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+import { Text } from '@/shared/ui/deprecated/Text'
 
 interface ArticlesPageInfiniteListProps {
   className?: string

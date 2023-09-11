@@ -15,11 +15,10 @@ import { EditableProfileCardHeader } from '../EditableProfileCardHeader/Editable
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { Currency } from '@/entities/Currency'
 import { Country } from '@/entities/Country'
-import { TextTheme } from '@/shared/ui/Text/ui/Text'
-import { Text } from '@/shared/ui/Text'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { ProfileCard } from '@/entities/Profile'
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text/ui/Text'
 
 // import cls from './EditableProfileCard.module.scss';
 

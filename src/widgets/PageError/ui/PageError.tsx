@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import cls from './PageError.module.scss'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { Button, ButtonVariables } from '@/shared/ui/Button'
+import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
 
 interface PageErrorProps {
   className?: string

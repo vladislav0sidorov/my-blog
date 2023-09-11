@@ -4,8 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { ArticleType } from '../../model/consts/consts'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { Tabs } from '@/shared/ui/Tabs'
-import { TabItem } from '@/shared/ui/Tabs/ui/Tabs'
+import { TabItem, Tabs } from '@/shared/ui/deprecated/Tabs/ui/Tabs'
 
 // import cls from './ArticleTypeTabs.module.scss';
 

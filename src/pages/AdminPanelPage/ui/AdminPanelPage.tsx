@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 import React from 'react'
 
 import { Page } from '@/widgets/Page'
-import { Text } from '@/shared/ui/Text'
+import { Text } from '@/shared/ui/deprecated/Text'
 
 interface AdminPanelPageProps {
   className?: string
