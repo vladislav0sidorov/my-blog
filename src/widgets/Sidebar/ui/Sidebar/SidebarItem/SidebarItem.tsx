@@ -7,7 +7,10 @@ import cls from './SidebarItem.module.scss'
 
 import { getUserAuthData } from '@/entities/User'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { AppLink, ApplinkTheme } from '@/shared/ui/deprecated/AppLink'
+import { AppLink as AppLinkDeprecated, ApplinkTheme } from '@/shared/ui/deprecated/AppLink'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { AppLink } from '@/shared/ui/redesigned/AppLink'
+import { Icon } from '@/shared/ui/redesigned/Icon'
 
 interface SidebarItemProps {
   item: SidebarItemType
@@ -24,14 +27,28 @@ export const SidebarItem: React.FC<SidebarItemProps> = memo((props) => {
     return null
   }
 
-  return (
-    <AppLink
+  const deprecatedContent = (
+    <AppLinkDeprecated
       className={classNames(cls.item, { [cls.collapsed]: collapsed })}
       theme={ApplinkTheme.SECONDARY}
       to={item.path}
     >
       <item.Icon className={cls.icon} />
       <span className={cls.link}>{t(item.text)}</span>
+    </AppLinkDeprecated>
+  )
+
+  const redesignedContent = (
+    <AppLink
+      className={classNames(cls.itemRedesigned, { [cls.collapsedRedesigned]: collapsed })}
+      variant="primary"
+      to={item.path}
+      activeClassName={cls.active}
+    >
+      <Icon Svg={item.Icon} className={cls.icon} />
+      <span className={cls.link}>{t(item.text)}</span>
     </AppLink>
   )
+
+  return <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContent} off={deprecatedContent} />
 })

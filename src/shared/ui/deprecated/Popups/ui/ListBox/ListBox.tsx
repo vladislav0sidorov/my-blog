@@ -5,7 +5,7 @@ import popupCls from '../../styles/Popups.module.scss'
 import cls from './ListBox.module.scss'
 import { mapDirectionClass } from '../../styles/const'
 import { HStack } from '../../../Stack'
-import { Button, ButtonVariables } from '../../../deprecated/Button'
+import { Button, ButtonVariables } from '../../../../deprecated/Button'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { DropdownDirection } from '@/shared/types/ui'

@@ -20,7 +20,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import CalendarIcon from '@/shared/assets/icons/calendar.svg'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { HStack, VStack } from '@/shared/ui/Stack'
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack'
 import { Avatar } from '@/shared/ui/deprecated/Avatar'
 import { Icon } from '@/shared/ui/deprecated/Icon'
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton'

@@ -13,7 +13,7 @@ import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList'
 import { ArticleRating } from '@/features/ArticleRating'
 import { toggleFeatures } from '@/shared/lib/features'
 import { Card } from '@/shared/ui/deprecated/Card'
-import { VStack } from '@/shared/ui/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 
 interface ArticleDetailsPageProps {
   className?: string

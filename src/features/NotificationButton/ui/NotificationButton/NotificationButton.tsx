@@ -4,7 +4,7 @@ import { BrowserView, MobileView } from 'react-device-detect'
 import cls from './NotificationButton.module.scss'
 
 import { NotificationList } from '@/entities/Notification'
-import { Popover } from '@/shared/ui/Popups'
+import { Popover } from '@/shared/ui/redesigned/Popups'
 import Notification from '@/shared/assets/icons/notification.svg'
 import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
 import { Drawer } from '@/shared/ui/deprecated/Drawer'

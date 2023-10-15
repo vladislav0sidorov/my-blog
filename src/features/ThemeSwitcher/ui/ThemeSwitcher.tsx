@@ -2,12 +2,16 @@ import { memo, useCallback } from 'react'
 
 import { Theme, useTheme } from '@/app/providers/ThemeProvider'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import LightIcon from '@/shared/assets/icons/white.svg'
-import DarkIcon from '@/shared/assets/icons/orange.svg'
+import LightIconDeprecated from '@/shared/assets/icons/white.svg'
+import DarkIconDeprecated from '@/shared/assets/icons/orange.svg'
+import ThemeSwitcherIcon from '@/shared/assets/icons/redesign/theme-switcher.svg'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { saveJsonSettings } from '@/entities/User'
-import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
-import { Icon } from '@/shared/ui/deprecated/Icon'
+import { Button as ButtonDeprecated, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { Button } from '@/shared/ui/redesigned/Button'
+import { Icon } from '@/shared/ui/redesigned/Icon'
 
 interface ThemeSwitcherProps {
   className?: string
@@ -24,9 +28,21 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = memo((props) => {
     })
   }, [dispatch, toggleTheme])
 
-  return (
-    <Button theme={ButtonVariables.CLEAR_THIRD} onClick={onToggleHandler} className={classNames('', {}, [className])}>
-      <Icon height={24} width={24} Svg={theme === Theme.DARK ? DarkIcon : LightIcon} />
+  const deprecatedContent = (
+    <ButtonDeprecated
+      theme={ButtonVariables.CLEAR_THIRD}
+      onClick={onToggleHandler}
+      className={classNames('', {}, [className])}
+    >
+      <IconDeprecated height={24} width={24} Svg={theme === Theme.DARK ? DarkIconDeprecated : LightIconDeprecated} />
+    </ButtonDeprecated>
+  )
+
+  const redesignedContent = (
+    <Button variant="clear" onClick={onToggleHandler} className={classNames('', {}, [className])}>
+      <Icon Svg={ThemeSwitcherIcon} />
     </Button>
   )
+
+  return <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContent} off={deprecatedContent} />
 })

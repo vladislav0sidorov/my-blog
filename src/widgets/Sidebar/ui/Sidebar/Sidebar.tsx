@@ -12,8 +12,10 @@ import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { ToggleFeaturesComponent } from '@/shared/lib/features'
 import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
 import { ButtonSizes } from '@/shared/ui/deprecated/Button/ui/Button'
-import { VStack } from '@/shared/ui/Stack'
-import { AppLogo } from '@/shared/ui/deprecated/AppLogo'
+import { VStack } from '@/shared/ui/redesigned/Stack'
+import { AppLogo } from '@/shared/ui/redesigned/AppLogo'
+import { Icon } from '@/shared/ui/redesigned/Icon'
+import ArrowIcon from '@/shared/assets/icons/redesign/arrow-to-down.svg'
 
 interface SidebarProps {
   className?: string
@@ -60,10 +62,25 @@ export const Sidebar: React.FC<SidebarProps> = memo((props) => {
   const redesignedContent = (
     <aside
       data-testid="sidebar"
-      className={classNames(cls.SidebarRedesigned, { [cls.collapsed]: collapsed }, [className])}
+      className={classNames(cls.SidebarRedesigned, { [cls.collapsedRedesigned]: collapsed }, [className])}
     >
-      <AppLogo className={cls.appLogo} />
-      {t('gsdggsdg')}
+      <AppLogo size={collapsed ? 30 : 50} className={cls.appLogo} />
+      <VStack role="navigation" gap="8" className={cls.items}>
+        {itemList}
+      </VStack>
+      <Icon
+        width={15}
+        height={15}
+        Svg={ArrowIcon}
+        data-testid="sidebar-toggle"
+        onClick={onToggle}
+        className={cls.collapsedBtn}
+        clickable
+      />
+      <div className={cls.switchers}>
+        <ThemeSwitcher />
+        <LangSwitcher short={collapsed} className={cls.lang} />
+      </div>
     </aside>
   )
 

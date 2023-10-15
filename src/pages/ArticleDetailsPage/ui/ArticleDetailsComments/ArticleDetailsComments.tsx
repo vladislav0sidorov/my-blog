@@ -10,7 +10,7 @@ import { getArticleCommentsLoading } from '../../model/selectors/getArticleComme
 import { AddCommentForm } from '@/features/addCommentForm'
 import { CommentList } from '@/entities/Comment'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
-import { VStack } from '@/shared/ui/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 import { Text, TextSize } from '@/shared/ui/deprecated/Text'
 
 // import cls from './ArticleDetailsComments.module.scss';

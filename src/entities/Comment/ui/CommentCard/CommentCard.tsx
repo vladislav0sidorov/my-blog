@@ -6,7 +6,7 @@ import cls from './CommentCard.module.scss'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { getRouteProfile } from '@/shared/const/router'
-import { VStack } from '@/shared/ui/Stack'
+import { VStack } from '@/shared/ui/redesigned/Stack'
 import { AppLink } from '@/shared/ui/deprecated/AppLink'
 import { Avatar } from '@/shared/ui/deprecated/Avatar'
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton'

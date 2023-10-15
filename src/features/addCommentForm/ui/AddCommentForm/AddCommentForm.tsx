@@ -10,7 +10,7 @@ import cls from './AddCommentForm.module.scss'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
-import { HStack } from '@/shared/ui/Stack'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 import { Input } from '@/shared/ui/deprecated/Input'
 import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
 

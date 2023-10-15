@@ -11,7 +11,7 @@ import { NotificationButton } from '@/features/NotificationButton'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
 import { getRouteArticleCreate } from '@/shared/const/router'
 import { ToggleFeaturesComponent } from '@/shared/lib/features'
-import { HStack } from '@/shared/ui/Stack'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 import { AppLink, ApplinkTheme } from '@/shared/ui/deprecated/AppLink'
 import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
 

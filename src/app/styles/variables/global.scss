@@ -1,5 +1,5 @@
 :root {
-  --font-family-main: 'Raleway', sans-serif;
+  --font-family-main: "Raleway", sans-serif;
 
   // S
   --font-size-s: 10px;
@@ -42,8 +42,8 @@
   --red-dark: #c90000;
 
   // *Redesigned variavles
-  --font-family-text-redesigned: 'Nunito Sans', sans-serif;
-  --font-family-title-redesigned: font-family: 'Roboto', sans-serif;
+  --font-family-text-redesigned: "Nunito Sans", sans-serif;
+  --font-family-title-redesigned: font-family: "Roboto", sans-serif;
 
   // S
   --font-s-redesigned: var(--font-size-s) / var(--font-line-s) var(--font-family-text-redesigned);
@@ -56,4 +56,7 @@
 
   // XL
   --font-xl-redesigned: var(--font-size-xl) / var(--font-line-xl) var(--font-family-title-redesigned);
+
+  // Sidebar
+  --sidebar-width-collapsed-redesigned: 50px;
 }

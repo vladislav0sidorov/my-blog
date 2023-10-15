@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import { Portal } from '../../../Portal'
+import { Portal } from '../../../redesigned/Portal'
 import cls from './Modal.module.scss'
 import { Overlay } from '../../Overlay'
 

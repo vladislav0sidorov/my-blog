@@ -10,7 +10,7 @@ import { updateProfileData } from '../../model/services/updateProfileData/update
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { getUserAuthData } from '@/entities/User'
-import { HStack } from '@/shared/ui/Stack'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
 import { Text } from '@/shared/ui/deprecated/Text'
 

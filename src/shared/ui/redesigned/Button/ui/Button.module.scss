@@ -1,0 +1,66 @@
+.Button {
+  cursor: pointer;
+  color: var(--text-redesigned);
+  padding: 8px 16px;
+  transition: all 0.1s ease;
+
+  &:hover {
+    color: var(--accent-redesigned);
+  }
+}
+
+// Variants
+.clear {
+  background: none;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.outline {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  background: none;
+}
+
+.square {
+  padding: 0;
+}
+
+.square.m {
+  width: var(--font-line-m);
+  height: var(--font-line-m);
+  font-size: var(--font-size-m);
+}
+
+.square.l {
+  width: var(--font-line-l);
+  height: var(--font-line-l);
+  font-size: var(--font-size-l);
+}
+
+.square.xl {
+  width: var(--font-line-xl);
+  height: var(--font-line-xl);
+  font-size: var(--font-size-xl);
+}
+
+.m {
+  font-size: var(--font-size-m);
+}
+
+.l {
+  font-size: var(--font-size-l);
+}
+
+.xl {
+  font-size: var(--font-size-xl);
+}
+
+.fullWidth {
+  width: 100%;
+}
