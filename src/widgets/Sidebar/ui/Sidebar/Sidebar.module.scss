@@ -42,8 +42,10 @@
 }
 
 .SidebarRedesigned {
+  overflow: hidden;
   position: relative;
   background: var(--light-bg-redesigned);
+  transition: var(--main-transition-redesigned);
   width: 220px;
   height: 100%;
   border-radius: 32px;

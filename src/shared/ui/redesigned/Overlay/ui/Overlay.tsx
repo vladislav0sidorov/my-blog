@@ -13,11 +13,6 @@ interface OverlayProps {
   flexAling?: flexAlingParams
 }
 
-/**
- * Компонент устарел. Сейчас используем новые из папки redesigned
- * @deprecated
- */
-
 export const Overlay = React.memo((props: OverlayProps) => {
   const { className, onClick, children, flexAling = 'start' } = props
 

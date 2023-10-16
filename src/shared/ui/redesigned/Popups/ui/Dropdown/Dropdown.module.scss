@@ -1,19 +1,21 @@
 .menu {
   position: absolute;
-  background: var(--listbox-bg);
+  background: var(--dark-bg-redesigned);
   z-index: 3;
-  border-radius: 8px;
-  border: 1px solid var(--primary-color);
   flex-direction: column;
   display: flex;
 }
 
 .item {
   padding: 8px 10px;
-  color: var(--primary-color);
+  color: var(--text-redesigned);
   outline: none;
   border: none;
   background: none;
   width: 100%;
   cursor: pointer;
+}
+
+.active {
+  background: var(--light-bg-redesigned);
 }

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Portal } from '@headlessui/react'
 
 import cls from './Drawer.module.scss'
-import { Overlay } from '../../Overlay'
+import { Overlay } from '../../../redesigned/Overlay'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { useTheme } from '@/app/providers/ThemeProvider'

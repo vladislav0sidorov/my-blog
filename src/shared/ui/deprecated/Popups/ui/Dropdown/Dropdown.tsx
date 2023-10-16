@@ -24,6 +24,11 @@ interface DropdownProps {
   direction?: DropdownDirection
 }
 
+/**
+ * Компонент устарел. Сейчас используем новые из папки redesigned
+ * @deprecated
+ */
+
 export const Dropdown: FC<DropdownProps> = React.memo((props) => {
   const { className, items, trigger, direction = 'bottom right' } = props
   const { t } = useTranslation()

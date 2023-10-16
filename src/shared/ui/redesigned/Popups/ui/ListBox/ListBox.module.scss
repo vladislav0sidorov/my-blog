@@ -7,18 +7,18 @@
 }
 
 .options {
-  background: var(--listbox-bg);
+  background: var(--dark-bg-redesigned);
   position: absolute;
   z-index: 5;
   border-radius: 12px;
-  box-shadow: 4px 4px 16px var(--listbox-bg);
+  box-shadow: 4px 4px 16px var(--dark-bg-redesigned);
 }
 
 .item {
-  color: var(--primary-color);
+  color: var(--text-redesigned);
   padding: 12px 24px;
 }
 
-.label {
-  color: var(--inverted-third-color);
+.active {
+  background: var(--light-bg-redesigned);
 }

@@ -16,6 +16,11 @@ interface PopoverProps {
   direction?: DropdownDirection
 }
 
+/**
+ * Компонент устарел. Сейчас используем новые из папки redesigned
+ * @deprecated
+ */
+
 export const Popover = (props: PopoverProps) => {
   const { className, trigger, direction = 'bottom right', children } = props
   const { t } = useTranslation()

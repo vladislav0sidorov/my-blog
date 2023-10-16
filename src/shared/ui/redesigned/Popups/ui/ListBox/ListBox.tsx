@@ -30,7 +30,7 @@ interface ListBoxProps {
 export const ListBox = (props: ListBoxProps) => {
   const { items, className, value, defaultValue, onChange, readonly, direction = 'bottom right', label } = props
 
-  const optionClasses = [mapDirectionClass[direction]]
+  const optionClasses = [mapDirectionClass[direction], popupCls.menu]
 
   return (
     <HStack gap="8">
@@ -50,10 +50,8 @@ export const ListBox = (props: ListBoxProps) => {
         <HListBox.Options className={classNames(cls.options, {}, optionClasses)}>
           {items?.map((item) => (
             <HListBox.Option key={item.value} value={item.value} disabled={item.disabled}>
-              {({ active, selected }) => (
-                <div
-                  className={classNames(cls.item, { [popupCls.active]: active, [popupCls.disabled]: item.disabled })}
-                >
+              {({ active }) => (
+                <div className={classNames(cls.item, { [cls.active]: active, [popupCls.disabled]: item.disabled })}>
                   {item.content}
                 </div>
               )}

@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.appSvgLogo {
+  z-index: 1;
+}
+
 .gradientBig {
   pointer-events: none;
   position: absolute;

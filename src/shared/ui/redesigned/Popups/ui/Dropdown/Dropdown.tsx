@@ -28,7 +28,7 @@ export const Dropdown: FC<DropdownProps> = React.memo((props) => {
   const { className, items, trigger, direction = 'bottom right' } = props
   const { t } = useTranslation()
 
-  const menuClasses = [mapDirectionClass[direction]]
+  const menuClasses = [mapDirectionClass[direction], popupCls.menu]
 
   return (
     <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.Popups])}>
@@ -40,7 +40,7 @@ export const Dropdown: FC<DropdownProps> = React.memo((props) => {
               onClick={item.onClick}
               disabled={item.disabled}
               type="button"
-              className={classNames(cls.item, { [popupCls.active]: active })}
+              className={classNames(cls.item, { [cls.active]: active })}
             >
               {item.content}
             </button>

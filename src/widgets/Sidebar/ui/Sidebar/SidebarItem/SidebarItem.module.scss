@@ -32,6 +32,13 @@
     margin: 0;
   }
 
+  .link {
+    opacity: 1;
+    transition: var(--main-transition-redesigned) opacity;
+    transition-delay: 0.1s;
+    white-space: pre;
+  }
+
   .icon {
     margin: 0 12px 0 0;
     fill: var(--accent-redesigned);
@@ -40,7 +47,10 @@
 
 .collapsedRedesigned {
   .link {
-    display: none;
+    opacity: 0;
+    transition: var(--main-transition-redesigned) opacity;
+    white-space: pre;
+    width: 0;
   }
 
   .icon {

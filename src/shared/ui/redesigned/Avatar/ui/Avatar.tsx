@@ -2,9 +2,9 @@ import { useTranslation } from 'react-i18next'
 import React from 'react'
 
 import cls from './Avatar.module.scss'
-import { Skeleton } from '../../Skeleton'
-import { Icon } from '../../Icon'
 import { AppImage } from '../../../redesigned/AppImage'
+import { Skeleton } from '../../../deprecated/Skeleton'
+import { Icon } from '../../Icon'
 
 import UserImage from '@/shared/assets/icons/user.svg'
 import { classNames, Mods } from '@/shared/lib/ClassNames/ClassNames'
@@ -15,11 +15,6 @@ interface AvatarProps {
   alt?: string
   size?: number
 }
-
-/**
- * Компонент устарел. Сейчас используем новые из папки redesigned
- * @deprecated
- */
 
 export const Avatar: React.FC<AvatarProps> = (props) => {
   const { className, src, alt, size = 100, ...otherProps } = props
@@ -35,7 +30,7 @@ export const Avatar: React.FC<AvatarProps> = (props) => {
   )
 
   const fallback = <Skeleton width={size} height={size} border="50%" />
-  const errorFallback = <Icon inverted width={size} height={size} Svg={UserImage} />
+  const errorFallback = <Icon width={size} height={size} Svg={UserImage} />
 
   return (
     <AppImage

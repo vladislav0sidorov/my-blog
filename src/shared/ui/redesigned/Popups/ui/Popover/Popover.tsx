@@ -20,7 +20,7 @@ export const Popover = (props: PopoverProps) => {
   const { className, trigger, direction = 'bottom right', children } = props
   const { t } = useTranslation()
 
-  const menuClasses = [mapDirectionClass[direction]]
+  const menuClasses = [mapDirectionClass[direction], popupCls.menu]
 
   return (
     <HPopover className={classNames('', {}, [className, popupCls.Popups])}>

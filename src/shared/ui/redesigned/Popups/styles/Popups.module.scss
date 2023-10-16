@@ -2,6 +2,12 @@
   position: relative;
 }
 
+.menu {
+  border-radius: 18px;
+  border: 1px solid var(--accent-redesigned);
+  overflow: hidden;
+}
+
 .trigger {
   outline: none;
   background: none;
@@ -28,11 +34,6 @@
 .topRightDirectionOptions {
   bottom: 100%;
   left: 0;
-}
-
-.active {
-  background: var(--inverted-third-color);
-  color: var(--inverted-primary-color);
 }
 
 .disabled {

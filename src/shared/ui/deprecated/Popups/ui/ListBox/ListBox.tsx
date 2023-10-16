@@ -4,7 +4,7 @@ import { Listbox as HListBox } from '@headlessui/react'
 import popupCls from '../../styles/Popups.module.scss'
 import cls from './ListBox.module.scss'
 import { mapDirectionClass } from '../../styles/const'
-import { HStack } from '../../../Stack'
+import { HStack } from '../../../../redesigned/Stack'
 import { Button, ButtonVariables } from '../../../../deprecated/Button'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
@@ -26,6 +26,11 @@ interface ListBoxProps {
   direction?: DropdownDirection
   label?: string
 }
+
+/**
+ * Компонент устарел. Сейчас используем новые из папки redesigned
+ * @deprecated
+ */
 
 export const ListBox = (props: ListBoxProps) => {
   const { items, className, value, defaultValue, onChange, readonly, direction = 'bottom right', label } = props
