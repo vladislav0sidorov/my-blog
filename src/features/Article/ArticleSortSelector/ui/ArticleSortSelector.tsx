@@ -7,6 +7,10 @@ import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { SortOrder } from '@/shared/types/sort'
 import { ArticleSortField } from '@/entities/Article'
 import { Select, SelectOption } from '@/shared/ui/deprecated/Select/ui/Select'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { ListBox } from '@/shared/ui/redesigned/Popups'
+import { VStack } from '@/shared/ui/redesigned/Stack'
+import { Text } from '@/shared/ui/redesigned/Text'
 
 interface ArticleSortSelectorProps {
   className?: string
@@ -52,11 +56,23 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = React.memo((pro
     [t],
   )
 
-  return (
-    <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
+  const deprecatedContent = (
+    <div className={classNames(cls.ArticleSortSelectorDeprecated, {}, [className])}>
       <Select value={sort} onChange={onChangeSort} label={t('Сортировать по')} options={sortFieldOptions} />
       <Select className={cls.order} value={order} onChange={onChangeOrder} label={t('по')}
 options={orderOptions} />
     </div>
   )
+
+  const redesignedContenr = (
+    <div className={classNames(cls.ArticleSortSelector, {}, [className])}>
+      <VStack gap="8">
+        <Text text={t('Сортировать по:')} />
+        <ListBox value={sort} onChange={onChangeSort} items={sortFieldOptions} />
+        <ListBox value={order} onChange={onChangeOrder} items={orderOptions} />
+      </VStack>
+    </div>
+  )
+
+  return <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContenr} off={deprecatedContent} />
 })

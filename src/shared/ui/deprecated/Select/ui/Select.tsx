@@ -7,7 +7,7 @@ import { classNames, Mods } from '@/shared/lib/ClassNames/ClassNames'
 import { typedMemo } from '@/shared/lib/helpers/typedMemo/typedMemo'
 
 export interface SelectOption<T extends string> {
-  value: T
+  value: string
   content: string
 }
 

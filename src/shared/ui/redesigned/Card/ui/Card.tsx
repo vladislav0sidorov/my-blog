@@ -4,8 +4,9 @@ import cls from './Card.module.scss'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 
-export type CardVariant = 'normal' | 'outlined'
+export type CardVariant = 'normal' | 'outlined' | 'light'
 export type CardPadding = '0' | '8' | '16' | '24'
+export type CardBorderRadius = 'round' | 'normal'
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
@@ -13,6 +14,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: CardVariant
   max?: boolean
   padding?: CardPadding
+  borderRadius?: CardBorderRadius
 }
 
 const mapPaddingToClass: Record<CardPadding, string> = {
@@ -23,13 +25,18 @@ const mapPaddingToClass: Record<CardPadding, string> = {
 }
 
 export const Card = React.memo((props: CardProps) => {
-  const { className, children, variant = 'normal', max, padding = '8', ...otherProps } = props
+  const { className, children, variant = 'normal', max, padding = '8', borderRadius = 'normal', ...otherProps } = props
 
   const paddingClass = mapPaddingToClass[padding]
 
   return (
     <div
-      className={classNames(cls.Card, { [cls.max]: max }, [className, cls[variant], cls[paddingClass]])}
+      className={classNames(cls.Card, { [cls.max]: max }, [
+        className,
+        cls[variant],
+        cls[paddingClass],
+        cls[borderRadius],
+      ])}
       {...otherProps}
     >
       {children}

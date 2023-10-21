@@ -5,10 +5,16 @@ import cls from './ArticleViewSelector.module.scss'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { ArticleView } from '@/entities/Article'
-import PlateIcon from '@/shared/assets/icons/plate.svg'
-import ListIcon from '@/shared/assets/icons/list.svg'
-import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
-import { Icon } from '@/shared/ui/deprecated/Icon'
+import PlateIconDeprecated from '@/shared/assets/icons/plate.svg'
+import ListIconDeprecated from '@/shared/assets/icons/list.svg'
+import PlateIcon from '@/shared/assets/icons/redesign/plate.svg'
+import ListIcon from '@/shared/assets/icons/redesign/list.svg'
+import { Button as DeprecatedButton, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { Icon as DeprecatedIcon } from '@/shared/ui/deprecated/Icon'
+import { ToggleFeaturesComponent, toggleFeatures } from '@/shared/lib/features'
+import { Icon } from '@/shared/ui/redesigned/Icon'
+import { Card } from '@/shared/ui/redesigned/Card'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 
 interface ArticleViewSelectorProps {
   className?: string
@@ -19,11 +25,11 @@ interface ArticleViewSelectorProps {
 const viewTypes = [
   {
     view: ArticleView.PLATE,
-    icon: PlateIcon,
+    icon: toggleFeatures({ name: 'isAppRedesigned', on: () => PlateIcon, off: () => PlateIconDeprecated }),
   },
   {
     view: ArticleView.LIST,
-    icon: ListIcon,
+    icon: toggleFeatures({ name: 'isAppRedesigned', on: () => ListIcon, off: () => ListIconDeprecated }),
   },
 ]
 
@@ -35,17 +41,35 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = React.memo((pro
     onViewClick?.(newView)
   }
 
-  return (
-    <div className={classNames(cls.articleViewSelector, {}, [className])}>
+  const deprecatedContent = (
+    <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
       {viewTypes.map((viewType) => (
-        <Button key={viewType.view} theme={ButtonVariables.CLEAR} onClick={onClick(viewType.view)}>
-          <Icon
+        <DeprecatedButton key={viewType.view} theme={ButtonVariables.CLEAR} onClick={onClick(viewType.view)}>
+          <DeprecatedIcon
             inverted
             className={classNames('', { [cls.notSelected]: viewType.view !== view })}
             Svg={viewType.icon}
           />
-        </Button>
+        </DeprecatedButton>
       ))}
     </div>
   )
+
+  const redesignedContent = (
+    <Card className={classNames(cls.ArticleViewSelectorRedesigned, {}, [className])} padding="8" borderRadius="round">
+      <HStack gap="16">
+        {viewTypes.map((viewType) => (
+          <Icon
+            key={viewType.view}
+            clickable
+            className={classNames('', { [cls.notSelected]: viewType.view !== view })}
+            onClick={onClick(viewType.view)}
+            Svg={viewType.icon}
+          />
+        ))}
+      </HStack>
+    </Card>
+  )
+
+  return <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContent} off={deprecatedContent} />
 })

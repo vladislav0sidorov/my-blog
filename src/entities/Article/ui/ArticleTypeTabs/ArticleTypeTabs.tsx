@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next'
 import { ArticleType } from '../../model/consts/consts'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { TabItem, Tabs } from '@/shared/ui/deprecated/Tabs/ui/Tabs'
+import { TabItem, Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs/ui/Tabs'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { Tabs } from '@/shared/ui/redesigned/Tabs'
 
 // import cls from './ArticleTypeTabs.module.scss';
 
@@ -35,5 +37,19 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = React.memo((props) => {
     [onChangeType],
   )
 
-  return <Tabs tabs={typeTabs} value={value} onTabClick={onTabClick} className={classNames('', {}, [className])} />
+  const deprecatedContent = (
+    <TabsDeprecated tabs={typeTabs} value={value} onTabClick={onTabClick} className={classNames('', {}, [className])} />
+  )
+
+  const redesignedContent = (
+    <Tabs
+      tabs={typeTabs}
+      value={value}
+      direction="column"
+      onTabClick={onTabClick}
+      className={classNames('', {}, [className])}
+    />
+  )
+
+  return <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContent} off={deprecatedContent} />
 })

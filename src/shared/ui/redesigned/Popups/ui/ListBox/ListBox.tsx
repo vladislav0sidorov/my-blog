@@ -1,36 +1,38 @@
-import { ReactNode } from 'react'
+import { ReactNode, useMemo } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 
 import popupCls from '../../styles/Popups.module.scss'
 import cls from './ListBox.module.scss'
 import { mapDirectionClass } from '../../styles/const'
 import { HStack } from '../../../Stack'
-import { Button, ButtonVariables } from '../../../../deprecated/Button'
+import { Button } from '../../../Button'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { DropdownDirection } from '@/shared/types/ui'
 
-export interface ListBoxItem {
+export interface ListBoxItem<T extends string> {
   value: string
   content: ReactNode
   disabled?: boolean
 }
 
-interface ListBoxProps {
-  items: ListBoxItem[]
+interface ListBoxProps<T extends string> {
+  items: ListBoxItem<T>[]
   className?: string
-  value?: string
+  value?: T
   defaultValue?: string
-  onChange: (value: string) => void
+  onChange: (value: T) => void
   readonly?: boolean
   direction?: DropdownDirection
   label?: string
 }
 
-export const ListBox = (props: ListBoxProps) => {
+export function ListBox<T extends string>(props: ListBoxProps<T>) {
   const { items, className, value, defaultValue, onChange, readonly, direction = 'bottom right', label } = props
 
   const optionClasses = [mapDirectionClass[direction], popupCls.menu]
+
+  const selectedItem = useMemo(() => items.find((item) => item?.value === value), [items, value])
 
   return (
     <HStack gap="8">
@@ -43,8 +45,8 @@ export const ListBox = (props: ListBoxProps) => {
         onChange={onChange}
       >
         <HListBox.Button as="div" className={cls.trigger}>
-          <Button disabled={readonly} theme={ButtonVariables.OUTLINE}>
-            {value ?? defaultValue}
+          <Button disabled={readonly} variant="filled">
+            {selectedItem?.content ?? defaultValue}
           </Button>
         </HListBox.Button>
         <HListBox.Options className={classNames(cls.options, {}, optionClasses)}>
