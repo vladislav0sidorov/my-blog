@@ -6,9 +6,11 @@ import cls from './ListBox.module.scss'
 import { mapDirectionClass } from '../../styles/const'
 import { HStack } from '../../../Stack'
 import { Button } from '../../../Button'
+import { Icon } from '../../../Icon'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { DropdownDirection } from '@/shared/types/ui'
+import ArrowIcon from '@/shared/assets/icons/redesign/arrow-to-down.svg'
 
 export interface ListBoxItem<T extends string> {
   value: string
@@ -45,7 +47,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         onChange={onChange}
       >
         <HListBox.Button as="div" className={cls.trigger}>
-          <Button disabled={readonly} variant="filled">
+          <Button disabled={readonly} variant="filled" addonRight={<Icon Svg={ArrowIcon} height={12} width={12} />}>
             {selectedItem?.content ?? defaultValue}
           </Button>
         </HListBox.Button>

@@ -56,6 +56,7 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = React.memo((pro
   )
 
   const redesignedContent = (
+    // eslint-disable-next-line i18next/no-literal-string
     <Card className={classNames(cls.ArticleViewSelectorRedesigned, {}, [className])} padding="8" borderRadius="round">
       <HStack gap="16">
         {viewTypes.map((viewType) => (

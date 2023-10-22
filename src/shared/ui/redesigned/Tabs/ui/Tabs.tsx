@@ -1,5 +1,4 @@
 import React, { FC, ReactNode } from 'react'
-import { useTranslation } from 'react-i18next'
 
 import cls from './Tabs.module.scss'
 import { Card } from '../../Card'
@@ -23,7 +22,6 @@ interface TabsProps {
 
 export const Tabs: FC<TabsProps> = React.memo((props) => {
   const { className, direction = 'row', tabs, value, onTabClick } = props
-  const { t } = useTranslation()
 
   const clickHandle = React.useCallback(
     (tab: TabItem) => () => {
@@ -39,11 +37,13 @@ export const Tabs: FC<TabsProps> = React.memo((props) => {
 
         return (
           <Card
+            // eslint-disable-next-line i18next/no-literal-string
             borderRadius="round"
             data-testid={tab['data-testid']}
             onClick={clickHandle(tab)}
             variant={isSelected ? 'light' : 'normal'}
             key={tab.value}
+            padding="8_16"
             className={cls.tab}
           >
             {tab.content}

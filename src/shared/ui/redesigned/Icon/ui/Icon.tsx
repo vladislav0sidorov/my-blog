@@ -8,6 +8,8 @@ type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>
 
 interface IconBaseProps extends SvgProps {
   className?: string
+  width?: number
+  height?: number
   Svg: React.VFC<React.SVGProps<SVGSVGElement>>
 }
 

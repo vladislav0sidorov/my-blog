@@ -8,8 +8,10 @@ import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { VStack } from '@/shared/ui/redesigned/Stack'
 import { SortOrder } from '@/shared/types/sort'
 import { ArticleSortField, ArticleType, ArticleTypeTabs } from '@/entities/Article'
-import { Input } from '@/shared/ui/deprecated/Input'
+import { Input } from '@/shared/ui/redesigned/Input'
 import { ArticleSortSelector } from '@/features/Article'
+import SearchIcon from '@/shared/assets/icons/redesign/find.svg'
+import { Icon } from '@/shared/ui/redesigned/Icon'
 
 interface ArticlesFiltersProps {
   className?: string
@@ -34,7 +36,8 @@ export const ArticlesFilters: FC<ArticlesFiltersProps> = React.memo((props) => {
           data-testid="ArticlesPage.ArticlesSearchInput"
           value={search}
           onChange={onChangeSearch}
-          placeholder={t('Поиск')}
+          placeholder={t('Найти')}
+          addonLeft={<Icon height={15} width={15} Svg={SearchIcon} />}
         />
         <ArticleTypeTabs value={type} onChangeType={onChangeType} />
         <ArticleSortSelector sort={sort} order={order} onChangeOrder={onChangeOrder} onChangeSort={onChangeSort} />

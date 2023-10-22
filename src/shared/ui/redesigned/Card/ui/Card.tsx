@@ -5,7 +5,7 @@ import cls from './Card.module.scss'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 
 export type CardVariant = 'normal' | 'outlined' | 'light'
-export type CardPadding = '0' | '8' | '16' | '24'
+export type CardPadding = '0' | '8' | '8_16' | '16' | '24'
 export type CardBorderRadius = 'round' | 'normal'
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
@@ -22,6 +22,7 @@ const mapPaddingToClass: Record<CardPadding, string> = {
   '8': 'gap_8',
   '16': 'gap_16',
   '24': 'gap_24',
+  '8_16': 'gap_8_16',
 }
 
 export const Card = React.memo((props: CardProps) => {

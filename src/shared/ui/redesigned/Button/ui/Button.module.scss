@@ -72,3 +72,15 @@
 .fullWidth {
   width: 100%;
 }
+
+.addonLeft svg,
+.addonRight svg {
+  color: var(--hint-redesigned);
+}
+
+.addonLeft,
+.addonRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
