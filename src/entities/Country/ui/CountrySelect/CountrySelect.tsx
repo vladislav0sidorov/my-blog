@@ -5,6 +5,8 @@ import { Country } from '../../model/types/country'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { ListBox } from '@/shared/ui/redesigned/Popups/ui/ListBox/ListBox'
+import { Select } from '@/shared/ui/deprecated/Select'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
 
 interface CountrySelectProps {
   className?: string
@@ -31,7 +33,18 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
     [onChange],
   )
 
-  return (
+  const deprecatedContent = (
+    <Select
+      className={classNames('', {}, [className])}
+      options={options}
+      label={t('Укажите страну')}
+      onChange={onChangeHandler}
+      value={value}
+      readonly={readonly}
+    />
+  )
+
+  const redesignedContent = (
     <ListBox
       className={classNames('', {}, [className])}
       items={options}
@@ -42,4 +55,6 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
       direction="top right"
     />
   )
+
+  return <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContent} off={deprecatedContent} />
 })

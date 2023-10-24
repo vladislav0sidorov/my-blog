@@ -1,6 +1,8 @@
 import React, { ReactNode } from 'react'
 
 import cls from './Input.module.scss'
+import { HStack } from '../../Stack'
+import { Text } from '../../Text'
 
 import { classNames, Mods } from '@/shared/lib/ClassNames/ClassNames'
 
@@ -12,6 +14,7 @@ interface InputProps extends HTMLInputProps {
   className?: string
   value?: string | number
   onChange?: (value: string) => void
+  label?: string
   placeholder?: string
   autoFocus?: boolean
   type?: string
@@ -28,6 +31,7 @@ export const Input: React.FC<InputProps> = React.memo((props) => {
     onChange,
     variant = 'primary',
     type,
+    label,
     placeholder,
     autoFocus,
     readonly,
@@ -65,7 +69,7 @@ export const Input: React.FC<InputProps> = React.memo((props) => {
     [cls.withAddonRight]: Boolean(addonRight),
   }
 
-  return (
+  const content = (
     <div className={classNames(cls.InputWrapper, mods, [className, cls[variant]])}>
       {addonLeft && <div className={cls.addonLeft}>{addonLeft}</div>}
       <input
@@ -76,11 +80,22 @@ export const Input: React.FC<InputProps> = React.memo((props) => {
         type={type}
         value={value}
         onChange={onChangeHandler}
-        readOnly={readonly}
         placeholder={placeholder}
+        readOnly={readonly}
         {...otherProps}
       />
       {addonRight && <div className={cls.addonRight}>{addonRight}</div>}
     </div>
   )
+
+  if (label) {
+    return (
+      <HStack max align="center" gap="8">
+        <Text text={`${label}:`} />
+        {content}
+      </HStack>
+    )
+  }
+
+  return content
 })
