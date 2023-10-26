@@ -30,7 +30,7 @@ export const ArticlesFilters: FC<ArticlesFiltersProps> = React.memo((props) => {
   const { t } = useTranslation('article-list')
 
   return (
-    <Card className={classNames(cls.ArticlesFilters, {}, [className])}>
+    <Card padding="24" className={classNames(cls.ArticlesFilters, {}, [className])}>
       <VStack gap="32">
         <Input
           data-testid="ArticlesPage.ArticlesSearchInput"
