@@ -45,6 +45,7 @@ export interface FlexProps extends DivProps {
   direction: FlexDirection
   gap?: FlexGap
   max?: boolean
+  wrap?: boolean
   heightMax?: boolean
 }
 
@@ -57,6 +58,7 @@ export const Flex = (props: FlexProps) => {
     direction = 'row',
     gap,
     max,
+    wrap,
     heightMax,
     ...otherProps
   } = props
@@ -72,6 +74,7 @@ export const Flex = (props: FlexProps) => {
   const mods: Mods = {
     [cls.max]: max,
     [cls.heightMax]: heightMax,
+    [cls.wrap]: wrap,
   }
 
   return (

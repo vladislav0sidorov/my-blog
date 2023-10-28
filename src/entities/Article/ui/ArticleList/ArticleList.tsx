@@ -9,6 +9,8 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { Text, TextSize } from '@/shared/ui/deprecated/Text'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { HStack } from '@/shared/ui/redesigned/Stack'
 
 interface ArticleListProps {
   className?: string
@@ -32,6 +34,20 @@ export const ArticleList: FC<ArticleListProps> = React.memo((props) => {
 view={view} />
   )
 
+  const deprecatedContent = (
+    <div data-testid="ArticleList" className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+      {articles.length > 0 ? articles.map(renderArtcile) : null}
+      {isLoading && getSkeleton(view)}
+    </div>
+  )
+
+  const redesignedContent = (
+    <HStack wrap gap="16" data-testid="ArticleList" className={classNames(cls.ArticleListRedesigned, {}, [className])}>
+      {articles.length > 0 ? articles.map(renderArtcile) : null}
+      {isLoading && getSkeleton(view)}
+    </HStack>
+  )
+
   if (!isLoading && !articles.length) {
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
@@ -40,10 +56,5 @@ view={view} />
     )
   }
 
-  return (
-    <div data-testid="ArticleList" className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-      {articles.length > 0 ? articles.map(renderArtcile) : null}
-      {isLoading && getSkeleton(view)}
-    </div>
-  )
+  return <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContent} off={deprecatedContent} />
 })

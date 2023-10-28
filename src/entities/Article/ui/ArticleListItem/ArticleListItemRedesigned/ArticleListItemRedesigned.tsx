@@ -31,6 +31,12 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = React.memo((p
       <Text className={cls.views} text={String(article.views)} />
     </HStack>
   )
+  const userInfo = (
+    <>
+      {article.user.avatar && <Avatar size={32} src={article.user.avatar} />}
+      <Text bold text={article.user.username} />
+    </>
+  )
 
   const errorIconFallback = (
     <VStack heightMax justify="center">
@@ -61,8 +67,7 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = React.memo((p
         <VStack max gap="16">
           <VStack max gap="8">
             <HStack max gap="8">
-              {article.user.avatar && <Avatar size={32} src={article.user.avatar} />}
-              <Text bold text={article.user.username} />
+              {userInfo}
               <Text size="s" text={article.createdAt} />
             </HStack>
             <Text bold size="l" title={article.title} />
@@ -93,16 +98,18 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = React.memo((p
       to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
-      <Card>
-        <div>
-          {image}
-          <Text text={article.createdAt} />
-        </div>
-        <div>
-          {types}
-          {views}
-        </div>
-        <Text size="s" title={article.title} />
+      <Card padding="0" className={cls.card} borderRadius="round">
+        {image}
+        <VStack className={cls.info} gap="4">
+          <Text title={article.title} className={cls.title} />
+          <VStack gap="4" className={cls.footer} max>
+            <HStack justify="between" max>
+              <Text text={article.createdAt} className={cls.date} />
+              {views}
+            </HStack>
+            <HStack gap="4">{userInfo}</HStack>
+          </VStack>
+        </VStack>
       </Card>
     </AppLink>
   )

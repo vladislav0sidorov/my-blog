@@ -102,3 +102,9 @@
     text-overflow: ellipsis;
   }
 }
+
+.ArticleListItemRedesigned {
+  &.LIST {
+    width: 100%;
+  }
+}
