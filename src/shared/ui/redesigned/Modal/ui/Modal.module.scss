@@ -7,16 +7,26 @@
   opacity: 0;
   z-index: -1;
   pointer-events: none;
-  color: var(--inverted-primary-color);
 }
 
 .content {
   padding: 1.5rem;
   border-radius: 0.75rem;
-  background-color: var(--bg-color);
   transition: 0.2s ease transform;
   transform: scale(0.9);
   max-width: 60%;
+}
+
+.modalNew {
+  .content {
+    background-color: var(--light-bg-redesigned);
+  }
+}
+
+.modalOld {
+  .content {
+    background-color: var(--bg-color);
+  }
 }
 
 .opened {

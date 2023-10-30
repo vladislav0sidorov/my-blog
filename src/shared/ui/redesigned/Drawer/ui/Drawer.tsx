@@ -3,11 +3,12 @@ import { useTranslation } from 'react-i18next'
 import { Portal } from '@headlessui/react'
 
 import cls from './Drawer.module.scss'
-import { Overlay } from '../../../redesigned/Overlay'
+import { Overlay } from '../../Overlay'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { useTheme } from '@/app/providers/ThemeProvider'
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider'
+import { toggleFeatures } from '@/shared/lib/features'
 
 interface DrawerProps {
   className?: string
@@ -18,11 +19,6 @@ interface DrawerProps {
 }
 
 const height = window.innerHeight - 100
-
-/**
- * Компонент устарел. Сейчас используем новые из папки redesigned
- * @deprecated
- */
 
 export const DrawerContent = React.memo((props: DrawerProps) => {
   const { className, isOpen, onClose, children, lazy } = props
@@ -78,9 +74,15 @@ export const DrawerContent = React.memo((props: DrawerProps) => {
     return null
   }
 
+  const drawerClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => cls.drawerNew,
+    off: () => cls.drawerOld,
+  })
+
   return (
     <Portal>
-      <div className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}>
+      <div className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer', drawerClass])}>
         <Overlay onClick={close} flexAling="end" />
         <Spring.a.div
           className={cls.sheet}

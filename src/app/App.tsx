@@ -41,13 +41,13 @@ function App() {
 
   if (!inited) {
     deprecatedContent = (
-      <div className={classNames('app', {}, [theme])}>
+      <div id="app" className={classNames('app', {}, [theme])}>
         <PageLoader />
       </div>
     )
 
     redesignedContent = (
-      <div className={classNames('app_redesigned', {}, [theme])}>
+      <div id="app" className={classNames('app_redesigned', {}, [theme])}>
         <PageLoader />
       </div>
     )

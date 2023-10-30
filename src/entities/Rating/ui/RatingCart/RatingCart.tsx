@@ -9,8 +9,8 @@ import { VStack, HStack } from '@/shared/ui/redesigned/Stack'
 import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
 import { ButtonSizes } from '@/shared/ui/deprecated/Button/ui/Button'
 import { Card } from '@/shared/ui/deprecated/Card'
-import { Drawer } from '@/shared/ui/deprecated/Drawer'
-import { Modal } from '@/shared/ui/deprecated/Modal'
+import { Drawer } from '@/shared/ui/redesigned/Drawer'
+import { Modal } from '@/shared/ui/redesigned/Modal'
 import { StarRating } from '@/shared/ui/deprecated/StarRating'
 
 interface RatingCartProps {

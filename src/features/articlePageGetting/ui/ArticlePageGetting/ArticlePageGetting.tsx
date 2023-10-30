@@ -5,8 +5,8 @@ import { isMobile } from 'react-device-detect'
 import { saveJsonSettings, useJsonUserSettings } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { Text } from '@/shared/ui/deprecated/Text'
-import { Drawer } from '@/shared/ui/deprecated/Drawer'
-import { Modal } from '@/shared/ui/deprecated/Modal'
+import { Drawer } from '@/shared/ui/redesigned/Drawer'
+import { Modal } from '@/shared/ui/redesigned/Modal'
 
 export const ArticlePageGetting = memo(() => {
   const { t } = useTranslation('articles-page')
