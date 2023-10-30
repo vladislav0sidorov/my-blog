@@ -10,6 +10,7 @@ import { Avatar } from '@/shared/ui/redesigned/Avatar'
 import { Card } from '@/shared/ui/redesigned/Card'
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton'
 import { Text } from '@/shared/ui/redesigned/Text'
+import { UiDesignSwitcher } from '@/features/UiDesignSwitcher'
 
 export const SkeletonProfileCardRedesigned = () => (
   <Card padding="24" max>
@@ -68,63 +69,69 @@ export const ProfileCardRedesigned = (props: ProfileCardProps) => {
   const { t } = useTranslation('profile')
 
   return (
-    <VStack gap="32" max>
-      {data?.avatar && (
-        <HStack max justify="center">
-          <Avatar size={150} src={data?.avatar} />
-        </HStack>
-      )}
-      <HStack max gap="24">
-        <VStack max gap="16">
-          <Input
-            data-testid="ProfileCard.FirstName"
-            value={data?.firstname}
-            label={t('Имя')}
-            onChange={onChangeFirstname}
-            readonly={readonly}
-          />
-          <Input
-            data-testid="ProfileCard.LastName"
-            value={data?.lastname}
-            label={t('Фамилия')}
-            onChange={onChangeLastname}
-            readonly={readonly}
-          />
-          <Input
-            data-testid="ProfileCard.Age"
-            value={data?.age}
-            label={t('Возраст')}
-            onChange={onChangeAge}
-            readonly={readonly}
-          />
-          <Input
-            data-testid="ProfileCard.City"
-            value={data?.city}
-            label={t('Город')}
-            onChange={onChangeCity}
-            readonly={readonly}
-          />
-        </VStack>
+    <Card max padding="24">
+      <VStack gap="32" max>
+        {data?.avatar && (
+          <HStack max justify="center">
+            <Avatar size={150} src={data?.avatar} />
+          </HStack>
+        )}
+        <HStack max gap="24">
+          <VStack max gap="16">
+            <Input
+              data-testid="ProfileCard.FirstName"
+              value={data?.firstname}
+              label={t('Имя')}
+              onChange={onChangeFirstname}
+              readonly={readonly}
+            />
+            <Input
+              data-testid="ProfileCard.LastName"
+              value={data?.lastname}
+              label={t('Фамилия')}
+              onChange={onChangeLastname}
+              readonly={readonly}
+            />
+            <Input
+              data-testid="ProfileCard.Age"
+              value={data?.age}
+              label={t('Возраст')}
+              onChange={onChangeAge}
+              readonly={readonly}
+            />
+            <Input
+              data-testid="ProfileCard.City"
+              value={data?.city}
+              label={t('Город')}
+              onChange={onChangeCity}
+              readonly={readonly}
+            />
+          </VStack>
 
-        <VStack max gap="16">
-          <Input
-            data-testid="ProfileCard.Username"
-            value={data?.username}
-            label={t('Имя пользователя')}
-            onChange={onChangeUsername}
-            readonly={readonly}
-          />
-          <Input
-            data-testid="ProfileCard.Avatar"
-            value={data?.avatar}
-            label={t('Фото профиля')}
-            onChange={onChangeAvatar}
-            readonly={readonly}
-          />
-          <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
-          <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
-        </VStack>
-      </HStack>
-    </VStack>
+          <VStack max gap="16">
+            <Input
+              data-testid="ProfileCard.Username"
+              value={data?.username}
+              label={t('Имя пользователя')}
+              onChange={onChangeUsername}
+              readonly={readonly}
+            />
+            <Input
+              data-testid="ProfileCard.Avatar"
+              value={data?.avatar}
+              label={t('Фото профиля')}
+              onChange={onChangeAvatar}
+              readonly={readonly}
+            />
+            <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
+            <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
+          </VStack>
+        </HStack>
+        <HStack gap="8">
+          <Text text={t('Выбран дизайн:')} />
+          <UiDesignSwitcher />
+        </HStack>
+      </VStack>
+    </Card>
   )
 }

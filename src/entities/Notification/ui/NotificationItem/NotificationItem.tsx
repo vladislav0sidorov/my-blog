@@ -28,7 +28,7 @@ export const NotificationItem = React.memo((props: NotificationItemProps) => {
   )
 
   const contentRedesigned = (
-    <Card padding="8" variant="outlined" className={classNames(cls.NotificationItem, {}, [className])}>
+    <Card padding="8" className={classNames(cls.NotificationItem, {}, [className])}>
       <Text title={item.title} text={item.description} />
     </Card>
   )

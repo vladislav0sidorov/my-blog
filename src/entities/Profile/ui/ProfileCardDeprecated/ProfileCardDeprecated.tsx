@@ -11,6 +11,7 @@ import { Avatar } from '@/shared/ui/deprecated/Avatar'
 import { Input } from '@/shared/ui/deprecated/Input'
 import { TextTheme, TextAling, Text } from '@/shared/ui/deprecated/Text/ui/Text'
 import { Loader } from '@/shared/ui/deprecated/Loader'
+import { UiDesignSwitcher } from '@/features/UiDesignSwitcher'
 
 export const ProfileCardDeprecatedLoader = () => (
   <HStack max justify="center" className={classNames(cls.ProfileCard, {}, [cls.loading])}>
@@ -104,6 +105,10 @@ export const ProfileCardDeprecated = (props: ProfileCardProps) => {
       />
       <CurrencySelect value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
       <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} />
+      <HStack gap="8">
+        <Text text={t('Выбран дизайн:')} />
+        <UiDesignSwitcher />
+      </HStack>
     </VStack>
   )
 }
