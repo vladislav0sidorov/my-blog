@@ -5,5 +5,8 @@
   "Назад к списку": "Back to list",
   "Оцените статью": "Rate the article",
   "Оставьте свой отзыв, это поможет нам улучшить качество": "Leave your feedback, it will help us improve the quality",
-  "Спасибо за ваш отзыв!": "Thank for your feedback!"
+  "Спасибо за ваш отзыв!": "Thank for your feedback!",
+  "{{count}} просмотров_zero": "{{count}} view",
+  "{{count}} просмотров_one": "{{count}} views",
+  "{{count}} просмотров_other": "{{count}} views"
 }
