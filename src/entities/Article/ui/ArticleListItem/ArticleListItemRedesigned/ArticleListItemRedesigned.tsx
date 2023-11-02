@@ -33,7 +33,7 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = React.memo((p
   )
   const userInfo = (
     <>
-      {article.user.avatar && <Avatar size={32} src={article.user.avatar} />}
+      {article.user.avatar && <Avatar size={32} src={article.user.avatar} className={cls.userInfo} />}
       <Text bold text={article.user.username} />
     </>
   )

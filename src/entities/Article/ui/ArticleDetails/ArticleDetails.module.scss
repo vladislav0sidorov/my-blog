@@ -1,7 +1,14 @@
 .ArticleDetails {
   min-height: 100%;
+
+  .avatar {
+    margin: 0 auto;
+  }
 }
 
-.avatar {
-  margin: 0 auto;
+.ArticleDetailsRedesigned {
+  .image {
+    width: 100%;
+    max-height: 420px;
+  }
 }

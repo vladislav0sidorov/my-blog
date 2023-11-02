@@ -1,11 +1,12 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 
 import { ArticleTextBlock } from '../../model/types/article'
 import cls from './ArticleTextBlockComponent.module.scss'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
-import { Text } from '@/shared/ui/deprecated/Text'
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { Text } from '@/shared/ui/redesigned/Text'
 
 interface ArticleTextBlockComponentProps {
   className?: string
@@ -14,9 +15,17 @@ interface ArticleTextBlockComponentProps {
 
 export const ArticleTextBlockComponent: React.FC<ArticleTextBlockComponentProps> = React.memo((props) => {
   const { className, block } = props
-  const { t } = useTranslation()
 
-  return (
+  const deprecatedContent = (
+    <div className={classNames(cls.ArticleTextBlockComponent, {}, [className])}>
+      {block.title && <TextDeprecated className={cls.title} title={block.title} />}
+      {block.paragraphs.map((paragraph) => (
+        <TextDeprecated className={cls.paragraph} key={paragraph} text={paragraph} />
+      ))}
+    </div>
+  )
+
+  const redesignedContent = (
     <div className={classNames(cls.ArticleTextBlockComponent, {}, [className])}>
       {block.title && <Text className={cls.title} title={block.title} />}
       {block.paragraphs.map((paragraph) => (
@@ -24,4 +33,6 @@ export const ArticleTextBlockComponent: React.FC<ArticleTextBlockComponentProps>
       ))}
     </div>
   )
+
+  return <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContent} off={deprecatedContent} />
 })
