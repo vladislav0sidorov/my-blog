@@ -52,6 +52,37 @@
       "articleId": "12",
       "rate": 4,
       "id": "5BN66g-"
+    },
+    {
+      "userId": "1",
+      "articleId": "17",
+      "rate": 5,
+      "id": "eEKP6qZ"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 3,
+      "id": "gjyb4Rm"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 3,
+      "feedback": "",
+      "id": "weC-E4t"
+    },
+    {
+      "userId": "1",
+      "articleId": "16",
+      "rate": 4,
+      "id": "kRj2iZe"
+    },
+    {
+      "userId": "1",
+      "articleId": "16",
+      "rate": 3,
+      "id": "yeLRdYt"
     }
   ],
   "profile-ratings": [
@@ -117,7 +148,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isArticlePageWasOpen": true
       },
       "avatar": "https://sun9-60.userapi.com/impg/eqo5sYxr_jyw_yWO9_pKJRMkx8WVwVENfJrecQ/1zVSkEZs5NM.jpg?size=1620x2160&quality=95&sign=73cab6427b2934395f04d96835eb3720&type=album"

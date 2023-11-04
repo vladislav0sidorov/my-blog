@@ -25,6 +25,18 @@
   border-radius: 32px;
 }
 
+.red {
+  border: 1px solid var(--red-dark);
+  color: var(--red-dark);
+  background: none;
+  border-radius: 32px;
+
+  &:hover {
+    border: 1px solid var(--red-light);
+    color: var(--red-light);
+  }
+}
+
 .disabled {
   opacity: 0.5;
 }

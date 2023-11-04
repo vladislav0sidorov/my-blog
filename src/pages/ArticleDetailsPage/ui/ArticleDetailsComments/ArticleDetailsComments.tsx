@@ -11,7 +11,9 @@ import { AddCommentForm } from '@/features/addCommentForm'
 import { CommentList } from '@/entities/Comment'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { VStack } from '@/shared/ui/redesigned/Stack'
-import { Text, TextSize } from '@/shared/ui/deprecated/Text'
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { Text } from '@/shared/ui/redesigned/Text'
 
 // import cls from './ArticleDetailsComments.module.scss';
 
@@ -41,7 +43,12 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = React.mem
 
   return (
     <VStack gap="8" max>
-      <Text size={TextSize.L} title={t('Комментарии')} />
+      <ToggleFeaturesComponent
+        featureName="isAppRedesigned"
+        // eslint-disable-next-line i18next/no-literal-string
+        on={<Text size="l" title={t('Комментарии')} />}
+        off={<TextDeprecated size={TextSize.L} title={t('Комментарии')} />}
+      />
       <AddCommentForm onSendComment={onSendComment} />
       <CommentList isLoading={commentsIsLoading} comments={comments} />
     </VStack>

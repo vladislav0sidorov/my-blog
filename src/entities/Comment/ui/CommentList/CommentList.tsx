@@ -6,7 +6,9 @@ import { CommentCard } from '../CommentCard/CommentCard'
 
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { VStack } from '@/shared/ui/redesigned/Stack'
-import { Text } from '@/shared/ui/deprecated/Text'
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { Text } from '@/shared/ui/redesigned/Text'
 
 interface CommentListProps {
   className?: string
@@ -29,11 +31,15 @@ export const CommentList: FC<CommentListProps> = React.memo((props) => {
   }
 
   return (
-    <VStack gap="16" max className={classNames('', {}, [className])}>
+    <VStack gap="8" max className={classNames('', {}, [className])}>
       {comments?.length ? (
         comments.map((comment) => <CommentCard key={comment.id} isLoading={isLoading} comment={comment} />)
       ) : (
-        <Text text={t('Комментарии отсутствуют')} />
+        <ToggleFeaturesComponent
+          featureName="isAppRedesigned"
+          on={<Text text={t('Комментарии отсутствуют')} />}
+          off={<TextDeprecated text={t('Комментарии отсутствуют')} />}
+        />
       )}
     </VStack>
   )

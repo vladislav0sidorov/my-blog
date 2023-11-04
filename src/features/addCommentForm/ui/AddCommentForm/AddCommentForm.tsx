@@ -11,8 +11,12 @@ import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { HStack } from '@/shared/ui/redesigned/Stack'
-import { Input } from '@/shared/ui/deprecated/Input'
-import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input'
+import { Button as ButtonDeprecated, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { Input } from '@/shared/ui/redesigned/Input'
+import { Button } from '@/shared/ui/redesigned/Button'
+import { Card } from '@/shared/ui/redesigned/Card'
 
 export interface AddCommentFormProps {
   className?: string
@@ -42,12 +46,36 @@ const AddCommentForm: FC<AddCommentFormProps> = React.memo((props) => {
     onCommentTextChange('')
   }, [onCommentTextChange, onSendComment, text])
 
-  return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+  const deprecatedContent = (
+    <HStack
+      data-testid="ArticleDetailsPage.AddCommentForm"
+      max
+      className={classNames(cls.AddCommentForm, {}, [className])}
+    >
+      <InputDeprecated
+        data-testid="ArticleDetailsPage.AddCommentForm.Input"
+        className={cls.input}
+        onChange={onCommentTextChange}
+        value={text}
+        placeholder={t('Введите текст комментария')}
+      />
+      <ButtonDeprecated
+        data-testid="ArticleDetailsPage.AddCommentForm.Button"
+        onClick={onSendHandler}
+        theme={ButtonVariables.OUTLINE}
+      >
+        {t('Отправить')}
+      </ButtonDeprecated>
+    </HStack>
+  )
+
+  const redesignedContent = (
+    <Card max>
       <HStack
         data-testid="ArticleDetailsPage.AddCommentForm"
         max
-        className={classNames(cls.AddCommentForm, {}, [className])}
+        className={classNames(cls.AddCommentFormRedesigned, {}, [className])}
+        gap="16"
       >
         <Input
           data-testid="ArticleDetailsPage.AddCommentForm.Input"
@@ -56,14 +84,16 @@ const AddCommentForm: FC<AddCommentFormProps> = React.memo((props) => {
           value={text}
           placeholder={t('Введите текст комментария')}
         />
-        <Button
-          data-testid="ArticleDetailsPage.AddCommentForm.Button"
-          onClick={onSendHandler}
-          theme={ButtonVariables.OUTLINE}
-        >
+        <Button data-testid="ArticleDetailsPage.AddCommentForm.Button" onClick={onSendHandler} variant="outline">
           {t('Отправить')}
         </Button>
       </HStack>
+    </Card>
+  )
+
+  return (
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+      <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContent} off={deprecatedContent} />
     </DynamicModuleLoader>
   )
 })

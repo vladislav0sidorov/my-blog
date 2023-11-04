@@ -1,0 +1,20 @@
+.starIcon {
+  cursor: pointer;
+}
+
+.hovered {
+  path {
+    stroke: var(--accent-redesigned);
+    fill: var(--accent-redesigned);
+  }
+}
+
+.normal {
+  path {
+    fill: none;
+  }
+}
+
+.selected {
+  cursor: auto;
+}
