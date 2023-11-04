@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import { useTranslation } from 'react-i18next'
 import React, { memo } from 'react'
 import { useSelector } from 'react-redux'
@@ -18,7 +19,10 @@ import { Country } from '@/entities/Country'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { ProfileCard } from '@/entities/Profile'
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text/ui/Text'
+import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text/ui/Text'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { Text } from '@/shared/ui/redesigned/Text'
+import { Card } from '@/shared/ui/redesigned/Card'
 
 // import cls from './EditableProfileCard.module.scss';
 
@@ -124,15 +128,39 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <EditableProfileCardHeader />
-      {validateErrors?.length &&
-        validateErrors?.map((error) => (
-          <Text
-            data-testid="EditableProfileCard.Error"
-            key={error}
-            theme={TextTheme.ERROR}
-            text={validateErrorTranslates[error]}
-          />
-        ))}
+      <ToggleFeaturesComponent
+        featureName="isAppRedesigned"
+        on={
+          <>
+            {validateErrors?.length && (
+              <Card max padding="24">
+                {validateErrors?.map((error) => (
+                  <Text
+                    data-testid="EditableProfileCard.Error"
+                    key={error}
+                    variant="error"
+                    text={validateErrorTranslates[error]}
+                  />
+                ))}
+              </Card>
+            )}
+          </>
+        }
+        off={
+          <>
+            {validateErrors?.length &&
+              validateErrors?.map((error) => (
+                <TextDeprecated
+                  data-testid="EditableProfileCard.Error"
+                  key={error}
+                  theme={TextTheme.ERROR}
+                  text={validateErrorTranslates[error]}
+                />
+              ))}
+          </>
+        }
+      />
+      {}
       <ProfileCard
         onChangeFirstname={onChangeFirstname}
         onChangeLastname={onChangeLastname}

@@ -98,7 +98,7 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = React.memo((p
       to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
     >
-      <Card padding="0" className={cls.card} borderRadius="round">
+      <Card padding="0" className={cls.card}>
         {image}
         <VStack className={cls.info} gap="4">
           <Text title={article.title} className={cls.title} />

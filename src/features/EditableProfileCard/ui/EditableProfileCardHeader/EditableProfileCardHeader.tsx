@@ -11,8 +11,12 @@ import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { getUserAuthData } from '@/entities/User'
 import { HStack } from '@/shared/ui/redesigned/Stack'
-import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
-import { Text } from '@/shared/ui/deprecated/Text'
+import { Button as ButtonDeprecated, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text'
+import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { Text } from '@/shared/ui/redesigned/Text'
+import { Button } from '@/shared/ui/redesigned/Button'
+import { Card } from '@/shared/ui/redesigned/Card'
 
 interface EditableProfileCardHeaderProps {
   className?: string
@@ -40,35 +44,67 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> = Rea
     dispatch(updateProfileData())
   }, [dispatch])
 
-  return (
+  const deprecatedContent = (
     <HStack max justify="between" className={classNames('', {}, [className])}>
-      <Text title={t('Профиль')} />
+      <TextDeprecated title={t('Профиль')} />
       {canEdit && (
         <div>
           {readonly ? (
-            <Button data-testid="EditableProfileCardHeader.EditButton" theme={ButtonVariables.OUTLINE} onClick={onEdit}>
+            <ButtonDeprecated
+              data-testid="EditableProfileCardHeader.EditButton"
+              theme={ButtonVariables.OUTLINE}
+              onClick={onEdit}
+            >
               {t('Редактировать')}
-            </Button>
+            </ButtonDeprecated>
           ) : (
             <HStack gap="16">
-              <Button
+              <ButtonDeprecated
                 data-testid="EditableProfileCardHeader.CancelButton"
                 theme={ButtonVariables.OUTLINE_RED}
                 onClick={onCancelEdit}
               >
                 {t('Отменить')}
-              </Button>
-              <Button
+              </ButtonDeprecated>
+              <ButtonDeprecated
                 data-testid="EditableProfileCardHeader.SaveButton"
                 theme={ButtonVariables.OUTLINE}
                 onClick={onSave}
               >
                 {t('Сохранить')}
-              </Button>
+              </ButtonDeprecated>
             </HStack>
           )}
         </div>
       )}
     </HStack>
   )
+
+  const redesignedContent = (
+    <Card max padding="24">
+      <HStack max justify="between" className={classNames('', {}, [className])}>
+        <Text title={t('Профиль')} />
+        {canEdit && (
+          <div>
+            {readonly ? (
+              <Button data-testid="EditableProfileCardHeader.EditButton" variant="outline" onClick={onEdit}>
+                {t('Редактировать')}
+              </Button>
+            ) : (
+              <HStack gap="16">
+                <Button data-testid="EditableProfileCardHeader.CancelButton" variant="red" onClick={onCancelEdit}>
+                  {t('Отменить')}
+                </Button>
+                <Button data-testid="EditableProfileCardHeader.SaveButton" variant="outline" onClick={onSave}>
+                  {t('Сохранить')}
+                </Button>
+              </HStack>
+            )}
+          </div>
+        )}
+      </HStack>
+    </Card>
+  )
+
+  return <ToggleFeaturesComponent featureName="isAppRedesigned" on={redesignedContent} off={deprecatedContent} />
 })

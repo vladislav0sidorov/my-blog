@@ -10,10 +10,11 @@ import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { NotificationButton } from '@/features/NotificationButton'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
 import { getRouteArticleCreate } from '@/shared/const/router'
-import { ToggleFeaturesComponent } from '@/shared/lib/features'
+import { ToggleFeaturesComponent, toggleFeatures } from '@/shared/lib/features'
 import { HStack } from '@/shared/ui/redesigned/Stack'
 import { AppLink, ApplinkTheme } from '@/shared/ui/deprecated/AppLink'
-import { Button, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { Button as ButtonDeprecated, ButtonVariables } from '@/shared/ui/deprecated/Button'
+import { Button } from '@/shared/ui/redesigned/Button'
 
 interface NavbarProps {
   className?: string
@@ -34,8 +35,10 @@ export const Navbar: React.FC<NavbarProps> = memo((props) => {
     setIsAuthModal(true)
   }, [])
 
+  const mainClass = toggleFeatures({ name: 'isAppRedesigned', on: () => cls.NavbarRedesigned, off: () => cls.Navbar })
+
   const deprecatedContent = (
-    <nav className={classNames(cls.Navbar, {}, [className])}>
+    <nav className={classNames(mainClass, {}, [className])}>
       {authData ? (
         <AppLink theme={ApplinkTheme.THIRD} to={getRouteArticleCreate()}>
           {t('Создать статью')}
@@ -48,9 +51,9 @@ export const Navbar: React.FC<NavbarProps> = memo((props) => {
             <AvatarDropdown />
           </>
         ) : (
-          <Button onClick={onShowModal} theme={ButtonVariables.CLEAR_INVERTED}>
+          <ButtonDeprecated onClick={onShowModal} theme={ButtonVariables.CLEAR_INVERTED}>
             {t('Войти')}
-          </Button>
+          </ButtonDeprecated>
         )}
       </HStack>
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onClose} />}
@@ -58,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = memo((props) => {
   )
 
   const redesignedContent = (
-    <nav className={classNames(cls.NavbarRedesigned, {}, [className])}>
+    <nav className={classNames(mainClass, {}, [className])}>
       <HStack gap="16" className={cls.actions}>
         {authData ? (
           <>
@@ -66,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = memo((props) => {
             <AvatarDropdown />
           </>
         ) : (
-          <Button onClick={onShowModal} theme={ButtonVariables.CLEAR_INVERTED}>
+          <Button onClick={onShowModal} variant="clear">
             {t('Войти')}
           </Button>
         )}
