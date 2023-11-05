@@ -5,7 +5,7 @@ import { saveJsonSettings } from '../services/saveJsonSettings'
 import { JsonSettings } from '../types/jsonSettings'
 import { initAuthData } from '../services/initAuthData'
 
-import { USER_LOCALSTORAGE_KEY } from '@/shared/const/lodalStorage'
+import { LOCAL_STORAGE_LAST_DESIGN_THEME_KEY, USER_LOCALSTORAGE_KEY } from '@/shared/const/lodalStorage'
 import { setFeatureFlags } from '@/shared/lib/features'
 
 const initialState: UserSchema = {
@@ -19,6 +19,10 @@ export const userSlice = createSlice({
     setAuthData: (state, action: PayloadAction<User>) => {
       state.authData = action.payload
       localStorage.setItem(USER_LOCALSTORAGE_KEY, action.payload.id)
+      localStorage.setItem(
+        LOCAL_STORAGE_LAST_DESIGN_THEME_KEY,
+        action.payload.features?.isAppRedesigned ? 'new' : 'old',
+      )
       setFeatureFlags(action.payload.features)
     },
     logout: (state) => {

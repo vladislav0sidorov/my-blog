@@ -9,9 +9,10 @@ import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
 import { getUserInited, initAuthData } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { PageLoader } from '@/widgets/PageLoader'
 import { ToggleFeaturesComponent } from '@/shared/lib/features'
 import { MainLayout } from '@/shared/layouts/MainLayout'
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout'
+import { PageLoader } from '@/widgets/PageLoader'
 
 function App() {
   const { theme } = useTheme()
@@ -48,7 +49,7 @@ function App() {
 
     redesignedContent = (
       <div id="app" className={classNames('app_redesigned', {}, [theme])}>
-        <PageLoader />
+        <AppLoaderLayout />
       </div>
     )
   }

@@ -8,7 +8,7 @@ interface MainLayoutProps {
   className?: string
   header: ReactNode
   sidebar: ReactNode
-  toolbar: ReactNode
+  toolbar?: ReactNode
   content: ReactNode
 }
 

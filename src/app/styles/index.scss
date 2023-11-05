@@ -31,10 +31,30 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--card-bg);
+  background: var(--light-bg-redesigned);
 }
 
 *::-webkit-scrollbar-thumb {
+  background-color: var(--accent-redesigned);
+
+  /* цвет плашки */
+  border-radius: 10px;
+
+  /* закругления плашки */
+  border: 1px solid var(--accent-redesigned);
+
+  /* padding вокруг плашки */
+}
+
+.app *::-webkit-scrollbar {
+  width: 4px;
+}
+
+.app *::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+.app *::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
 
   /* цвет плашки */
