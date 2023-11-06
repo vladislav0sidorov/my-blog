@@ -6,10 +6,7 @@ import { useSearchParams } from 'react-router-dom'
 import { getArticlesPageError } from '../../model/selectors/getArticlesPageError/getArticlesPageError'
 import { getArticles } from '../../model/slice/articlePageSlice'
 import { getArticlesPageLoading } from '../../model/selectors/getArticlesPageLoading/getArticlesPageLoading'
-import { getArticlesPageHasMore } from '../../model/selectors/getArticlesPageHasMore/getArticlesPageHasMore'
-import { getArticlesPageNumber } from '../../model/selectors/getArticlesPageNumber/getArticlesPageNumber'
 import { getArticlesPageView } from '../../model/selectors/getArticlesPageView/getArticlesPageView'
-import { getArticlesPageInited } from '../../model/selectors/getArticlesPageInited/getArticlesPageInited'
 // import cls from './ArticlesPageInfiniteList.module.scss';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 
@@ -32,10 +29,7 @@ export const ArticlesPageInfiniteList: FC<ArticlesPageInfiniteListProps> = React
 
   const articles = useSelector(getArticles.selectAll)
   const isLoading = useSelector(getArticlesPageLoading)
-  const hasMore = useSelector(getArticlesPageHasMore)
-  const page = useSelector(getArticlesPageNumber)
   const view = useSelector(getArticlesPageView)
-  const inited = useSelector(getArticlesPageInited)
   const error = useSelector(getArticlesPageError)
 
   useInitialEffect(() => {

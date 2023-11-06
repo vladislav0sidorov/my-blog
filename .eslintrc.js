@@ -38,7 +38,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'linebreak-style': 'off',
-    'react/prop-types': 'warn',
+    'react/prop-types': 'off',
     'i18next/no-literal-string': [
       2,
       {

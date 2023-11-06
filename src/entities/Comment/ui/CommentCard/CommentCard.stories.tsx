@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { CommentCard } from './CommentCard'
 
 import Avatar from '@/shared/assets/storybook/avatar.jpg'
+import { FeatureFlagDecorator } from '@/shared/config/stroybook/FeatureFlagDecorator/FeatureFlagDecorator'
 
 export default {
   title: 'entities/Comment/CommentCard',
@@ -14,8 +15,7 @@ export default {
 
 const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />
 
-export const Normal = Template.bind({})
-Normal.args = {
+const normalArgs = {
   isLoading: false,
   comment: {
     id: '1',
@@ -27,6 +27,13 @@ Normal.args = {
     },
   },
 }
+
+export const Normal = Template.bind({})
+Normal.args = normalArgs
+
+export const NormalRedesigned = Template.bind({})
+NormalRedesigned.args = normalArgs
+NormalRedesigned.decorators = [FeatureFlagDecorator({ isAppRedesigned: true })]
 
 export const Loading = Template.bind({})
 Loading.args = {

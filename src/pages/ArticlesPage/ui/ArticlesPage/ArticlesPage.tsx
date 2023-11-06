@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next'
 import React from 'react'
 
 import { articlePageReducer } from '../../model/slice/articlePageSlice'
@@ -23,7 +22,6 @@ interface ArticlesPageProps {
 
 const ArticlesPage: React.FC<ArticlesPageProps> = (props) => {
   const { className } = props
-  const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
   const onLoadNextPart = React.useCallback(() => {
@@ -35,7 +33,11 @@ const ArticlesPage: React.FC<ArticlesPageProps> = (props) => {
   }
 
   const deprecatedContent = (
-    <Page className={classNames(cls.ArticlesPage, {}, [])} data-testid="ArticlesPage" onScrollEnd={onLoadNextPart}>
+    <Page
+      className={classNames(cls.ArticlesPage, {}, [className])}
+      data-testid="ArticlesPage"
+      onScrollEnd={onLoadNextPart}
+    >
       <ArticlePageFilters />
       <ArticlesPageInfiniteList className={cls.list} />
       <ArticlePageGetting />

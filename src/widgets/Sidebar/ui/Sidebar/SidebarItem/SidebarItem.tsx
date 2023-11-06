@@ -19,7 +19,7 @@ interface SidebarItemProps {
 }
 
 export const SidebarItem: React.FC<SidebarItemProps> = memo((props) => {
-  const { item, text, collapsed } = props
+  const { item, collapsed } = props
   const { t } = useTranslation()
   const isAuth = useSelector(getUserAuthData)
 

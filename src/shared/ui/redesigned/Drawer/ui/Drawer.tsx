@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import { useTranslation } from 'react-i18next'
 import { Portal } from '@headlessui/react'
 
 import cls from './Drawer.module.scss'
@@ -21,8 +20,7 @@ interface DrawerProps {
 const height = window.innerHeight - 100
 
 export const DrawerContent = React.memo((props: DrawerProps) => {
-  const { className, isOpen, onClose, children, lazy } = props
-  const { t } = useTranslation()
+  const { className, isOpen, onClose, children } = props
   const { theme } = useTheme()
   const { Spring, Gesture } = useAnimationLibs()
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }))

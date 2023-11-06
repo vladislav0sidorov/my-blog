@@ -19,7 +19,7 @@ export default {
   decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof HomePage>
 
-const Template: ComponentStory<typeof HomePage> = (args) => <HomePage />
+const Template: ComponentStory<typeof HomePage> = () => <HomePage />
 
 export const Primary = Template.bind({})
 Primary.args = {}

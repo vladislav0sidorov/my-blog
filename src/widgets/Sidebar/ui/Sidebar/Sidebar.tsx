@@ -1,5 +1,4 @@
 import React, { memo, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { getSidebarItems } from '../../model/selectors/getSidebarItems/getSidebarItems'
@@ -25,7 +24,6 @@ export const Sidebar: React.FC<SidebarProps> = memo((props) => {
   const { className } = props
   const [collapsed, setCollapsed] = React.useState(false)
   const sidebarItemsList = useSelector(getSidebarItems)
-  const { t } = useTranslation()
 
   const itemList = useMemo(
     () => sidebarItemsList.map((item) => <SidebarItem key={item.path} item={item} collapsed={collapsed} />),

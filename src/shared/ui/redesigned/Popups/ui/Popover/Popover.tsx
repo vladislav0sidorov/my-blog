@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import { useTranslation } from 'react-i18next'
 import { Popover as HPopover } from '@headlessui/react'
 
 import cls from './Popover.module.scss'
@@ -18,7 +17,6 @@ interface PopoverProps {
 
 export const Popover = (props: PopoverProps) => {
   const { className, trigger, direction = 'bottom right', children } = props
-  const { t } = useTranslation()
 
   const menuClasses = [mapDirectionClass[direction], popupCls.menu]
 

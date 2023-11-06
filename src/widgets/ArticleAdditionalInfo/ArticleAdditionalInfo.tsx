@@ -8,14 +8,14 @@ import { Text } from '@/shared/ui/redesigned/Text'
 import { ArticleEditButton } from '@/features/ArticleEditButton'
 
 interface ArticleAdditionalInfoProps {
-  className?: string
+  // className?: string
   author?: User
   createdAt?: string
   views?: number
 }
 
 export const ArticleAdditionalInfo: FC<ArticleAdditionalInfoProps> = React.memo((props) => {
-  const { className, author, createdAt, views } = props
+  const { author, createdAt, views } = props
   const { t } = useTranslation('article-details')
 
   return (

@@ -2,6 +2,7 @@ import { addDecorator } from '@storybook/react'
 
 import { StyleDecorator } from '../../src/shared/config/stroybook/StyleDecorator/StyleDecorator'
 import { RouteDecorator } from '../../src/shared/config/stroybook/RouteDecorator/RouteDecorator'
+import { FeatureFlagDecorator } from '../../src/shared/config/stroybook/FeatureFlagDecorator/FeatureFlagDecorator'
 import { Theme } from '../../src/shared/const/theme'
 
 export const parameters = {
@@ -28,3 +29,4 @@ addDecorator(StyleDecorator)
 // addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouteDecorator)
 // addDecorator(SuspenseDecorator);
+addDecorator(FeatureFlagDecorator({}))

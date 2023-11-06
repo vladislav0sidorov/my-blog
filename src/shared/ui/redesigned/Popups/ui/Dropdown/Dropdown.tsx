@@ -1,5 +1,4 @@
 import React, { FC, Fragment, ReactNode } from 'react'
-import { useTranslation } from 'react-i18next'
 import { Menu } from '@headlessui/react'
 
 import cls from './Dropdown.module.scss'
@@ -26,7 +25,6 @@ interface DropdownProps {
 
 export const Dropdown: FC<DropdownProps> = React.memo((props) => {
   const { className, items, trigger, direction = 'bottom right' } = props
-  const { t } = useTranslation()
 
   const menuClasses = [mapDirectionClass[direction], popupCls.menu]
 

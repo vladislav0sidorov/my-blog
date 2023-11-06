@@ -11,7 +11,7 @@ import { ArticleSortField, ArticleType } from '@/entities/Article'
 export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkConfig<void>>(
   'articlesPage/initArticlesPage',
   async (searchParams, thunkApi) => {
-    const { extra, rejectWithValue, getState, dispatch } = thunkApi
+    const { getState, dispatch } = thunkApi
     const inited = getArticlesPageInited(getState())
 
     if (!inited) {

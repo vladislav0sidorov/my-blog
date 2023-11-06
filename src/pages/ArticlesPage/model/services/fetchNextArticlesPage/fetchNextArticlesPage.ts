@@ -11,7 +11,7 @@ import { ThunkConfig } from '@/app/providers/StoreProvider'
 export const fetchNextArticlesPage = createAsyncThunk<void, void, ThunkConfig<void>>(
   'articlesPage/fetchNextArticlesPage',
   async (_, thunkApi) => {
-    const { extra, rejectWithValue, getState, dispatch } = thunkApi
+    const { getState, dispatch } = thunkApi
     const hasMore = getArticlesPageHasMore(getState())
     const isLoading = getArticlesPageLoading(getState())
     const page = getArticlesPageNumber(getState())
