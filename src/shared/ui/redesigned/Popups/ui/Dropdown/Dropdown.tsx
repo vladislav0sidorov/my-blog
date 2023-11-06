@@ -4,7 +4,7 @@ import { Menu } from '@headlessui/react'
 import cls from './Dropdown.module.scss'
 import popupCls from '../../styles/Popups.module.scss'
 import { mapDirectionClass } from '../../styles/const'
-import { AppLink } from '../../../../deprecated/AppLink'
+import { AppLink } from '../../../AppLink'
 
 import { DropdownDirection } from '@/shared/types/ui'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
@@ -44,7 +44,7 @@ export const Dropdown: FC<DropdownProps> = React.memo((props) => {
             </button>
           )
 
-          if (item.href) {
+          if (item?.href) {
             return (
               <Menu.Item key={`Dropdown-key${index}`} as={AppLink} to={item.href} disabled={item.disabled}>
                 {content}

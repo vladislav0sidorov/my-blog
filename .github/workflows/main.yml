@@ -41,9 +41,9 @@ jobs:
       - name: unit testing
         if: always()
         run: npm run test:unit
-      - name: Generate HTML report
-        run: npm run test:ui:report
-        if: always()
+      # - name: Generate HTML report
+      #   run: npm run test:ui:report
+      #   if: always()
       # - name: move loki
       #   run: mv .loki reports/
       #   if: always()
