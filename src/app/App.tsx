@@ -2,6 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 
+import { useAppToolbar } from './lib/useAppToolbar'
+
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
 import { useTheme } from '@/app/providers/ThemeProvider'
 import { AppRouter } from '@/app/providers/router'
@@ -19,6 +21,7 @@ function App() {
   const dispatch = useAppDispatch()
   const inited = useSelector(getUserInited)
   const { t } = useTranslation()
+  const toolbar = useAppToolbar()
 
   React.useEffect(() => {
     dispatch(initAuthData())
@@ -36,7 +39,7 @@ function App() {
 
   let redesignedContent = (
     <React.Suspense fallback="">
-      <MainLayout header={<Navbar />} sidebar={<Sidebar />} content={<AppRouter />} toolbar={t('Toolbar')} />
+      <MainLayout header={<Navbar />} sidebar={<Sidebar />} content={<AppRouter />} toolbar={toolbar} />
     </React.Suspense>
   )
 

@@ -14,8 +14,8 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { ReducersList, DynamicModuleLoader } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { ArticlePageGetting } from '@/features/articlePageGetting'
 import { ToggleFeaturesComponent } from '@/shared/lib/features'
-import { StickyComponentLayout } from '@/shared/layouts/StickyComponentLayout'
 import { classNames } from '@/shared/lib/ClassNames/ClassNames'
+import { StickyComponentLayout } from '@/shared/layouts/StickyComponentLayout'
 
 interface ArticlesPageProps {
   className?: string
